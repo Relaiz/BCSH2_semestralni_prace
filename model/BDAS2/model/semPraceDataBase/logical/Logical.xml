@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="035BF92C-3CEF-2C2A-5DCB-EFFDDE5489A0" mainViewID="CCE3DED7-0F5B-23A5-30BB-7EFD8FB5C460">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 15:07:40 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

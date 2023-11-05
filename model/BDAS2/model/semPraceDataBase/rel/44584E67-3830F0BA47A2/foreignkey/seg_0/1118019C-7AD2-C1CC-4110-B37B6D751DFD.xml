@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1118019C-7AD2-C1CC-4110-B37B6D751DFD" containerWithKeyObject="3AB68081-BE99-0EC8-F2CA-2EF0012CBE67" localFKIndex="479A0BC4-3619-D75A-9EB8-DA2F8800ADEB" name="UCET_STATUS_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>08E0D232-A578-F5A6-7670-BB689964F9B0</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<referredTableLongName>STATUS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D97C4937-66BB-71EF-7621-B5686C6BA2D6</referredTableID>
+<keyObject>E91796FA-3261-6F8E-6A47-9A7AA1262F3A</keyObject>
+<referredKeyID>E91796FA-3261-6F8E-6A47-9A7AA1262F3A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_status</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="F23B6AA4-8030-890B-E911-E5A4B1D236EB" name="FKArc_1">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<mandatory>false</mandatory>
+<reverseArc>true</reverseArc>
+<table>9625A84F-7F0D-214C-C3F2-172EDC363ED7</table>
+<fkeys>
+<fkeyID>89E831B2-4721-9217-DF73-975641FAD3FF</fkeyID>
+<fkeyID>32D39070-8AFC-31B5-B791-78082B25E849</fkeyID>
+</fkeys>
+</FKArc>

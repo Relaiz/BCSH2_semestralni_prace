@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="58B7433B-A0EC-9AAC-52C6-6F77DB6CE666" name="OPERACE">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>24F68D46-A0FC-E9CA-6965-EA1B17C24D46</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_operace" id="92D6D724-A568-59BA-91BE-8B0775EB3197">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3EBF27F4-44CA-FCC0-2E8B-F70EB1871D28</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="castka" id="E4C32CF2-7F3C-5AE6-F850-386850C26B7E">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>5B5DF541-8FBC-540C-D035-C91FA18C1C27</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum_zacatka" id="CE5021C8-B7CF-A2DD-480F-F140B6EF04FD">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>59D55B21-4081-77EA-C407-02467D705FD1</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum_okonceni" id="97B4C994-C6CD-C1DD-3869-DD29F2DB83F8">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>E3624B03-49F7-F54E-C11B-4082429F1BA2</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazev" id="0CD8ACF1-5A37-07CB-51C6-B4B06949344B">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>A5578662-19F3-B7DB-B9AB-E061B4AA3092</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="z_uctu" id="A0A16B34-4ECF-5AD6-CBEA-00B22FE6D87B">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>1A8BA5A4-B0BE-3B74-C7C7-C9E98A84BA05</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="do_uctu" id="18589BE4-CD07-A381-E4D7-34D8F3247263">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>0ECC8750-7808-F562-ACAB-BF0A20F7FF47</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UCET_id_ucet" id="9B8F5D1B-0B0D-C87F-215F-AB8CDD23E905">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>CB2564C4-84CC-2B36-10CF-4BC3D4414493</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DC5EA818-E0CC-C26C-82B6-03F6D7D85311" referredColumn="B6CDBCE0-2A58-7AD1-F75A-06BEB67A05C3"/>
+</associations>
+</Column>
+<Column name="STATUS_id_status" id="06EAE2C6-5FC5-6718-653C-085A0322DFAD">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>0AA4A45A-EA30-C381-7D6B-A13D468E0244</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7FD5A4DA-C86F-7D3E-A009-EC697EB26FC1" referredColumn="FCE3F821-0622-FCA0-77B5-AB5C33DDD3A6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED6CAE21-D502-5B0E-9E10-3BFA72C3039F" name="OPERACE_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>CCD570F3-6267-A2FD-9729-139FD1493511</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92D6D724-A568-59BA-91BE-8B0775EB3197"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC7965C7-A61B-9A6B-7827-49D03426F847" name="OPERACE_STATUS_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3B1D5BDF-6B62-E14B-BE65-0435DBE6B0EA</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06EAE2C6-5FC5-6718-653C-085A0322DFAD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E1B44EA-51FB-F595-CF27-6FEA7C967202" name="OPERACE_UCET_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>9D0F3F27-847B-BA44-CAF3-2C4902B6888E</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B8F5D1B-0B0D-C87F-215F-AB8CDD23E905"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

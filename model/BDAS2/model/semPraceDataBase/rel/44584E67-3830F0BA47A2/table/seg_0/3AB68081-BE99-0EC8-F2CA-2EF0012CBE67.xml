@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3AB68081-BE99-0EC8-F2CA-2EF0012CBE67" name="UCET">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>AAC834DD-B566-0332-14D7-CAB77987372A</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_ucet" id="B6CDBCE0-2A58-7AD1-F75A-06BEB67A05C3">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>460D4CC9-F932-4960-D08D-1AF780FF6EC9</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cislo_uctu" id="11B37A9F-2AC8-2EB7-580E-46CFEC3E71EC">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>C2FFC556-AC51-357C-41F9-139BF23030FD</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazev" id="9E2A7A96-C4F0-8AE1-43ED-7142C745C4BA">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>9F04F8DF-2526-AF06-4892-EAC93D3D493E</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Klient_id_klient" id="DCB095CC-3060-55CC-6538-02F56F8AEA9D">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>C2CB10C5-174E-950E-60EB-4EB8A3B4B286</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B648E4FB-5B91-833E-8134-5D8E5AB74AA8" referredColumn="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
+</associations>
+</Column>
+<Column name="Bank_id_bank" id="791C1C00-C147-9EFA-8B3D-95A098811CA2">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>61F81E1B-044D-DF09-6F6B-64111A0DAD1D</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4F9B33E0-5D17-EFC9-0BF6-174B7A60D23B" referredColumn="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B"/>
+</associations>
+</Column>
+<Column name="STATUS_id_status" id="39820BC2-FD92-6A06-7712-3BD43612981F">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>91D8DAB9-24F0-9F6F-5152-FE79D109561B</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1118019C-7AD2-C1CC-4110-B37B6D751DFD" referredColumn="FCE3F821-0622-FCA0-77B5-AB5C33DDD3A6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C7A4BB42-CA74-D558-8529-F692F89F6D8F" name="UCET_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>D3BA8E46-0E18-07C1-86DE-04FEFAE92F43</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6CDBCE0-2A58-7AD1-F75A-06BEB67A05C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB072675-A7EA-4B9F-708B-C165A9A8A220" name="UCET_Bank_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>FED0119C-C6D8-7737-F5F9-879A6641AEE2</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="791C1C00-C147-9EFA-8B3D-95A098811CA2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9E08A6EC-5042-DA68-D217-7BF933B5CDC6" name="UCET_Klient_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>99530323-0D81-5EAC-7EB0-0F07D92FD01F</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCB095CC-3060-55CC-6538-02F56F8AEA9D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="479A0BC4-3619-D75A-9EB8-DA2F8800ADEB" name="UCET_STATUS_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>08E0D232-A578-F5A6-7670-BB689964F9B0</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39820BC2-FD92-6A06-7712-3BD43612981F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

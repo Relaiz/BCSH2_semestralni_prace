@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ADRESA_ZAMESTNANEC" directorySegmentName="seg_0" id="5535D4DA-4EEE-61DF-111B-DA8C6C109184">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-06 16:45:46 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+</engineerTo>
+<sourcePk>3F01F17B-847F-3B00-482D-5C8320B46DBE</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>obyva</nameOnSource>
+<nameOnTarget>bydli</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7A98D05C-4FFD-DFC7-69B1-0EC20B07BEE0</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BF3EDEF1-0743-8F11-2A37-3EA90AA99E74</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

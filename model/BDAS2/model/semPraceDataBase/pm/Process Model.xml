@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="2B264DF7-08FB-912F-A56C-8C29E1A00D12">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 15:07:40 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

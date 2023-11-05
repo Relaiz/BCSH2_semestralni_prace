@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4E62C16C-8FF2-44CF-9423-3542876B30C3" name="SCHUZKA">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>9CFDAF25-D0B4-12DD-3776-B0BB4C2FEF29</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_schuzka" id="B6B8DAD9-CA28-9D35-BB77-A23156485A1F">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>07FDA67B-94EE-AEC2-948C-1982A6C3B8A4</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum" id="BC92294C-D870-BD42-D9D7-F2F88AD21396">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>94502178-A5E2-6A60-30CD-EFD7134BE81A</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POBOCKA_id_pobocka" id="CC47EDA6-7AD8-9C01-B4AE-16B692FD6D6A">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>375422FD-3ADB-E7AF-3CE8-A438942F7E2B</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6D881E06-6273-8726-8863-E7DB0686C577" referredColumn="5B29E704-FBB9-1CB8-2998-F0F3240CCD36"/>
+</associations>
+</Column>
+<Column name="STATUS_id_status" id="FBE22FBC-451C-5FE8-83E5-C850DDA6B292">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>09CE2745-E23C-681A-C40B-CF297A23CBBD</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="68FADCBB-C3D8-5108-790E-B816EA9F1C96" referredColumn="FCE3F821-0622-FCA0-77B5-AB5C33DDD3A6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C2165BDF-5088-F67B-46AE-990813F5CEF2" name="SCHUZKA_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>45C56A0E-1FB3-6D23-D89B-D0601B4C52E2</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6B8DAD9-CA28-9D35-BB77-A23156485A1F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="18737D78-4899-C80C-BE69-CA726913520F" name="SCHUZKA_POBOCKA_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3AAB583C-DB6B-A012-0376-C946567A5D0B</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CC47EDA6-7AD8-9C01-B4AE-16B692FD6D6A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="06DC5A3C-C668-A0A9-5EEC-76ACE4BBF432" name="SCHUZKA_STATUS_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>AAA07851-19E2-55D4-D1D5-0A02FEE8529C</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FBE22FBC-451C-5FE8-83E5-C850DDA6B292"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

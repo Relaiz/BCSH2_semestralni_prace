@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7A98D05C-4FFD-DFC7-69B1-0EC20B07BEE0" name="ADRESA">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 17:53:58 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_adres" id="1ED19FCE-4964-A14F-BE90-57928C755D2C">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 17:54:34 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ulice" id="D2629F4B-99C9-BA8E-8EAB-8500CE182DE3">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 17:54:36 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mesto" id="FA793F87-3B09-91CF-8084-EB6F139A7969">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 17:54:36 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cislo_popisne" id="08AB98DC-D675-217E-2A80-6C76A24E882A">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 17:54:36 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="psc" id="CC448E4C-D947-1449-9CB8-782038553CF5">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 17:54:37 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="stat" id="FE383712-04E6-3FF7-9F7E-54262777AE26">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 17:54:38 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3F01F17B-847F-3B00-482D-5C8320B46DBE" name="ADRESA PK">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 17:54:49 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1ED19FCE-4964-A14F-BE90-57928C755D2C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

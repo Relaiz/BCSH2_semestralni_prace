@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="380C6C86-03B1-510C-BB29-321ED73B9B1C" name="Klient">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 16:06:58 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_klient" id="E7BCE587-C48A-B40C-FBA5-002C09C64B55">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:03:50 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cislo_prukazu" id="EEBB0472-9515-53C5-FB34-76938A5A3D48">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:22:49 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="jmeno" id="14FA396D-907E-0838-CD00-07868228DE57">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:04:05 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prijmeni" id="694C05B6-E4C4-7DDD-29AC-E2B1D1C644C1">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:05:11 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_adres" id="F117D1AD-661E-FE1D-82FF-CBC0766799CC">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-06 16:46:09 UTC</createdTime>
+<generatorID>EEC5976A-C96C-916F-20DA-96A17860B1B9</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+</engineerTo>
+<referedAttribute>1ED19FCE-4964-A14F-BE90-57928C755D2C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_bank" id="88FD54C1-07FA-2100-A8F7-5ABB471BAAC0">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-12 14:59:38 UTC</createdTime>
+<generatorID>3E7BE679-F787-DDD4-3B89-7F749394C361</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+</engineerTo>
+<referedAttribute>DF81F5D7-9A4A-3F76-5919-97DEF1CD693D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefoni_cislo" id="F8B20B5D-872E-D02B-E375-DB14AC2EE130">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-20 21:22:53 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_zamestnanec" id="974A5CD6-1F4A-60C0-4E4E-1788963D7995">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-20 21:27:24 UTC</createdTime>
+<generatorID>337EA408-304F-AE37-631E-CAB47813E971</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+</engineerTo>
+<referedAttribute>8C93F709-BA40-5F61-2F81-243B7BAC8762</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="061DB3B5-3976-F274-B14D-0E62EBD6867F" name="Klient PK">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:04:03 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E7BCE587-C48A-B40C-FBA5-002C09C64B55</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

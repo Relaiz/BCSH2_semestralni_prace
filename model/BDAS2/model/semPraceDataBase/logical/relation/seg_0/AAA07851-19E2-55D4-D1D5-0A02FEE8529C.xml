@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="STATUS_SCHUZKA" directorySegmentName="seg_0" id="AAA07851-19E2-55D4-D1D5-0A02FEE8529C">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-23 21:21:39 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+</engineerTo>
+<sourcePk>8F917EFD-DD49-7EAB-1E04-BC05EAAF745C</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>patri</nameOnSource>
+<nameOnTarget>ma</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5091E14C-56F2-EB64-1F5D-A1A92DC30BFE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9CFDAF25-D0B4-12DD-3776-B0BB4C2FEF29</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
