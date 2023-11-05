@@ -93,5 +93,14 @@
 <colUsage columnID="28B493D8-ACB5-C3C0-485D-C4DB0F7CA120"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="61B709F0-0755-7961-D4B3-8DC52C1A654B" name="ADRESA_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:43:01 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28B493D8-ACB5-C3C0-485D-C4DB0F7CA120"/>
+</indexColumnUsage>
+</ind_PK_UK>
 </indexes>
 </Table>

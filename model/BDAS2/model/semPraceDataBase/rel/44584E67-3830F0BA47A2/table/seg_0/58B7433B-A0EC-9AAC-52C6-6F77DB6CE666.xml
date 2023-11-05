@@ -130,6 +130,33 @@
 <colUsage columnID="92D6D724-A568-59BA-91BE-8B0775EB3197"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="5FF5414C-54FC-F97E-426D-55021F0D462D" name="OPERACE_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:42:37 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92D6D724-A568-59BA-91BE-8B0775EB3197"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="03C4C8ED-FE1E-F611-5CF0-17ECA4027011" name="OPERACE_UCET_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:42:37 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B8F5D1B-0B0D-C87F-215F-AB8CDD23E905"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9B235CB7-36A6-3FEE-2B42-2E63059CC082" name="OPERACE_STATUS_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:42:37 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06EAE2C6-5FC5-6718-653C-085A0322DFAD"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="CC7965C7-A61B-9A6B-7827-49D03426F847" name="OPERACE_STATUS_FK">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>

@@ -101,6 +101,42 @@
 <colUsage columnID="B6CDBCE0-2A58-7AD1-F75A-06BEB67A05C3"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="66272334-C0A4-7B32-6AB9-4934DDF86644" name="UCET_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:41:49 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6CDBCE0-2A58-7AD1-F75A-06BEB67A05C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D689D7DF-BF33-46BC-F62D-6FD0ABA516C5" name="UCET_KLIENT_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:41:49 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCB095CC-3060-55CC-6538-02F56F8AEA9D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="56D58B7A-8EBC-9B52-C3AA-7DCC3FC47E1C" name="UCET_STATUS_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:41:49 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="39820BC2-FD92-6A06-7712-3BD43612981F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F21D660C-1E86-C7FD-E895-09BFD44F4482" name="UCET_BANK_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:41:49 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="791C1C00-C147-9EFA-8B3D-95A098811CA2"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="BB072675-A7EA-4B9F-708B-C165A9A8A220" name="UCET_Bank_FK">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>

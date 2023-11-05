@@ -111,12 +111,11 @@
 <colAssociation fkAssociation="C2229DB5-C8CB-DBA0-2AF3-E2160DE1A2E4" referredColumn="FCE3F821-0622-FCA0-77B5-AB5C33DDD3A6"/>
 </associations>
 </Column>
-<Column name="id_manazer" id="1115C8AB-D4A1-676B-E937-5750B434CFEB">
+<Column name="ZAMESTNANEC_id_zamestnanec" id="1115C8AB-D4A1-676B-E937-5750B434CFEB">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
 <generatorID>DF234D1E-535F-773D-622C-926B806E39A4</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -131,7 +130,6 @@
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
 <generatorID>E3B96AD7-1C7C-7410-A656-B4B3074019B6</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -250,6 +248,42 @@
 <colUsage columnID="F71A8A87-0E58-E45E-7EBF-141478E77EBC"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="4037EEC4-E5E0-39F9-2AE0-30EC19034EC1" name="ZAMESTNANEC_STATUS_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CAA5CB24-52FF-BF46-F779-3BCE1CA8240C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8EAE9920-673E-2A75-5490-91200CD00673" name="ZAMESTNANEC_ADRES_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:38:56 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C78A6D70-7453-7621-2043-E64DE4960921"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8C6878A1-CA1C-0E5D-0AA2-2E2DB65F6F47" name="ZAMESTNANEC_POZICE_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:38:56 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C20F8C0-7D6E-EB48-4930-3B66772A3321"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="279B2CB5-6237-B767-DD0D-A9FF0C6E83D4" name="ZAMESTNANEC_BANK_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:38:56 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C79CE45A-71B3-80BE-DF99-5D52C4158A72"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="F7581123-334E-C543-46AB-9A576F2F9762" name="ZAMESTNANEC_ADRESA_FK">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
@@ -272,7 +306,7 @@
 <colUsage columnID="C79CE45A-71B3-80BE-DF99-5D52C4158A72"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="A12FA426-EF88-A7CB-5B39-D7D3F7A4C071" name="ZAMESTNANEC_MANAZER_FK">
+<ind_PK_UK id="A12FA426-EF88-A7CB-5B39-D7D3F7A4C071" name="ZAMESTNANEC_ZAMESTNANEC_FK">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
 <generatorID>1DCA2A11-1A61-5880-8213-69AD52BA6EAB</generatorID>

@@ -4,7 +4,7 @@
 <createdTime>2022-11-23 21:02:47 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -15,13 +15,12 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_status" id="0FD19A55-0E97-4D4E-EB36-0EF6F5527906">
+<Attribute name="id status" id="0FD19A55-0E97-4D4E-EB36-0EF6F5527906">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-23 21:03:50 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,9 +31,8 @@
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-23 21:04:05 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -50,7 +48,7 @@
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

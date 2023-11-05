@@ -93,7 +93,6 @@
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
 <generatorID>3F97EF78-D86A-65A0-66A2-540E269562F7</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -116,6 +115,51 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="5B29E704-FBB9-1CB8-2998-F0F3240CCD36"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BF6EE224-0622-16DA-16D0-C176A9FCB903" name="POBOCKA_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B29E704-FBB9-1CB8-2998-F0F3240CCD36"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F718F909-B584-A090-ECAC-1B76EF43D2CD" name="POBOCKA_ADRES_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0CD3E2F9-A01E-0BBC-BCA9-CE7AA8EC943E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2B48079D-7069-6B33-4A7F-44C8BE4E30E9" name="POBOCKA_BANK_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FA45AE8-B581-79DC-D355-73B0C7DFA4A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="37B1158E-BB0C-6464-D845-80EA5B963BDE" name="POBOCKA_STATUS_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47CDA36A-362F-A542-3168-7E48B0E77A99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="83CFE720-16C2-F885-2E96-CF472C256960" name="POBOCKA_ZAMESTNANEC_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DA983D5-D086-6621-FB7C-75F15FCF52E4"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="0F881E8E-D2C7-A227-3912-9FAC66E4DE5E" name="POBOCKA_ADRESA_FK">

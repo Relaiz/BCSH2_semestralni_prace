@@ -9,7 +9,7 @@
 <referredTableID>A76D7B8A-CB2D-0B83-14A0-D33E3448943F</referredTableID>
 <keyObject>CE7EB979-4A17-9761-690E-762EA9F41E33</keyObject>
 <referredKeyID>CE7EB979-4A17-9761-690E-762EA9F41E33</referredKeyID>
-<mandatory>false</mandatory>
+<mandatory>true</mandatory>
 <refColNames>id_zamestnanec</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

@@ -90,6 +90,42 @@
 <colUsage columnID="CF29E2C9-6360-BA87-969E-4B26EFCFDB6D"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="EE7289DD-B3EB-33DD-2FB3-F0695E8DF55A" name="BANKOMAT__IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:39:52 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF29E2C9-6360-BA87-969E-4B26EFCFDB6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="030F4EA9-9952-C772-F669-C21F699E8E01" name="BANKOMAT_ADRES_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:40:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EA9FEC3-65A4-BEEB-F9E3-AEED92505C7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="665F03A3-8780-1ED3-357D-A562EA23AA83" name="BANKOMAT_BANK_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:40:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF29E2C9-6360-BA87-969E-4B26EFCFDB6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="52BBE9DD-FF19-D398-B9AD-1D0E8B9265B6" name="BANKOMAT_STATUS_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:40:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C76D8EF3-DDF1-83EF-829B-27014CA067B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="8299A4E6-F1FD-E11E-9EC7-2029975C6DB0" name="BANKOMAT_Bank_FK">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>

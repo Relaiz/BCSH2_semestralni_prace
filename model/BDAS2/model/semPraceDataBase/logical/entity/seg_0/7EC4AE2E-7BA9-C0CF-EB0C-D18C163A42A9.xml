@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5B7DE47A-3F8C-3E05-FECF-B6D3EFDF2D02" name="Zustatek">
-<createdBy>razbo</createdBy>
-<createdTime>2022-10-23 16:16:41 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7EC4AE2E-7BA9-C0CF-EB0C-D18C163A42A9" name="LOGIN">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:28:51 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
@@ -15,63 +15,68 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id zustatek" id="5A550E4B-7011-3F90-AE2C-40E3857EADD8">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-08 22:04:34 UTC</createdTime>
+<Attribute name="id zamestnanec" id="DCE3B59A-FB20-E540-53FB-C3DCF467CE65">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:29:50 UTC</createdTime>
+<generatorID>FED8B9C5-FBCA-2A14-00FB-C5412913E32D</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
+<referedAttribute>8C93F709-BA40-5F61-2F81-243B7BAC8762</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="blokovane castka" id="18039925-07DA-0D41-D528-EC1429208E8B">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-08 22:04:59 UTC</createdTime>
+<Attribute name="login" id="1E1FFC75-F5CD-8E61-1937-E4994A62295D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:30:10 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="volna castka" id="FFE8A0F7-C917-8B21-168C-5986588862D0">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-08 22:05:24 UTC</createdTime>
+<Attribute name="heslo" id="0C7105ED-2879-83D7-A86D-B86264A84869">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:30:43 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="date" id="824C07A8-6ACA-8339-4F1F-206C6D9F4079">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-23 21:12:09 UTC</createdTime>
+<Attribute name="is admin" id="10994E9A-F080-E49C-9136-7DE192BF4706">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:31:41 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="UCET id ucet" id="6EDB5874-80BE-9DAD-6A34-E46946E5A537">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-23 21:35:12 UTC</createdTime>
-<generatorID>B21C59BA-31BC-A2E8-14C0-9C7408CBE789</generatorID>
+<Attribute name="Klient id klient" id="B903A569-BAFE-EABE-90D2-54A8056B023C">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:34:15 UTC</createdTime>
+<generatorID>8BE44793-3830-5242-A69B-344A41549714</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
-<referedAttribute>460D4CC9-F932-4960-D08D-1AF780FF6EC9</referedAttribute>
+<referedAttribute>E7BCE587-C48A-B40C-FBA5-002C09C64B55</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -79,17 +84,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="0F718C4A-F72C-5CFF-5B67-1C2D64D0D4C9" name="Zustatek PK">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-08 22:04:58 UTC</createdTime>
+<identifier id="0A220ADB-3A01-5B0D-75FC-B136D3EA87D9" name="LOGIN PK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:30:20 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>5A550E4B-7011-3F90-AE2C-40E3857EADD8</attributeRef>
+<attributeRef>1E1FFC75-F5CD-8E61-1937-E4994A62295D</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

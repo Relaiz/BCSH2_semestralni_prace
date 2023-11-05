@@ -4,7 +4,7 @@
 <createdTime>2022-10-23 16:09:08 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -15,26 +15,24 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_ucet" id="460D4CC9-F932-4960-D08D-1AF780FF6EC9">
+<Attribute name="id ucet" id="460D4CC9-F932-4960-D08D-1AF780FF6EC9">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-08 21:43:05 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cislo_uctu" id="C2FFC556-AC51-357C-41F9-139BF23030FD">
+<Attribute name="cislo uctu" id="C2FFC556-AC51-357C-41F9-139BF23030FD">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-08 22:00:39 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -45,9 +43,8 @@
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-08 21:43:35 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -55,13 +52,13 @@
 <dataTypeSize>32</dataTypeSize>
 <ownDataTypeParameters>32,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_klient" id="C2CB10C5-174E-950E-60EB-4EB8A3B4B286">
+<Attribute name="Klient id klient" id="C2CB10C5-174E-950E-60EB-4EB8A3B4B286">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-08 22:28:49 UTC</createdTime>
 <generatorID>99530323-0D81-5EAC-7EB0-0F07D92FD01F</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <referedAttribute>E7BCE587-C48A-B40C-FBA5-002C09C64B55</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -69,13 +66,13 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_bank" id="61F81E1B-044D-DF09-6F6B-64111A0DAD1D">
+<Attribute name="Bank id bank" id="61F81E1B-044D-DF09-6F6B-64111A0DAD1D">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-12 14:20:37 UTC</createdTime>
 <generatorID>FED0119C-C6D8-7737-F5F9-879A6641AEE2</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <referedAttribute>DF81F5D7-9A4A-3F76-5919-97DEF1CD693D</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -83,13 +80,13 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_status" id="91D8DAB9-24F0-9F6F-5152-FE79D109561B">
+<Attribute name="STATUS id status" id="91D8DAB9-24F0-9F6F-5152-FE79D109561B">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-23 21:16:17 UTC</createdTime>
 <generatorID>08E0D232-A578-F5A6-7670-BB689964F9B0</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <referedAttribute>0FD19A55-0E97-4D4E-EB36-0EF6F5527906</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -105,7 +102,7 @@
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

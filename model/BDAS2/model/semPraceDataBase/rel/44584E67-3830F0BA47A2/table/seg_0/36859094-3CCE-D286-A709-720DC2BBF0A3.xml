@@ -56,5 +56,14 @@
 <colUsage columnID="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="18EE5A93-2F39-E93E-B922-0D2C175B746E" name="Bank__IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:39:44 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
 </indexes>
 </Table>

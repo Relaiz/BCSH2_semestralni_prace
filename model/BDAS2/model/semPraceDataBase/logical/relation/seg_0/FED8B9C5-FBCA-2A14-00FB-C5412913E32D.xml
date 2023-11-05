@@ -1,21 +1,19 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Klient ZAMESTNANEC FK" directorySegmentName="seg_0" id="337EA408-304F-AE37-631E-CAB47813E971">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-20 21:27:24 UTC</createdTime>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="LOGIN ZAMESTNANEC FK" directorySegmentName="seg_0" id="FED8B9C5-FBCA-2A14-00FB-C5412913E32D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:29:50 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <sourcePk>7EF54A53-4F81-0429-10BA-9DC3A7EEE328</sourcePk>
 <identifying>false</identifying>
-<nameOnSource>vedou</nameOnSource>
-<nameOnTarget>obratit se</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>BF3EDEF1-0743-8F11-2A37-3EA90AA99E74</sourceEntity>
-<targetCardinalityString>*</targetCardinalityString>
-<targetEntity>380C6C86-03B1-510C-BB29-321ED73B9B1C</targetEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>7EC4AE2E-7BA9-C0CF-EB0C-D18C163A42A9</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>
 </Relation>

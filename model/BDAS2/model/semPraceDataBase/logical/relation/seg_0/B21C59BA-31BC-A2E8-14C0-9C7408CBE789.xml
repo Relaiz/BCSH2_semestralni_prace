@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="UCET_ZUSTATEK" directorySegmentName="seg_0" id="B21C59BA-31BC-A2E8-14C0-9C7408CBE789">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Zustatek UCET FK" directorySegmentName="seg_0" id="B21C59BA-31BC-A2E8-14C0-9C7408CBE789">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-23 21:35:12 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <sourcePk>D3BA8E46-0E18-07C1-86DE-04FEFAE92F43</sourcePk>
 <identifying>false</identifying>

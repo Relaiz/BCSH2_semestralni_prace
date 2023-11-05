@@ -4,7 +4,7 @@
 <createdTime>2022-10-23 15:46:17 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -15,13 +15,12 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_bank" id="DF81F5D7-9A4A-3F76-5919-97DEF1CD693D">
+<Attribute name="id bank" id="DF81F5D7-9A4A-3F76-5919-97DEF1CD693D">
 <createdBy>razbo</createdBy>
 <createdTime>2022-10-23 17:16:46 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,9 +31,8 @@
 <createdBy>razbo</createdBy>
 <createdTime>2022-10-23 19:28:46 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -45,9 +43,8 @@
 <createdBy>razbo</createdBy>
 <createdTime>2022-10-23 17:17:03 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -63,7 +60,7 @@
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

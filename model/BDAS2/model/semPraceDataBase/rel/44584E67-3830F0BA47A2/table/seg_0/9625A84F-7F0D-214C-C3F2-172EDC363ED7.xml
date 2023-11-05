@@ -111,11 +111,39 @@
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
 <generatorID>786208EC-00A6-CE79-D836-CFF9B87F5865</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="4FB495C4-190F-54C5-D3BC-28EECC5AEDEE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="747C19EB-D5F7-02A9-0AF5-763FA3B60BA3" name="Karta_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:49:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4FB495C4-190F-54C5-D3BC-28EECC5AEDEE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6EFB0656-51A4-1358-90E7-241166DD5E3E" name="Karta_UCET_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:49:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0B02570-5AA1-9FEA-7973-EBAF2F2F4ECA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2E1550A5-A14A-9E05-2A31-AAB8675C82EB" name="Karta_TYPE_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:49:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B637ACBF-CC5A-A3FB-EB59-35F31E21F1C2"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="01173FF9-DFF2-C77B-A8A3-D0A1AEB106B6" name="Karta_UCET_FK">

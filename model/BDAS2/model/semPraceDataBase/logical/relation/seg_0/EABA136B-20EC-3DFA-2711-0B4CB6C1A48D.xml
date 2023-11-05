@@ -1,19 +1,18 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Klient Bank FK" directorySegmentName="seg_0" id="3E7BE679-F787-DDD4-3B89-7F749394C361">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-12 14:59:38 UTC</createdTime>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Klient_ADRESA_FK" directorySegmentName="seg_0" id="EABA136B-20EC-3DFA-2711-0B4CB6C1A48D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>089B61BF-67BD-63B6-95B2-7E90A1513B2D</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
-<sourcePk>A1F65F9C-7F81-8D21-E977-D6D83EF8DDAF</sourcePk>
+<sourcePk>A6AA5848-3CF7-2F8B-6305-05F6C7052C82</sourcePk>
 <identifying>false</identifying>
-<nameOnSource>ma</nameOnSource>
-<nameOnTarget>patri</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
-<sourceEntity>C7F1F2EB-05BF-EC42-0377-7539E318A87F</sourceEntity>
+<sourceEntity>B17E6950-EB7C-142C-3B19-B6A4113B7135</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>
 <targetEntity>380C6C86-03B1-510C-BB29-321ED73B9B1C</targetEntity>
 <transferable>true</transferable>

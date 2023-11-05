@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="BANK_POBOCKA" directorySegmentName="seg_0" id="2C29B580-6632-8488-4CAD-F1DCA0E14666">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="POBOCKA Bank FK" directorySegmentName="seg_0" id="2C29B580-6632-8488-4CAD-F1DCA0E14666">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-12 14:39:49 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <sourcePk>A1F65F9C-7F81-8D21-E977-D6D83EF8DDAF</sourcePk>
 <identifying>false</identifying>

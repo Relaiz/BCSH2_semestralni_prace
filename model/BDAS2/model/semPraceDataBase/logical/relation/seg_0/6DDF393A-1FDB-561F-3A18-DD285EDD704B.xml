@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="STATUS_ZAMESTNANEC" directorySegmentName="seg_0" id="6DDF393A-1FDB-561F-3A18-DD285EDD704B">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ZAMESTNANEC STATUS FK" directorySegmentName="seg_0" id="6DDF393A-1FDB-561F-3A18-DD285EDD704B">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-23 21:15:50 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <sourcePk>8F917EFD-DD49-7EAB-1E04-BC05EAAF745C</sourcePk>
 <identifying>false</identifying>

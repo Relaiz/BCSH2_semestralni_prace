@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="STATUS_OPERACE" directorySegmentName="seg_0" id="3B1D5BDF-6B62-E14B-BE65-0435DBE6B0EA">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="OPERACE STATUS FK" directorySegmentName="seg_0" id="3B1D5BDF-6B62-E14B-BE65-0435DBE6B0EA">
 <createdBy>razbo</createdBy>
 <createdTime>2022-11-23 21:16:55 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
-<item key="A76BF201-9F90-82F8-E936-E67C43A3A1AD" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <sourcePk>8F917EFD-DD49-7EAB-1E04-BC05EAAF745C</sourcePk>
 <identifying>false</identifying>

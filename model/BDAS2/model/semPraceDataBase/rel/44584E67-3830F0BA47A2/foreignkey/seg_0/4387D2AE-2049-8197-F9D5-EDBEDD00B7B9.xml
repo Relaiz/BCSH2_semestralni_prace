@@ -9,7 +9,7 @@
 <referredTableID>5A0AD7D8-CAB4-D230-E474-D13CC5BAECB2</referredTableID>
 <keyObject>CB929F42-78C0-320F-3E6C-CB6BAB54B32F</keyObject>
 <referredKeyID>CB929F42-78C0-320F-3E6C-CB6BAB54B32F</referredKeyID>
-<mandatory>false</mandatory>
+<mandatory>true</mandatory>
 <refColNames>id_pobocka</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

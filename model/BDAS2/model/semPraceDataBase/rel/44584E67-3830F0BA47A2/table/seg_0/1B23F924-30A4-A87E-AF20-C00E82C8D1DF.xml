@@ -125,6 +125,52 @@
 <colUsage columnID="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="3E77E78D-36D8-2609-223C-0F5AA14BBFBE" name="Klient_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8C0F448-9FD8-9E37-5BEE-B4992D876DB8" name="Klient_ADRES_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F744301-2E71-E7B2-87C2-F3D7A52DE2E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7AF6F764-DFB6-CC3D-5980-6D6A1FA7126F" name="Klient_BANK_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F4EA0BA-30C7-8976-9EC0-0F964F879A62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="124E7089-3DBD-2DAA-203C-7373B8322892" name="Klient_ZAMESTNANEC_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B24B0F3-6938-6F69-085D-DB9B0CAD75A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5947EDF0-945B-F2DF-BC9B-14A14DC73F48" name="Klient_NAME_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E719856-4B3D-E586-3D96-C4B045E38193"/>
+<colUsage columnID="052E53FD-D573-0543-6974-E8AF594A61B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="4236FC02-F764-DFE0-3561-887CDF8262EB" name="Klient_ADRESA_FK">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>

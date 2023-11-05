@@ -74,6 +74,43 @@
 <colUsage columnID="B6B8DAD9-CA28-9D35-BB77-A23156485A1F"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="FAA035A0-3BCF-4BB6-99E4-7D32A26792D3" name="SCHUZKA_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:43:58 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6B8DAD9-CA28-9D35-BB77-A23156485A1F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B9ED244D-E7C9-DF5A-71CD-D5DCF3E11C48" name="SCHUZKA_POBOCKA_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:43:58 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CC47EDA6-7AD8-9C01-B4AE-16B692FD6D6A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="41155A9A-4A9F-F4E8-B2E1-429979DC0316" name="SCHUZKA_STATUS_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:43:58 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FBE22FBC-451C-5FE8-83E5-C850DDA6B292"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD1AA3EA-415F-6F32-051D-1B4A3942DE0C" name="SCHUZKA_DATUM_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:44:15 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC92294C-D870-BD42-D9D7-F2F88AD21396"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="18737D78-4899-C80C-BE69-CA726913520F" name="SCHUZKA_POBOCKA_FK">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>

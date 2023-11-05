@@ -81,6 +81,24 @@
 <colUsage columnID="5822BA71-0B1F-90F0-0F64-3B02E7F9EE09"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="96C55B92-646A-4B52-F80F-E830ABF00278" name="Zustatek_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:46:56 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5822BA71-0B1F-90F0-0F64-3B02E7F9EE09"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8C334916-53EE-868C-DE1B-411D17141AB1" name="Zustatek_UCET_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:46:56 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1E237C41-20CB-87A9-8861-6AA730163A9F"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="191B6824-B7A5-AEBB-00F9-C710711B401E" name="Zustatek_UCET_FK">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
