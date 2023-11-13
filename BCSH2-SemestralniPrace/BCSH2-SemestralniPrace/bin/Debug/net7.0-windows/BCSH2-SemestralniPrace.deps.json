@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v7.0": {
       "BCSH2-SemestralniPrace/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.3",
           "Oracle.EntityFrameworkCore": "7.21.12",
           "Oracle.ManagedDataAccess.Core": "3.21.120"
         },

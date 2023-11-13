@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+6Id/Qz3PKy+2shdSoDzhwpDPk0f3fmnUkbaT1I9sBxGQ23rMrTjPVZCtFGyxLQw8PHQ0vyFMRvjSR200xoW5Q==",
+  "dgSpecHash": "RWdlacYEE4o0gJw9b9TfMU8f+0D/hTLtSQ3wdK8Th1/dC5sS4ydLfbp+EQVOCMNJr7pZV1e4CCAGks1cNHxGVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
+  "projectFilePath": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wille\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",
     "C:\\Users\\wille\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512",
