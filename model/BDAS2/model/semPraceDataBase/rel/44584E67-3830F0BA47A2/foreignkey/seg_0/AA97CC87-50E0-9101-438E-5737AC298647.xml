@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AA97CC87-50E0-9101-438E-5737AC298647" containerWithKeyObject="A76D7B8A-CB2D-0B83-14A0-D33E3448943F" localFKIndex="4AB7B154-4410-4D07-E32B-6E5395B05529" name="ZAMESTNANEC_PRACE_POZICE_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>299F7584-6657-AB4C-B013-D8C28AC72BA6</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<referredTableLongName>PRACE_POZICE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D16E5075-230E-E98E-8FC1-3C9D0F644F39</referredTableID>
+<keyObject>1063F101-BCC8-49E9-39E4-08752B1C32D2</keyObject>
+<referredKeyID>1063F101-BCC8-49E9-39E4-08752B1C32D2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_pozice</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

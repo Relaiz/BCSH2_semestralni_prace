@@ -1,0 +1,208 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1B23F924-30A4-A87E-AF20-C00E82C8D1DF" name="Klient">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>380C6C86-03B1-510C-BB29-321ED73B9B1C</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_klient" id="C0C11172-5D99-9292-01CC-C228EA0EEE02">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>E7BCE587-C48A-B40C-FBA5-002C09C64B55</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cislo_prukazu" id="033BF41C-A087-8A5E-6438-D3D7EE2D08A1">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>EEBB0472-9515-53C5-FB34-76938A5A3D48</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="jmeno" id="2E719856-4B3D-E586-3D96-C4B045E38193">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>14FA396D-907E-0838-CD00-07868228DE57</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prijmeni" id="052E53FD-D573-0543-6974-E8AF594A61B3">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>694C05B6-E4C4-7DDD-29AC-E2B1D1C644C1</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADRESA_id_adres" id="4F744301-2E71-E7B2-87C2-F3D7A52DE2E2">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>F117D1AD-661E-FE1D-82FF-CBC0766799CC</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="089B61BF-67BD-63B6-95B2-7E90A1513B2D" referredColumn="28B493D8-ACB5-C3C0-485D-C4DB0F7CA120"/>
+</associations>
+</Column>
+<Column name="Bank_id_bank" id="3F4EA0BA-30C7-8976-9EC0-0F964F879A62">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>88FD54C1-07FA-2100-A8F7-5ABB471BAAC0</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AF81BCCA-F8F7-02A4-BF3F-9D476043A7E8" referredColumn="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B"/>
+</associations>
+</Column>
+<Column name="telefoni_cislo" id="1EA0500C-FFE2-E4F2-A4C6-D4EBF19E6A03">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>F8B20B5D-872E-D02B-E375-DB14AC2EE130</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ZAMESTNANEC_id_zamestnanec" id="0B24B0F3-6938-6F69-085D-DB9B0CAD75A3">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>974A5CD6-1F4A-60C0-4E4E-1788963D7995</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="75CE5E7C-9071-9DA3-E7D6-E9D70354189C" referredColumn="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DB981330-BDBB-CEAB-D1FF-4C56246B247D" name="Klient_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>061DB3B5-3976-F274-B14D-0E62EBD6867F</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3E77E78D-36D8-2609-223C-0F5AA14BBFBE" name="Klient_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8C0F448-9FD8-9E37-5BEE-B4992D876DB8" name="Klient_ADRES_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F744301-2E71-E7B2-87C2-F3D7A52DE2E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7AF6F764-DFB6-CC3D-5980-6D6A1FA7126F" name="Klient_BANK_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F4EA0BA-30C7-8976-9EC0-0F964F879A62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="124E7089-3DBD-2DAA-203C-7373B8322892" name="Klient_ZAMESTNANEC_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B24B0F3-6938-6F69-085D-DB9B0CAD75A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5947EDF0-945B-F2DF-BC9B-14A14DC73F48" name="Klient_NAME_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:45:33 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E719856-4B3D-E586-3D96-C4B045E38193"/>
+<colUsage columnID="052E53FD-D573-0543-6974-E8AF594A61B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4236FC02-F764-DFE0-3561-887CDF8262EB" name="Klient_ADRESA_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>EEC5976A-C96C-916F-20DA-96A17860B1B9</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F744301-2E71-E7B2-87C2-F3D7A52DE2E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="23C786C0-B41B-A783-5F8A-4E19A1B88B66" name="Klient_Bank_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3E7BE679-F787-DDD4-3B89-7F749394C361</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F4EA0BA-30C7-8976-9EC0-0F964F879A62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A891B82F-EF85-35DB-46F3-E5C1FBD62016" name="Klient_ZAMESTNANEC_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>337EA408-304F-AE37-631E-CAB47813E971</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B24B0F3-6938-6F69-085D-DB9B0CAD75A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

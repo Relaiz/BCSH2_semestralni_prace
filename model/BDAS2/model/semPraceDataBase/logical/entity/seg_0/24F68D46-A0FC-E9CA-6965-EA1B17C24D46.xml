@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="24F68D46-A0FC-E9CA-6965-EA1B17C24D46" name="OPERACE">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:24:20 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id operace" id="3EBF27F4-44CA-FCC0-2E8B-F70EB1871D28">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:24:27 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="castka" id="5B5DF541-8FBC-540C-D035-C91FA18C1C27">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:24:41 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="datum zacatka" id="59D55B21-4081-77EA-C407-02467D705FD1">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:25:07 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="datum okonceni" id="E3624B03-49F7-F54E-C11B-4082429F1BA2">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:25:35 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazev" id="A5578662-19F3-B7DB-B9AB-E061B4AA3092">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:25:52 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="z uctu" id="1A8BA5A4-B0BE-3B74-C7C7-C9E98A84BA05">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:26:12 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="do uctu" id="0ECC8750-7808-F562-ACAB-BF0A20F7FF47">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:26:30 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id ucet" id="CB2564C4-84CC-2B36-10CF-4BC3D4414493">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:27:36 UTC</createdTime>
+<generatorID>9D0F3F27-847B-BA44-CAF3-2C4902B6888E</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>460D4CC9-F932-4960-D08D-1AF780FF6EC9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id status" id="0AA4A45A-EA30-C381-7D6B-A13D468E0244">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-23 21:16:55 UTC</createdTime>
+<generatorID>3B1D5BDF-6B62-E14B-BE65-0435DBE6B0EA</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>0FD19A55-0E97-4D4E-EB36-0EF6F5527906</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CCD570F3-6267-A2FD-9729-139FD1493511" name="OPERACE_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:24:38 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3EBF27F4-44CA-FCC0-2E8B-F70EB1871D28</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

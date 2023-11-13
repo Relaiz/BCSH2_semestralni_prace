@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ZAMESTNANEC POBOCKA FK" directorySegmentName="seg_0" id="AAF01008-0C28-5755-D0F3-9C5443115D51">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:13:38 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>4F654F15-8199-2A8F-6C56-363B8C5430B6</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1025505E-6D4B-195C-2E8D-2E433F6FABE9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BF3EDEF1-0743-8F11-2A37-3EA90AA99E74</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

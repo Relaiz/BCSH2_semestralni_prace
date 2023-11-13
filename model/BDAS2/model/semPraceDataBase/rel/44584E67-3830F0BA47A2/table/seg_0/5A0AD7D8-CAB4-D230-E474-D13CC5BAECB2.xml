@@ -1,0 +1,210 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5A0AD7D8-CAB4-D230-E474-D13CC5BAECB2" name="POBOCKA">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>1025505E-6D4B-195C-2E8D-2E433F6FABE9</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pobocka" id="5B29E704-FBB9-1CB8-2998-F0F3240CCD36">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>F9C68AF4-FB03-DA60-C581-F1F4C9DA6FDC</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazev" id="F0286E3D-C9B2-D06F-5D0B-5D7807397F7C">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>237F9F83-38EE-635B-012C-4BB1822B7A18</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADRESA_id_adres" id="0CD3E2F9-A01E-0BBC-BCA9-CE7AA8EC943E">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>FA443519-AB0A-CFE6-570E-2E29CD3155CF</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C0AA7114-2EA9-5DF1-75E7-222CF3E63A91" referredColumn="28B493D8-ACB5-C3C0-485D-C4DB0F7CA120"/>
+</associations>
+</Column>
+<Column name="Bank_id_bank" id="6FA45AE8-B581-79DC-D355-73B0C7DFA4A0">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>E0BEC736-06D3-E5EC-4C21-45CB8B2EA5BB</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="272837B2-57EB-3EBD-BF61-7089DB64E2BF" referredColumn="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B"/>
+</associations>
+</Column>
+<Column name="telefoni_cislo" id="74CDD76E-AC12-DDC3-E33C-D2B173B2EF01">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>4FA27E86-47F2-7BF8-D4BD-567ABD2599BE</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS_id_status" id="47CDA36A-362F-A542-3168-7E48B0E77A99">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>8B74CE46-6477-A850-AD78-C6B35A44D1B2</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F783DF70-B17D-22A6-1D1C-AEE9D8AB0234" referredColumn="FCE3F821-0622-FCA0-77B5-AB5C33DDD3A6"/>
+</associations>
+</Column>
+<Column name="ZAMESTNANEC_id_zamestnanec" id="7DA983D5-D086-6621-FB7C-75F15FCF52E4">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3F97EF78-D86A-65A0-66A2-540E269562F7</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A05A3ADF-3EA8-987A-5A0A-F9B9A74C59F6" referredColumn="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CB929F42-78C0-320F-3E6C-CB6BAB54B32F" name="POBOCKA_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>4F654F15-8199-2A8F-6C56-363B8C5430B6</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B29E704-FBB9-1CB8-2998-F0F3240CCD36"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BF6EE224-0622-16DA-16D0-C176A9FCB903" name="POBOCKA_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B29E704-FBB9-1CB8-2998-F0F3240CCD36"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F718F909-B584-A090-ECAC-1B76EF43D2CD" name="POBOCKA_ADRES_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0CD3E2F9-A01E-0BBC-BCA9-CE7AA8EC943E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2B48079D-7069-6B33-4A7F-44C8BE4E30E9" name="POBOCKA_BANK_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FA45AE8-B581-79DC-D355-73B0C7DFA4A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="37B1158E-BB0C-6464-D845-80EA5B963BDE" name="POBOCKA_STATUS_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47CDA36A-362F-A542-3168-7E48B0E77A99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="83CFE720-16C2-F885-2E96-CF472C256960" name="POBOCKA_ZAMESTNANEC_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:48:42 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DA983D5-D086-6621-FB7C-75F15FCF52E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0F881E8E-D2C7-A227-3912-9FAC66E4DE5E" name="POBOCKA_ADRESA_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>13092609-A48B-7CD4-CA6A-795A91EB6954</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0CD3E2F9-A01E-0BBC-BCA9-CE7AA8EC943E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="82308C61-5A09-1BD5-B7E3-6411CA278A61" name="POBOCKA_Bank_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>2C29B580-6632-8488-4CAD-F1DCA0E14666</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FA45AE8-B581-79DC-D355-73B0C7DFA4A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79D59E82-5067-868B-35B3-41F232191E0E" name="POBOCKA_ZAMESTNANEC_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>875341B0-23DA-4F99-647B-CF8660F0EFE1</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DA983D5-D086-6621-FB7C-75F15FCF52E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DEB91B6B-A70A-3A51-2958-430304BCE25C" name="POBOCKA_STATUS_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3ABE5479-AB9A-7BDD-FC77-0AEF526E24FE</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47CDA36A-362F-A542-3168-7E48B0E77A99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

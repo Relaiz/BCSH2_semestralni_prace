@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B312DB97-AA4C-960C-7BCF-3463FF5DFD60" name="LOGIN">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<generatorID>7EC4AE2E-7BA9-C0CF-EB0C-D18C163A42A9</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ZAMESTNANEC_id_zamestnanec" id="53552708-9F5B-B77A-7E2F-4658627752B1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<generatorID>DCE3B59A-FB20-E540-53FB-C3DCF467CE65</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="442295AB-F22E-B4D3-2DF7-9962A8C1B929" referredColumn="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
+</associations>
+</Column>
+<Column name="login" id="80579481-4D47-6077-4DE6-07B0BB76DD9A">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<generatorID>1E1FFC75-F5CD-8E61-1937-E4994A62295D</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="heslo" id="9DD8C4C2-A1EA-4D61-F6C8-50DCB05D0A5F">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<generatorID>0C7105ED-2879-83D7-A86D-B86264A84869</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="is_admin" id="0D8A186B-5DB7-464F-060D-3C967D350ED9">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<generatorID>10994E9A-F080-E49C-9136-7DE192BF4706</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Klient_id_klient" id="50FB0E53-0268-7FF6-F590-DEDA2290B813">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<generatorID>B903A569-BAFE-EABE-90D2-54A8056B023C</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B5ED3005-5700-355D-5413-B71D56198429" referredColumn="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="812456DA-E3EA-81A9-E619-76AC6FE5BDD1" name="LOGIN_PK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<generatorID>0A220ADB-3A01-5B0D-75FC-B136D3EA87D9</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="80579481-4D47-6077-4DE6-07B0BB76DD9A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD2B736B-EF9A-7112-3879-6C11336CF4DD" name="LOGIN_KLIENT_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>8BE44793-3830-5242-A69B-344A41549714</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="50FB0E53-0268-7FF6-F590-DEDA2290B813"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AA7CFCF3-F237-72B6-4107-35ECD3DBF281" name="LOGIN_ZAMESTNANEC_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>FED8B9C5-FBCA-2A14-00FB-C5412913E32D</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="53552708-9F5B-B77A-7E2F-4658627752B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45DD5F18-2AB6-1BDB-45BE-373364B76C26" name="LOGIN_Klient_FK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<generatorID>8BE44793-3830-5242-A69B-344A41549714</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50FB0E53-0268-7FF6-F590-DEDA2290B813"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E41C764D-A6FB-DA02-B434-54B86D83531F" name="LOGIN_ZAMESTNANEC_FK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:10 UTC</createdTime>
+<generatorID>FED8B9C5-FBCA-2A14-00FB-C5412913E32D</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="53552708-9F5B-B77A-7E2F-4658627752B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
