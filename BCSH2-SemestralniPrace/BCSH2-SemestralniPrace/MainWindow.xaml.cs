@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,35 @@ namespace BCSH2_SemestralniPrace
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string connectionString;
+
         public MainWindow()
         {
             InitializeComponent();
+            //string constr = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=fei-sql3.upceucebny.cz)(PORT=1521)))(CONNECT_DATA=(SID=BDAS)));" +
+            //            "user id=stXXXXX;password=abcde;" +
+            //            "Connection Timeout=120;Validate connection=true;Min Pool Size=4;";
+
+        }
+
+        private void ConnectButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Handle the connect button click
+            try
+            {
+                using (var connection = new OracleConnection(connectionString))
+                {
+                    connection.Open();
+                    // Database is connected
+                    // You can now perform database operations
+                    DataGrid.Visibility = Visibility.Visible; // Show data grid, etc.
+                }
+            }
+            catch (OracleException ex)
+            {
+                // Handle connection error
+                MessageBox.Show($"Connection Error: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

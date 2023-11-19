@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wille\\Documents\\GitHub\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj": {}
+    "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wille\\Documents\\GitHub\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj": {
+    "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
+        "projectUniqueName": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
         "projectName": "BCSH2-SemestralniPrace",
-        "projectPath": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
+        "projectPath": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
         "packagesPath": "C:\\Users\\wille\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\obj\\",
+        "outputPath": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wille\\AppData\\Roaming\\NuGet\\NuGet.Config",
