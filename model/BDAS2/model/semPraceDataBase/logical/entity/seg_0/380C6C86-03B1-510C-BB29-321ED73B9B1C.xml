@@ -120,6 +120,62 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_file" id="AA9C5744-5FCC-F566-A62B-1DEB1B887C4D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:35:47 UTC</createdTime>
+<generatorID>BC89B4C4-0238-B41A-50FD-3B9FF4AA57F9</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>7664EB96-ED03-8931-0726-E715F4321699</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id klient1" id="9B728705-3B73-ACE9-3BE3-E7A9F0E44692">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:35:59 UTC</createdTime>
+<generatorID>BC89B4C4-0238-B41A-50FD-3B9FF4AA57F9</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>4C90EC30-E788-AC4C-92E6-85F3C619DE89</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_file1" id="C350962D-26C3-C1D4-4479-F388C12A9119">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>337EA408-304F-AE37-631E-CAB47813E971</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>B88ED4CA-BA65-6119-1818-8D3146DA24AC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id klient2" id="9987C4BE-DABD-8560-9C71-A6A007B68033">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>337EA408-304F-AE37-631E-CAB47813E971</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>9168FB0A-FA73-FA73-7562-D4EA3B17EFFD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="061DB3B5-3976-F274-B14D-0E62EBD6867F" name="Klient PK">

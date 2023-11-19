@@ -103,6 +103,30 @@
 <colAssociation fkAssociation="A05A3ADF-3EA8-987A-5A0A-F9B9A74C59F6" referredColumn="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
 </associations>
 </Column>
+<Column name="id_file" id="F38B2462-C702-9787-5FF8-0262F96B15B0">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>AB3FE2FD-45F5-5670-D87E-C6EF9D48D91B</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_klient" id="69639DBE-0E45-82EC-0A87-10AD2BB09008">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>DDAD9CA0-2B8A-1E6B-B8E1-6A6929917D48</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="CB929F42-78C0-320F-3E6C-CB6BAB54B32F" name="POBOCKA_PK">

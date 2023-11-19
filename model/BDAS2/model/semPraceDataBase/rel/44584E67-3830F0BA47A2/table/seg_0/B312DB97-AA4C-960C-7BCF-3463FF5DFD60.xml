@@ -74,6 +74,30 @@
 <colAssociation fkAssociation="B5ED3005-5700-355D-5413-B71D56198429" referredColumn="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
 </associations>
 </Column>
+<Column name="id_file" id="4A246E23-C57E-F9DF-8CE4-5F8BE6F1B17D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>D4CEB451-F57E-8BC2-2C05-0EAB697A83B9</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_klient" id="34130112-710E-8FAF-1E07-F8FE6FA9F47D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>DC5C7DE7-A39B-FF54-57AF-BBDEBD658341</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="812456DA-E3EA-81A9-E619-76AC6FE5BDD1" name="LOGIN_PK">

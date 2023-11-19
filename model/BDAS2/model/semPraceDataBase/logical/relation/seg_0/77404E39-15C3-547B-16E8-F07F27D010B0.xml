@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ZAM_FILE" directorySegmentName="seg_0" id="77404E39-15C3-547B-16E8-F07F27D010B0">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:35:30 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>7EF54A53-4F81-0429-10BA-9DC3A7EEE328</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BF3EDEF1-0743-8F11-2A37-3EA90AA99E74</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BD5DAFBB-AE4D-CB11-7A29-272C91D2A29D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

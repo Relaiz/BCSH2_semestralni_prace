@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1025505E-6D4B-195C-2E8D-2E433F6FABE9" name="POBOCKA">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-08 21:35:56 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BD5DAFBB-AE4D-CB11-7A29-272C91D2A29D" name="ODESILANI_FILE">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:28:41 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id pobocka" id="F9C68AF4-FB03-DA60-C581-F1F4C9DA6FDC">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-08 21:36:03 UTC</createdTime>
+<Attribute name="id_file" id="7664EB96-ED03-8931-0726-E715F4321699">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:31:11 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
@@ -27,64 +27,65 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nazev" id="237F9F83-38EE-635B-012C-4BB1822B7A18">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-08 21:36:34 UTC</createdTime>
+<Attribute name="nazev_file" id="91FC943A-C27C-13D1-280D-811B4CED26AA">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:31:30 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="file" id="D6837656-09CE-F400-5238-C0D4BB533B8F">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:31:56 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prijemce_file" id="47F005CD-F347-5E97-6FA9-997A37EB67CB">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:32:15 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="format_file" id="BDF15573-F307-1D4E-0411-978466D2A1F7">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:33:06 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>32</dataTypeSize>
 <ownDataTypeParameters>32,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Bank id bank" id="E0BEC736-06D3-E5EC-4C21-45CB8B2EA5BB">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-12 14:39:49 UTC</createdTime>
-<generatorID>2C29B580-6632-8488-4CAD-F1DCA0E14666</generatorID>
-<ownerDesignName>semPraceDataBase</ownerDesignName>
-<engineerTo>
-<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
-</engineerTo>
-<referedAttribute>DF81F5D7-9A4A-3F76-5919-97DEF1CD693D</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="telefoni cislo" id="4FA27E86-47F2-7BF8-D4BD-567ABD2599BE">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-20 21:21:16 UTC</createdTime>
-<ownerDesignName>semPraceDataBase</ownerDesignName>
-<engineerTo>
-<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id status" id="8B74CE46-6477-A850-AD78-C6B35A44D1B2">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-23 21:06:42 UTC</createdTime>
-<generatorID>3ABE5479-AB9A-7BDD-FC77-0AEF526E24FE</generatorID>
-<ownerDesignName>semPraceDataBase</ownerDesignName>
-<engineerTo>
-<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
-</engineerTo>
-<referedAttribute>0FD19A55-0E97-4D4E-EB36-0EF6F5527906</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id zamestnanec" id="3F97EF78-D86A-65A0-66A2-540E269562F7">
-<createdBy>razbo</createdBy>
-<createdTime>2023-11-02 17:14:51 UTC</createdTime>
-<generatorID>875341B0-23DA-4F99-647B-CF8660F0EFE1</generatorID>
+<Attribute name="id zamestnanec" id="00BCDA1A-45C1-C0CB-BFEE-EF38FBF72573">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:35:30 UTC</createdTime>
+<generatorID>77404E39-15C3-547B-16E8-F07F27D010B0</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
@@ -95,24 +96,24 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ADRESA id adres" id="35287D8D-85DB-F0BF-C54A-18CC325EDDF1">
+<Attribute name="id klient" id="4C90EC30-E788-AC4C-92E6-85F3C619DE89">
 <createdBy>Relaiz</createdBy>
-<createdTime>2023-11-05 15:53:51 UTC</createdTime>
-<generatorID>E121F511-85CF-6A96-D84D-94B2A9566FDD</generatorID>
+<createdTime>2023-11-19 13:35:59 UTC</createdTime>
+<generatorID>7C361E0F-4FAF-E327-FF5E-7776E7331EF1</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
-<referedAttribute>082D0CC1-719A-F2B2-D257-9DD50727C9A6</referedAttribute>
+<referedAttribute>E7BCE587-C48A-B40C-FBA5-002C09C64B55</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_file" id="AB3FE2FD-45F5-5670-D87E-C6EF9D48D91B">
+<Attribute name="id_file1" id="68A77590-5153-B8E0-B78F-C8A91DD9156B">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-19 13:36:11 UTC</createdTime>
-<generatorID>875341B0-23DA-4F99-647B-CF8660F0EFE1</generatorID>
+<generatorID>77404E39-15C3-547B-16E8-F07F27D010B0</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
@@ -123,10 +124,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id klient" id="DDAD9CA0-2B8A-1E6B-B8E1-6A6929917D48">
+<Attribute name="id klient1" id="99765648-0F77-C770-33D9-58601B624C44">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-19 13:36:11 UTC</createdTime>
-<generatorID>875341B0-23DA-4F99-647B-CF8660F0EFE1</generatorID>
+<generatorID>77404E39-15C3-547B-16E8-F07F27D010B0</generatorID>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
 <engineerTo>
 <item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
@@ -139,17 +140,17 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="4F654F15-8199-2A8F-6C56-363B8C5430B6" name="POBOCKA PK">
-<createdBy>razbo</createdBy>
-<createdTime>2022-11-14 09:09:46 UTC</createdTime>
+<identifier id="EBB5D99F-748D-4E7D-2C81-0416ACA9A174" name="ODESILANI_FILE PK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:31:17 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>F9C68AF4-FB03-DA60-C581-F1F4C9DA6FDC</attributeRef>
+<attributeRef>7664EB96-ED03-8931-0726-E715F4321699</attributeRef>
+<attributeRef>4C90EC30-E788-AC4C-92E6-85F3C619DE89</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

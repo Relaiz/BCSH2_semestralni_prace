@@ -82,14 +82,43 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_file" id="D4CEB451-F57E-8BC2-2C05-0EAB697A83B9">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>FED8B9C5-FBCA-2A14-00FB-C5412913E32D</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>B88ED4CA-BA65-6119-1818-8D3146DA24AC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id klient" id="DC5C7DE7-A39B-FF54-57AF-BBDEBD658341">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>FED8B9C5-FBCA-2A14-00FB-C5412913E32D</generatorID>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>9168FB0A-FA73-FA73-7562-D4EA3B17EFFD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="0A220ADB-3A01-5B0D-75FC-B136D3EA87D9" name="LOGIN PK">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-05 15:30:20 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
