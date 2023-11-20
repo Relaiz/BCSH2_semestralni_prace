@@ -235,7 +235,7 @@
 <colUsage columnID="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="DE8068DF-82A2-FE03-2B32-51E10F78C8B0" name="ZAMESTNANEC_email_zamestnanec_UN">
+<ind_PK_UK id="DE8068DF-82A2-FE03-2B32-51E10F78C8B0" name="ZAM_email_ZAM_UN">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:43:34 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>

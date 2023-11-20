@@ -14,5 +14,7 @@
 <refColNames>id_karta</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
+<discriminatorColumn>B637ACBF-CC5A-A3FB-EB59-35F31E21F1C2</discriminatorColumn>
+<discriminatorValue>K</discriminatorValue>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
 </FKIndexAssociation>

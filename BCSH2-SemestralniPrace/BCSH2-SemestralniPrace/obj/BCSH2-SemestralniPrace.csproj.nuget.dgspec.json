@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj": {}
+    "D:\\Program Files\\Git\\BCSH2-Sem-Prace\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj": {
+    "D:\\Program Files\\Git\\BCSH2-Sem-Prace\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
+        "projectUniqueName": "D:\\Program Files\\Git\\BCSH2-Sem-Prace\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
         "projectName": "BCSH2-SemestralniPrace",
-        "projectPath": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
-        "packagesPath": "C:\\Users\\wille\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wille\\Documents\\GitHub\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\obj\\",
+        "projectPath": "D:\\Program Files\\Git\\BCSH2-Sem-Prace\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace.csproj",
+        "packagesPath": "C:\\Users\\Relaiz\\.nuget\\packages\\",
+        "outputPath": "D:\\Program Files\\Git\\BCSH2-Sem-Prace\\BCSH2_semestralni_prace\\BCSH2-SemestralniPrace\\BCSH2-SemestralniPrace\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files\\Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\wille\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Relaiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,13 +45,37 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Oracle.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.21.12, )"
             },
+            "Oracle.ManagedDataAccess": {
+              "target": "Package",
+              "version": "[21.12.0, )"
+            },
             "Oracle.ManagedDataAccess.Core": {
               "target": "Package",
               "version": "[3.21.120, )"
+            },
+            "Oracle.ManagedDataAccess.EntityFramework": {
+              "target": "Package",
+              "version": "[21.9.0, )"
             }
           },
           "imports": [
@@ -68,7 +97,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

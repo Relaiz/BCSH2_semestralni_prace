@@ -13,5 +13,7 @@ namespace BCSH2_SemestralniPrace
     /// </summary>
     public partial class App : Application
     {
+       
+
     }
 }

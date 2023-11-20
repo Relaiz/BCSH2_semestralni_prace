@@ -148,7 +148,7 @@
 <colUsage columnID="30482480-DE5C-67D7-AC81-4D2C2C904D14"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="19AB9746-3325-3621-FD0E-485A75136C0B" name="ODESILANI_FILE__PRIJEMCE_KLIENT">
+<ind_PK_UK id="19AB9746-3325-3621-FD0E-485A75136C0B" name="ODES_FILE_PRIJ_KLIE">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-19 13:38:10 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
@@ -158,7 +158,7 @@
 <colUsage columnID="C5FBB0F9-07E6-0DC7-28BF-244B05BA9DD1"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E2DF32CF-72EE-5475-4107-3BD350CD9E9F" name="ODESILANI_FILE__PRIJEMCE_ZAM">
+<ind_PK_UK id="E2DF32CF-72EE-5475-4107-3BD350CD9E9F" name="ODES_FILE_PRIJ_ZAM">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-19 13:38:10 UTC</createdTime>
 <ownerDesignName>semPraceDataBase</ownerDesignName>
