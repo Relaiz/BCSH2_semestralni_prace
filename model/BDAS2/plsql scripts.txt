@@ -1,0 +1,47 @@
+CREATE OR REPLACE TRIGGER log_changes_Karta
+BEFORE INSERT OR UPDATE OR DELETE ON Karta
+FOR EACH ROW
+DECLARE
+    v_change_type VARCHAR2(10);
+    v_change_description VARCHAR2(200);
+BEGIN
+    IF INSERTING THEN
+        v_change_type := 'INSERT';
+        v_change_description := 'Row inserted';
+    ELSIF UPDATING THEN
+        v_change_type := 'UPDATE';
+        v_change_description := 'Row updated';
+    ELSIF DELETING THEN
+        v_change_type := 'DELETE';
+        v_change_description := 'Row deleted';
+    END IF;
+
+    -- Insert a record into the log_table
+    INSERT INTO log_table (tabulka, operace, cas, uzivatel)
+    VALUES ('Karta', v_change_type, SYSTIMESTAMP, USER);
+END;
+/
+
+CREATE OR REPLACE TRIGGER log_changes_Adresa
+BEFORE INSERT OR UPDATE OR DELETE ON Adresa
+FOR EACH ROW
+DECLARE
+    v_change_type VARCHAR2(10);
+    v_change_description VARCHAR2(200);
+BEGIN
+    IF INSERTING THEN
+        v_change_type := 'INSERT';
+        v_change_description := 'Row inserted';
+    ELSIF UPDATING THEN
+        v_change_type := 'UPDATE';
+        v_change_description := 'Row updated';
+    ELSIF DELETING THEN
+        v_change_type := 'DELETE';
+        v_change_description := 'Row deleted';
+    END IF;
+
+    -- Insert a record into the log_table
+    INSERT INTO log_table (tabulka, operace, cas, uzivatel)
+    VALUES ('Adresa', v_change_type, SYSTIMESTAMP, USER);
+END;
+/
