@@ -70,7 +70,7 @@
 <ownDataTypeParameters>32,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ZAMESTNANEC_id_zamestnanec" id="EC8F6A62-5394-755F-84AD-E7DE5DEB1F2B">
+<Column name="ZAME_id_zamestnanec" id="EC8F6A62-5394-755F-84AD-E7DE5DEB1F2B">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-19 13:36:27 UTC</createdTime>
 <generatorID>00BCDA1A-45C1-C0CB-BFEE-EF38FBF72573</generatorID>
@@ -179,7 +179,7 @@
 <colUsage columnID="99F3DFA7-0CB2-9467-D7B7-E9911CD6E5A9"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="553AF1D9-67DC-48FF-A77D-9A5824E43792" name="ODESILANI_FILE_ZAMESTNANEC_FK">
+<ind_PK_UK id="553AF1D9-67DC-48FF-A77D-9A5824E43792" name="ODES_FILE_ZAM_FK">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-19 13:36:27 UTC</createdTime>
 <generatorID>77404E39-15C3-547B-16E8-F07F27D010B0</generatorID>

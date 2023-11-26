@@ -8,7 +8,7 @@
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center">
             <!-- Login Form -->
-            <GroupBox Header="Database Connection">
+            <GroupBox Header="Login">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -20,22 +20,22 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Content="Server:"
+                    <Label Content="Email:"
                            Grid.Row="0"
                            Grid.Column="0" />
-                    <TextBox x:Name="ServerTextBox"
+                    <TextBox x:Name="EmailTextBox"
                              Grid.Row="0"
                              Grid.Column="1" />
 
-                    <Label Content="User:"
+                    <Label Content="Password:"
                            Grid.Row="1"
                            Grid.Column="0" />
-                    <TextBox x:Name="UserTextBox"
-                             Grid.Row="1"
-                             Grid.Column="1" />
+                    <PasswordBox x:Name="PasswordBox"
+                                 Grid.Row="1"
+                                 Grid.Column="1" />
 
-                    <Button Content="Connect"
-                            Click="ConnectButton_Click"
+                    <Button Content="Login"
+                            Click="LoginButton_Click"
                             Grid.Row="2"
                             Grid.Column="1" />
                 </Grid>

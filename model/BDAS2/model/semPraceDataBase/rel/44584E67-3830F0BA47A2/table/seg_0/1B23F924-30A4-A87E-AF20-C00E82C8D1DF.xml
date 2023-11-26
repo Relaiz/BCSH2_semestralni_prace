@@ -54,6 +54,17 @@
 <ownDataTypeParameters>32,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="klient_email" id="D9B46FF4-D324-0617-1183-E9C7E3E2C8AA">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-25 19:26:24 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70</dataTypeSize>
+<ownDataTypeParameters>70,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="ADRESA_id_adres" id="4F744301-2E71-E7B2-87C2-F3D7A52DE2E2">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
@@ -96,7 +107,7 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ZAMESTNANEC_id_zamestnanec" id="0B24B0F3-6938-6F69-085D-DB9B0CAD75A3">
+<Column name="ZAME_id_zamestnanec" id="0B24B0F3-6938-6F69-085D-DB9B0CAD75A3">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
 <generatorID>974A5CD6-1F4A-60C0-4E4E-1788963D7995</generatorID>
@@ -111,7 +122,7 @@
 <colAssociation fkAssociation="75CE5E7C-9071-9DA3-E7D6-E9D70354189C" referredColumn="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
 </associations>
 </Column>
-<Column name="ODESILANI_FILE_id_file" id="F8664F87-50D5-D95D-CA4E-AA526AD4E7E7">
+<Column name="ODESI_FILE_id_file" id="F8664F87-50D5-D95D-CA4E-AA526AD4E7E7">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-19 13:36:27 UTC</createdTime>
 <generatorID>AA9C5744-5FCC-F566-A62B-1DEB1B887C4D</generatorID>
@@ -126,7 +137,7 @@
 <colAssociation fkAssociation="684A55C6-5689-F60F-5BD1-80883BD47B67" referredColumn="30482480-DE5C-67D7-AC81-4D2C2C904D14"/>
 </associations>
 </Column>
-<Column name="ODESILANI_FILE_id_klient" id="1AF42D63-13DD-AE86-A48A-BD71513E6BBC">
+<Column name="ODES_FILE_id_klient" id="1AF42D63-13DD-AE86-A48A-BD71513E6BBC">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-19 13:36:27 UTC</createdTime>
 <generatorID>9B728705-3B73-ACE9-3BE3-E7A9F0E44692</generatorID>
@@ -179,6 +190,27 @@
 <colUsage columnID="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="BA9DFAAE-695E-217C-8875-785C0DB8F56B" name="Klient_email_UN">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-25 19:27:20 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D9B46FF4-D324-0617-1183-E9C7E3E2C8AA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6ED963F1-AAA0-0FAA-6009-0BDBC8524F44" name="Klient_name_UNv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-25 19:27:20 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E719856-4B3D-E586-3D96-C4B045E38193"/>
+<colUsage columnID="052E53FD-D573-0543-6974-E8AF594A61B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="3E77E78D-36D8-2609-223C-0F5AA14BBFBE" name="Klient_ID_IDX">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-05 15:45:33 UTC</createdTime>
@@ -225,6 +257,16 @@
 <colUsage columnID="052E53FD-D573-0543-6974-E8AF594A61B3"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="D23562C7-6D20-E42E-CF9F-71DCE4240931" name="Klient_ENAIL_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-25 19:27:20 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
+<colUsage columnID="D9B46FF4-D324-0617-1183-E9C7E3E2C8AA"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="4236FC02-F764-DFE0-3561-887CDF8262EB" name="Klient_ADRESA_FK">
 <createdBy>razbo</createdBy>
 <createdTime>2023-11-02 17:42:24 UTC</createdTime>
@@ -258,7 +300,7 @@
 <colUsage columnID="0B24B0F3-6938-6F69-085D-DB9B0CAD75A3"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="328A3E45-DD65-A8E6-7041-0A99DA90E3AD" name="Klient_ODESILANI_FILE_FK">
+<ind_PK_UK id="328A3E45-DD65-A8E6-7041-0A99DA90E3AD" name="Klient_ODESI_FILE_FK">
 <createdBy>Relaiz</createdBy>
 <createdTime>2023-11-19 13:36:27 UTC</createdTime>
 <generatorID>BC89B4C4-0238-B41A-50FD-3B9FF4AA57F9</generatorID>

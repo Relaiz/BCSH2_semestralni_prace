@@ -88,6 +88,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include=".xaml.cs">
+      <DependentUpon>.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ZamestnanecViewModel.cs" />
+    <Compile Include="View\UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -101,6 +108,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include=".xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Adresa.cs" />
@@ -117,7 +132,7 @@
     <Compile Include="Model\Schuzka.cs" />
     <Compile Include="Model\Status.cs" />
     <Compile Include="Model\Ucet.cs" />
-    <Compile Include="Model\Zamestnanec.cs" />
+    <Compile Include="Model\ZamestnanecModel.cs" />
     <Compile Include="Model\Zustatek.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
