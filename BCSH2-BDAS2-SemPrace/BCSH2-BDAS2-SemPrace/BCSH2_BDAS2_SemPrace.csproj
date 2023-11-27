@@ -88,12 +88,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include=".xaml.cs">
-      <DependentUpon>.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Model\Zamestnanec.cs" />
     <Compile Include="ViewModel\ZamestnanecViewModel.cs" />
-    <Compile Include="View\UserWindow.xaml.cs">
-      <DependentUpon>UserWindow.xaml</DependentUpon>
+    <Compile Include="View\EditKlientWindow.xaml.cs">
+      <DependentUpon>EditKlientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KlientWindow.xaml.cs">
+      <DependentUpon>KlientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ZamestnanecWindow.xaml.cs">
+      <DependentUpon>ZamestnanecWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -108,11 +112,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include=".xaml">
+    <Page Include="View\EditKlientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserWindow.xaml">
+    <Page Include="View\KlientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ZamestnanecWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -31,7 +31,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         public ZamestnanecViewModel()
         {
-            LoadZamestnanciCommand = new RelayCommand(LoadZamestnanci);
+           // LoadZamestnanciCommand = new RelayCommand(LoadZamestnanci);
             _databaseService = new OracleDatabaseService();
         }
 
