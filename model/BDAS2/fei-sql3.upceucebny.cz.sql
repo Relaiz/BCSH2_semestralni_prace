@@ -193,7 +193,7 @@ CREATE TABLE login (
     klient_id_klient           NUMBER ,
     id_file                    NUMBER ,
     id_klient                  NUMBER,
-    PRIMARY KEY (login),
+    
     FOREIGN KEY (zamestnanec_id_zamestnanec) REFERENCES zamestnanec (id_zamestnanec),
     FOREIGN KEY (klient_id_klient) REFERENCES klient (id_klient)
 );
@@ -1266,3 +1266,77 @@ INSERT INTO login (zamestnanec_id_zamestnanec, login, heslo, is_admin, klient_id
 SELECT id_zamestnanec, email_zamestnanec, 'password123', 1, NULL, NULL, NULL
 FROM zamestnanec
 WHERE id_zamestnanec = 31; -- Здесь 1 - это идентификатор записи, которую вы хотите добавить
+/
+INSERT INTO login (zamestnanec_id_zamestnanec, login, heslo, is_admin, klient_id_klient, id_file, id_klient)
+SELECT id_zamestnanec, email_zamestnanec, 'password123', 0, NULL, NULL, NULL
+FROM zamestnanec
+WHERE id_zamestnanec = 1;
+/
+select * from login ;
+
+--make a package to make logging generic
+
+-- PL/SQL package for logging changes
+CREATE OR REPLACE PACKAGE LogPackage AS
+    PROCEDURE LogChange(
+        p_operation_type IN VARCHAR2,
+        p_table_name IN VARCHAR2,
+        p_column_name IN VARCHAR2,
+        p_old_value IN VARCHAR2,
+        p_new_value IN VARCHAR2,
+        p_changed_by IN VARCHAR2
+    );
+END LogPackage;
+/
+
+CREATE OR REPLACE PACKAGE BODY LogPackage AS
+    PROCEDURE LogChange(
+        p_operation_type IN VARCHAR2,
+        p_table_name IN VARCHAR2,
+        p_column_name IN VARCHAR2,
+        p_old_value IN VARCHAR2,
+        p_new_value IN VARCHAR2,
+        p_changed_by IN VARCHAR2
+    ) AS
+    BEGIN
+        INSERT INTO log_table (tabulka, operace, cas, uzivatel)
+        VALUES (p_table_name, p_operation_type, SYSTIMESTAMP, p_changed_by);
+
+        COMMIT;
+    END;
+END LogPackage;
+/
+
+CREATE OR REPLACE PROCEDURE UpdateKlientInfo (
+    p_klient_id IN NUMBER,
+    p_jmeno IN VARCHAR2,
+    p_prijmeni IN VARCHAR2,
+    p_telefoni_cislo IN VARCHAR2,
+    p_cislo_prukazu IN NUMBER,
+    p_klient_email IN VARCHAR2,
+    p_adresa_id_adres IN NUMBER,
+    p_bank_id_bank IN NUMBER
+)
+AS
+BEGIN
+    UPDATE klient
+    SET
+        jmeno = p_jmeno,
+        prijmeni = p_prijmeni,
+        telefoni_cislo = p_telefoni_cislo,
+        cislo_prukazu = p_cislo_prukazu,
+        klient_email = p_klient_email,
+        adresa_id_adres = p_adresa_id_adres,
+        bank_id_bank = p_bank_id_bank
+    WHERE id_klient = p_klient_id;
+
+    COMMIT;
+END UpdateKlientInfo;
+/
+
+
+ --SELECT login FROM login WHERE login = 'johndoe@gmail.com' AND heslo = 'password123'
+
+
+
+

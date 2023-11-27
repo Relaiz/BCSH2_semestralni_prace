@@ -73,3 +73,10 @@ C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCS
 C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2_BDAS2_SemPrace.csproj.GenerateResource.cache
 C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2_BDAS2_SemPrace.csproj.CoreCompileInputs.cache
 C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2_BDAS2_SemPrace.csproj.CopyComplete
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\EditKlientWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\KlientWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\ZamestnanecWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2-BDAS2-SemPrace_MarkupCompile.lref
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\EditKlientWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\KlientWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\ZamestnanecWindow.baml

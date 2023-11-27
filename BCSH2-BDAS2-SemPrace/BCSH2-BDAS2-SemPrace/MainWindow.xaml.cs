@@ -50,15 +50,24 @@ namespace BCSH2_BDAS2_SemPrace
 
         private string CheckUserCredentials(string email, string password)
         {
-            OracleDatabaseService db = new OracleDatabaseService();
-            db.OpenConnection();
+            try
+            {
+                OracleDatabaseService db = new OracleDatabaseService();
+                db.OpenConnection();
 
-            string query = $"SELECT login FROM login WHERE email = '{email}' AND heslo = '{password}'";
-            DataTable result = db.ExecuteQuery(query);
+                string query = $"SELECT login FROM login WHERE login = '{email}' AND heslo = '{password}'";
+                DataTable result = db.ExecuteQuery(query);
 
-            db.CloseConnection();
+                db.CloseConnection();
 
-            return result.Rows.Count > 0 ? result.Rows[0]["login"].ToString() : string.Empty;
+                return result.Rows.Count > 0 ? result.Rows[0]["login"].ToString() : string.Empty;
+            }
+            catch (Exception ex)
+            {
+                
+                Console.WriteLine($"Error: {ex.Message}");
+                return string.Empty;
+            }
         }
 
         private void OpenUserWindow(string userLogin)

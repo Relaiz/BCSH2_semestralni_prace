@@ -40,14 +40,27 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
 
         public DataTable ExecuteQuery(string query)
         {
-            using (OracleCommand cmd = new OracleCommand(query, connection))
+            try
             {
-                using (OracleDataAdapter adapter = new OracleDataAdapter(cmd))
+                Console.WriteLine($"Executing query: {query}");
+
+                using (OracleCommand cmd = new OracleCommand(query, connection))
                 {
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                    return dataTable;
+                    using (OracleDataAdapter adapter = new OracleDataAdapter(cmd))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        Console.WriteLine($"Query result: {dataTable.Rows.Count} rows");
+
+                        return dataTable;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error executing query: {ex.Message}");
+                throw;
             }
         }
 
