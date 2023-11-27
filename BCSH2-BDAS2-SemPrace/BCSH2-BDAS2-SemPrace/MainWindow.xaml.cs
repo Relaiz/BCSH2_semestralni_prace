@@ -50,35 +50,7 @@ namespace BCSH2_BDAS2_SemPrace
 
         private string CheckUserCredentials(string email, string password)
         {
-            /*bool userExists = false;
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=" +
-              "(PROTOCOL=TCP)(HOST=fei-sql3.upceucebny.cz)(PORT=1521)))(CONNECT_DATA = " +
-              "(SERVER = DEDICATED)(SID = BDAS)));" +
-              "User Id = st67094; Password = Awphaiperbist1;";
-
-            using (OracleConnection connection = new OracleConnection(connectionString))
-            {
-                string query = "SELECT COUNT(*) FROM login WHERE email = 'johndoe@gmail.com' AND heslo = 'password123'";
-
-                using (OracleCommand command = new OracleCommand(query, connection))
-                {
-                    
-
-                    try
-                    {
-                        connection.Open();
-                        int count = Convert.ToInt32(command.ExecuteScalar());
-                        userExists = count > 0;
-                    }
-                    catch (OracleException ex)
-                    {
-                        // Handle Oracle exception (e.g., logging, error handling)
-                        Console.WriteLine("Oracle Error: " + ex.Message);
-                    }
-                }
-            }
-
-            return email;*/
+           
 
             try
             {
