@@ -14,8 +14,8 @@ namespace BCSH2_BDAS2_SemPrace
     /// </summary>
     public partial class MainWindow : Window
     {
-
         private OracleDatabaseService db;
+
         public MainWindow()
         {
             db = new OracleDatabaseService();
@@ -36,94 +36,120 @@ namespace BCSH2_BDAS2_SemPrace
             }
 
             // Check if the user exists in the login table
-            string userLogin = CheckUserCredentials(email, password);
+            string userEmail = CheckUserCredentials(email, password);
 
-            if (string.IsNullOrEmpty(userLogin))
+            if (string.IsNullOrEmpty(userEmail))
             {
                 MessageBox.Show("Invalid email or password. Please try again.");
                 return;
             }
 
             // Determine the user type and open the corresponding window
-            OpenUserWindow(userLogin);
+            OpenUserWindow(userEmail);
         }
 
         private string CheckUserCredentials(string email, string password)
         {
+            /*bool userExists = false;
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=" +
+              "(PROTOCOL=TCP)(HOST=fei-sql3.upceucebny.cz)(PORT=1521)))(CONNECT_DATA = " +
+              "(SERVER = DEDICATED)(SID = BDAS)));" +
+              "User Id = st67094; Password = Awphaiperbist1;";
+
+            using (OracleConnection connection = new OracleConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM login WHERE email = 'johndoe@gmail.com' AND heslo = 'password123'";
+
+                using (OracleCommand command = new OracleCommand(query, connection))
+                {
+                    
+
+                    try
+                    {
+                        connection.Open();
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+                        userExists = count > 0;
+                    }
+                    catch (OracleException ex)
+                    {
+                        // Handle Oracle exception (e.g., logging, error handling)
+                        Console.WriteLine("Oracle Error: " + ex.Message);
+                    }
+                }
+            }
+
+            return email;*/
+
             try
             {
-                OracleDatabaseService db = new OracleDatabaseService();
-                db.OpenConnection();
+                string query = $"SELECT email FROM login WHERE email = '{email}' AND heslo = '{password}'";
 
-                string query = $"SELECT login FROM login WHERE login = '{email}' AND heslo = '{password}'";
                 DataTable result = db.ExecuteQuery(query);
 
-                db.CloseConnection();
-
-                return result.Rows.Count > 0 ? result.Rows[0]["login"].ToString() : string.Empty;
+                return result.Rows.Count > 0 ? result.Rows[0]["email"].ToString() : string.Empty;
             }
             catch (Exception ex)
             {
-                
                 Console.WriteLine($"Error: {ex.Message}");
                 return string.Empty;
             }
         }
 
-        private void OpenUserWindow(string userLogin)
+        private void OpenUserWindow(string userEmail)
         {
-            if (IsAdminUser(userLogin))
+            if (IsAdminUser(userEmail))
             {
                 // Open Admin window
                 //AdminWindow adminWindow = new AdminWindow();
                 //adminWindow.Show();
             }
-            else if (IsKlientUser(userLogin))
+            else if (IsKlientUser(userEmail))
             {
                 // Get Klient information
-                Klient klient = GetKlientFromLogin(userLogin);
+                Klient klient = GetKlientFromLogin(userEmail);
 
                 // Open Klient window
                 KlientWindow klientWindow = new KlientWindow(klient);
                 klientWindow.Show();
             }
-            else if (IsZamestnanecUser(userLogin))
+            else if (IsZamestnanecUser(userEmail))
             {
                 // Get Zamestnanec information
-                Zamestnanec zamestnanec = GetZamestnanecFromLogin(userLogin);
+                Zamestnanec zamestnanec = GetZamestnanecFromLogin(userEmail);
 
                 // Open Zamestnanec window
                 ZamestnanecWindow zamestnanecWindow = new ZamestnanecWindow(zamestnanec);
                 zamestnanecWindow.Show();
             }
         }
-        private bool IsAdminUser(string login)
+
+        private bool IsAdminUser(string email)
         {
-            string query = $"SELECT is_admin FROM login WHERE login = '{login}'";
+            string query = $"SELECT is_admin FROM login WHERE email = '{email}'";
             DataTable result = db.ExecuteQuery(query);
 
             return result.Rows.Count > 0 && Convert.ToInt32(result.Rows[0]["is_admin"]) == 1;
         }
 
-        private bool IsKlientUser(string login)
+        private bool IsKlientUser(string email)
         {
-            string query = $"SELECT klient_id_klient FROM login WHERE login = '{login}'";
+            string query = $"SELECT klient_id_klient FROM login WHERE email = '{email}'";
             DataTable result = db.ExecuteQuery(query);
 
             return result.Rows.Count > 0 && result.Rows[0]["klient_id_klient"] != DBNull.Value;
         }
 
-        private bool IsZamestnanecUser(string login)
+        private bool IsZamestnanecUser(string email)
         {
-            string query = $"SELECT zamestnanec_id_zamestnanec FROM login WHERE login = '{login}'";
+            string query = $"SELECT zamestnanec_id_zamestnanec FROM login WHERE email = '{email}'";
             DataTable result = db.ExecuteQuery(query);
 
             return result.Rows.Count > 0 && result.Rows[0]["zamestnanec_id_zamestnanec"] != DBNull.Value;
         }
 
-        private Klient GetKlientFromLogin(string login)
+        private Klient GetKlientFromLogin(string email)
         {
-            string query = $"SELECT * FROM klient WHERE klient_email = '{login}'";
+            string query = $"SELECT * FROM klient WHERE klient_email = '{email}'";
             DataTable result = db.ExecuteQuery(query);
 
             if (result.Rows.Count > 0)
@@ -144,9 +170,9 @@ namespace BCSH2_BDAS2_SemPrace
             return null;
         }
 
-        private Zamestnanec GetZamestnanecFromLogin(string login)
+        private Zamestnanec GetZamestnanecFromLogin(string email)
         {
-            string query = $"SELECT * FROM zamestnanec WHERE email_zamestnanec = '{login}'";
+            string query = $"SELECT * FROM zamestnanec WHERE email_zamestnanec = '{email}'";
             DataTable result = db.ExecuteQuery(query);
 
             if (result.Rows.Count > 0)

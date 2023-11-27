@@ -10,7 +10,7 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
 {
     public class OracleDatabaseService
     {
-        private string connectionString;
+        private readonly string connectionString;
         private OracleConnection connection;
 
         public OracleDatabaseService()
@@ -24,17 +24,35 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
 
         public void OpenConnection()
         {
-            if (connection.State == System.Data.ConnectionState.Closed)
+            try
             {
-                connection.Open();
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                    Console.WriteLine("Database connection opened.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error opening database connection: {ex.Message}");
+                throw;
             }
         }
 
         public void CloseConnection()
         {
-            if (connection.State == System.Data.ConnectionState.Open)
+            try
             {
-                connection.Close();
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                    Console.WriteLine("Database connection closed.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error closing database connection: {ex.Message}");
+                throw;
             }
         }
 
@@ -42,6 +60,7 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
         {
             try
             {
+                OpenConnection();
                 Console.WriteLine($"Executing query: {query}");
 
                 using (OracleCommand cmd = new OracleCommand(query, connection))
@@ -62,13 +81,30 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 Console.WriteLine($"Error executing query: {ex.Message}");
                 throw;
             }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
         public int ExecuteNonQuery(string query)
         {
-            using (OracleCommand cmd = new OracleCommand(query, connection))
+            try
             {
-                return cmd.ExecuteNonQuery();
+                OpenConnection();
+                using (OracleCommand cmd = new OracleCommand(query, connection))
+                {
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error executing non-query: {ex.Message}");
+                throw;
+            }
+            finally
+            {
+                CloseConnection();
             }
         }
     }
