@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BCSH2_BDAS2_SemPrace
+namespace BCSH2_BDAS2_SemPrace.View
 {
     /// <summary>
-    /// Логика взаимодействия для UserWindow.xaml
+    /// Interaction logic for EditKlientWindow.xaml
     /// </summary>
-    public partial class UserWindow : Window
+    public partial class EditKlientWindow : Window
     {
-        public UserWindow()
+        public EditKlientWindow()
         {
             InitializeComponent();
         }

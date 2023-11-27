@@ -32,3 +32,44 @@ D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrac
 D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2_BDAS2_SemPrace.csproj.CopyComplete
 D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2-BDAS2-SemPrace.exe
 D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2-BDAS2-SemPrace.pdb
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2_BDAS2_SemPrace.csproj.AssemblyReference.cache
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\MainWindow.baml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\MainWindow.g.cs
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\EditKlientWindow.g.cs
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\KlientWindow.g.cs
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\ZamestnanecWindow.g.cs
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\App.g.cs
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2-BDAS2-SemPrace_MarkupCompile.cache
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2-BDAS2-SemPrace_MarkupCompile.lref
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2-BDAS2-SemPrace.exe
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2-BDAS2-SemPrace.pdb
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\BCSH2-BDAS2-SemPrace.exe.config
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\BCSH2-BDAS2-SemPrace.exe
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\BCSH2-BDAS2-SemPrace.pdb
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Buffers.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Memory.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Text.Json.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.ValueTuple.dll
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Buffers.xml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Memory.xml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Text.Json.xml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\bin\Debug\System.ValueTuple.xml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\EditKlientWindow.baml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\KlientWindow.baml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\ZamestnanecWindow.baml
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2-BDAS2-SemPrace.g.resources
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2_BDAS2_SemPrace.Properties.Resources.resources
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2_BDAS2_SemPrace.csproj.GenerateResource.cache
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2_BDAS2_SemPrace.csproj.CoreCompileInputs.cache
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\BCSH2_BDAS2_SemPrace.csproj.CopyComplete

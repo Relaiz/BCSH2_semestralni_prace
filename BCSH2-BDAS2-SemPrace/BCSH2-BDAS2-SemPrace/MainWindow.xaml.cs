@@ -1,68 +1,161 @@
 ﻿using BCSH2_BDAS2_SemPrace.DataBase;
+using BCSH2_BDAS2_SemPrace.Model;
+using BCSH2_BDAS2_SemPrace.View;
 using Oracle.ManagedDataAccess.Client;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BCSH2_BDAS2_SemPrace
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// The entry point into the application, login window.
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private OracleDatabaseService db;
         public MainWindow()
         {
+            db = new OracleDatabaseService();
+            db.OpenConnection();
             InitializeComponent();
         }
 
-        private void ConnectButton_Click(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            string email = EmailTextBox.Text;
+            string password = PasswordBox.Password;
+
+            // Check if fields are empty
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter both email and password.");
+                return;
+            }
+
+            // Check if the user exists in the login table
+            string userLogin = CheckUserCredentials(email, password);
+
+            if (string.IsNullOrEmpty(userLogin))
+            {
+                MessageBox.Show("Invalid email or password. Please try again.");
+                return;
+            }
+
+            // Determine the user type and open the corresponding window
+            OpenUserWindow(userLogin);
+        }
+
+        private string CheckUserCredentials(string email, string password)
         {
             OracleDatabaseService db = new OracleDatabaseService();
             db.OpenConnection();
-            OracleCommand cmd = new OracleCommand();
-            //cmd.Connection = db.;
-            //cmd.CommandText = "select name from counttest where id = 100";
-            //cmd.CommandType = CommandType.Text;
-            //OracleDataReader dr = cmd.ExecuteReader();
-            //dr.Read();
-            //lbl_info.Content = dr.GetString(0);
-           // cmd.CommandText = "select ulice from adresa where id_adres = 41";
-            string  query= "select ulice from adresa where id_adres = 41";
-            DataTable userTable = db.ExecuteQuery(query);
 
-            // Выводим содержимое DataTable в TextBox (замените textBox1 на имя вашего TextBox)
-            if (userTable.Rows.Count > 0)
-            {
-                StringBuilder sb = new StringBuilder();
-                foreach (DataRow row in userTable.Rows)
-                {
-                    foreach (var item in row.ItemArray)
-                    {
-                        sb.Append(item + " ");
-                    }
-                    sb.AppendLine();
-                }
-                ServerTextBox.Text = sb.ToString();
-            }
-            else
-            {
-                ServerTextBox.Text = "Нет данных";
-            }
+            string query = $"SELECT login FROM login WHERE email = '{email}' AND heslo = '{password}'";
+            DataTable result = db.ExecuteQuery(query);
 
             db.CloseConnection();
+
+            return result.Rows.Count > 0 ? result.Rows[0]["login"].ToString() : string.Empty;
+        }
+
+        private void OpenUserWindow(string userLogin)
+        {
+            if (IsAdminUser(userLogin))
+            {
+                // Open Admin window
+                //AdminWindow adminWindow = new AdminWindow();
+                //adminWindow.Show();
+            }
+            else if (IsKlientUser(userLogin))
+            {
+                // Get Klient information
+                Klient klient = GetKlientFromLogin(userLogin);
+
+                // Open Klient window
+                KlientWindow klientWindow = new KlientWindow(klient);
+                klientWindow.Show();
+            }
+            else if (IsZamestnanecUser(userLogin))
+            {
+                // Get Zamestnanec information
+                Zamestnanec zamestnanec = GetZamestnanecFromLogin(userLogin);
+
+                // Open Zamestnanec window
+                ZamestnanecWindow zamestnanecWindow = new ZamestnanecWindow(zamestnanec);
+                zamestnanecWindow.Show();
+            }
+        }
+        private bool IsAdminUser(string login)
+        {
+            string query = $"SELECT is_admin FROM login WHERE login = '{login}'";
+            DataTable result = db.ExecuteQuery(query);
+
+            return result.Rows.Count > 0 && Convert.ToInt32(result.Rows[0]["is_admin"]) == 1;
+        }
+
+        private bool IsKlientUser(string login)
+        {
+            string query = $"SELECT klient_id_klient FROM login WHERE login = '{login}'";
+            DataTable result = db.ExecuteQuery(query);
+
+            return result.Rows.Count > 0 && result.Rows[0]["klient_id_klient"] != DBNull.Value;
+        }
+
+        private bool IsZamestnanecUser(string login)
+        {
+            string query = $"SELECT zamestnanec_id_zamestnanec FROM login WHERE login = '{login}'";
+            DataTable result = db.ExecuteQuery(query);
+
+            return result.Rows.Count > 0 && result.Rows[0]["zamestnanec_id_zamestnanec"] != DBNull.Value;
+        }
+
+        private Klient GetKlientFromLogin(string login)
+        {
+            string query = $"SELECT * FROM klient WHERE klient_email = '{login}'";
+            DataTable result = db.ExecuteQuery(query);
+
+            if (result.Rows.Count > 0)
+            {
+                // Assuming you have a Klient class with appropriate properties
+                Klient klient = new Klient
+                {
+                    Id = Convert.ToInt32(result.Rows[0]["id_klient"]),
+                    Jmeno = result.Rows[0]["jmeno"].ToString(),
+                    Prijmeni = result.Rows[0]["prijmeni"].ToString(),
+                    Email = result.Rows[0]["klient_email"].ToString(),
+                    // Set other properties based on your Klient class
+                };
+
+                return klient;
+            }
+
+            return null;
+        }
+
+        private Zamestnanec GetZamestnanecFromLogin(string login)
+        {
+            string query = $"SELECT * FROM zamestnanec WHERE email_zamestnanec = '{login}'";
+            DataTable result = db.ExecuteQuery(query);
+
+            if (result.Rows.Count > 0)
+            {
+                // Assuming you have a Zamestnanec class with appropriate properties
+                Zamestnanec zamestnanec = new Zamestnanec
+                {
+                    Id = Convert.ToInt32(result.Rows[0]["id_zamestnanec"]),
+                    Jmeno = result.Rows[0]["jmeno"].ToString(),
+                    Prijmeni = result.Rows[0]["prijmeni"].ToString(),
+                    Email = result.Rows[0]["email_zamestnanec"].ToString(),
+                    // Set other properties based on your Zamestnanec class
+                };
+
+                return zamestnanec;
+            }
+
+            return null;
         }
     }
 }
