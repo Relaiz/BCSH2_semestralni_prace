@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BCSH2_BDAS2_SemPrace.View;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace BCSH2_BDAS2_SemPrace
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }

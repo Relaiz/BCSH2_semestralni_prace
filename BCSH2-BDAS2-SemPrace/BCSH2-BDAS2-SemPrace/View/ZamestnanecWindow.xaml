@@ -5,32 +5,159 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BCSH2_BDAS2_SemPrace.View"
         mc:Ignorable="d"
-        Title="ZamestnanecWindow" Height="450" Width="800">
+        Title="ZamestnanecWindow"
+        Height="450"
+        Width="800"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle"
+               TargetType="Button">
+            <Setter Property="Margin"
+                    Value="0,10,0,0" />
+            <Setter Property="Padding"
+                    Value="10" />
+            <Setter Property="Background"
+                    Value="LightBlue" />
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="BorderBrush"
+                    Value="DarkBlue" />
+            <Setter Property="BorderThickness"
+                    Value="2" />
+        </Style>
+    </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"
+                           MinHeight="337.96" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"
+                              MinWidth="581" />
+            <ColumnDefinition Width="Auto"
+                              MinWidth="0" />
         </Grid.ColumnDefinitions>
-
-        <!-- Left Column - Zamestnanec Info -->
-        <StackPanel Grid.Column="0" Margin="10">
-            <TextBlock FontWeight="Bold" FontSize="16" Text="Zamestnanec Information"/>
-            <TextBlock Text="{Binding Zamestnanec.Jmeno}" />
-            <TextBlock Text="{Binding Zamestnanec.Prijmeni}" />
-            <TextBlock Text="{Binding Zamestnanec.TelefoniCislo}" />
-            <!-- Add other Zamestnanec properties as needed -->
-
-            <Button Content="Edit Zamestnanec" Command="{Binding EditZamestnanecCommand}"/>
-        </StackPanel>
-
-        <!-- Right Column - List of Managed Klients -->
-        <ListView Grid.Column="1" Margin="10" ItemsSource="{Binding ManagedKlients}" SelectedItem="{Binding SelectedKlient}">
+        <Label x:Name="nameZam"
+               Content=""
+               Margin="0,35,0,277"
+               Background="#FFE2DDDD"
+               Grid.Row="1"
+               HorizontalAlignment="Center"
+               Width="186" />
+        <Label x:Name="praceZam"
+               Content=""
+               VerticalAlignment="Top"
+               Background="#FFE2DDDD"
+               Grid.Row="1"
+               Height="26"
+               Margin="0,184,0,0"
+               HorizontalAlignment="Center"
+               Width="186" />
+        <ListView x:Name="klientsList"
+                  ItemsSource="{Binding ListOfKlients}"
+                  SelectedItem="{Binding SelectedKlient}"
+                  Margin="10,70,10,117"
+                  Grid.Row="1"
+                  Grid.Column="1">
             <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Jmeno" DisplayMemberBinding="{Binding Jmeno}"/>
-                    <GridViewColumn Header="Prijmeni" DisplayMemberBinding="{Binding Prijmeni}"/>
-                </GridView>
-            </ListView.View>
+        <GridView>
+            <!-- Add columns for name and surname -->
+            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Jmeno}" />
+            <GridViewColumn Header="Surname" DisplayMemberBinding="{Binding Prijmeni}" />
+            <!-- Other columns as needed -->
+        </GridView>
+    </ListView.View>
         </ListView>
+        <Label x:Name="klients"
+               Content="List of klients"
+               Margin="10,33,320,277"
+               Background="#FFE2DDDD"
+               Grid.Column="1"
+               RenderTransformOrigin="0.629,0.481"
+               Grid.Row="1" />
+        <Label x:Name="emailZam"
+               Content=""
+               Margin="0,74,0,237"
+               Background="#FFE2DDDD"
+               Grid.Row="1"
+               HorizontalAlignment="Center"
+               Width="186" />
+        <Label x:Name="telZam"
+               Content=""
+               Background="#FFE2DDDD"
+               Grid.Row="1"
+               Margin="0,108,0,203"
+               HorizontalAlignment="Center"
+               Width="186" />
+        <Label x:Name="pobockaZam"
+               Content=""
+               Margin="0,217,0,94"
+               Background="#FFE2DDDD"
+               Grid.Row="1"
+               HorizontalAlignment="Center"
+               Width="186" />
+
+
+        <Button x:Name="btnAdd"
+                Style="{StaticResource ButtonStyle}"
+                Content="Pridat Klient"
+                Click="PridatKlientClick"
+                Margin="27,12,0,22"
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Width="108" />
+        <Button x:Name="fileZam"
+                Style="{StaticResource ButtonStyle}"
+                Click="PoslatFileClick"
+                Content="Poslat File"
+                Margin="141,12,0,22"
+                Grid.Row="3"
+                RenderTransformOrigin="0.418,0.897"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Width="108" />
+        <Button x:Name="editKlient"
+                Click="EditKlientClick"
+                Style="{StaticResource ButtonStyle}"
+                Content="Edit Klient"
+                Margin="254,12,0,22"
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Width="108" />
+        <Label x:Name="statusZam"
+               Content=""
+               Margin="0,145,0,166"
+               Background="#FFE2DDDD"
+               Grid.Row="1"
+               HorizontalAlignment="Center"
+               Width="186" />
+        <Button x:Name="btnExit"
+                Style="{StaticResource ButtonStyle}"
+                Content="Exit"
+                Click="ExitClick"
+                Margin="16,12,0,22"
+                Grid.Row="3"
+                HorizontalAlignment="Left"
+                Width="108" />
+        <Button x:Name="showKlient" 
+                
+                Content="Ukaz Klient"
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding ShowKlientCommand}"
+                Margin="367,12,0,22"
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Width="108" />
+
     </Grid>
+
 </Window>

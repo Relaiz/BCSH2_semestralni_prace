@@ -23,7 +23,7 @@ namespace BCSH2_BDAS2_SemPrace.View
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
             // Call the PL/SQL procedure to get current Klient information
-            Klient oldKlient = GetKlientInformationFromDatabase(Klient.Id);
+            Klient oldKlient = GetKlientInformationFromDatabase(Klient.IdKlient);
 
             // Update Klient information
             OracleDatabaseService db = new OracleDatabaseService();
@@ -35,10 +35,10 @@ namespace BCSH2_BDAS2_SemPrace.View
             cmd.CommandType = CommandType.StoredProcedure;
 
             // Add parameters
-            cmd.Parameters.Add("p_klient_id", OracleDbType.Decimal).Value = Klient.Id;
+            cmd.Parameters.Add("p_klient_id", OracleDbType.Decimal).Value = Klient.IdKlient;
             cmd.Parameters.Add("p_jmeno", OracleDbType.Varchar2).Value = Klient.Jmeno;
             cmd.Parameters.Add("p_prijmeni", OracleDbType.Varchar2).Value = Klient.Prijmeni;
-            cmd.Parameters.Add("p_telefonni_cislo", OracleDbType.Varchar2).Value = Klient.TelefonniCislo;
+            cmd.Parameters.Add("p_telefonni_cislo", OracleDbType.Varchar2).Value = Klient.TelefoniCislo;
 
             // Execute the procedure
             cmd.ExecuteNonQuery();
@@ -48,7 +48,7 @@ namespace BCSH2_BDAS2_SemPrace.View
             // Log changes
             LogChanges("UPDATE", "klient", "jmeno", oldKlient.Jmeno, Klient.Jmeno);
             LogChanges("UPDATE", "klient", "prijmeni", oldKlient.Prijmeni, Klient.Prijmeni);
-            LogChanges("UPDATE", "klient", "telefonni_cislo", oldKlient.TelefonniCislo, Klient.TelefonniCislo);
+            LogChanges("UPDATE", "klient", "telefonni_cislo", oldKlient.TelefoniCislo, Klient.TelefoniCislo);
 
             MessageBox.Show("Changes saved successfully.");
         }
@@ -69,7 +69,7 @@ namespace BCSH2_BDAS2_SemPrace.View
             cmd.Parameters.Add("p_column_name", OracleDbType.Varchar2).Value = columnName;
             cmd.Parameters.Add("p_old_value", OracleDbType.Varchar2).Value = oldValue;
             cmd.Parameters.Add("p_new_value", OracleDbType.Varchar2).Value = newValue;
-            cmd.Parameters.Add("p_changed_by", OracleDbType.Varchar2).Value = Klient.Jmeno + Klient.Prijmeni + Klient.Id;
+            cmd.Parameters.Add("p_changed_by", OracleDbType.Varchar2).Value = Klient.Jmeno + Klient.Prijmeni + Klient.IdKlient;
 
             // Execute the procedure
             cmd.ExecuteNonQuery();
@@ -93,10 +93,10 @@ namespace BCSH2_BDAS2_SemPrace.View
 
             if (reader.Read())
             {
-                klient.Id = (int)klientId;
+                klient.IdKlient = (int)klientId;
                 klient.Jmeno = reader["jmeno"].ToString();
                 klient.Prijmeni = reader["prijmeni"].ToString();
-                klient.TelefonniCislo = reader["telefonni_cislo"].ToString();
+                klient.TelefoniCislo = reader["telefonni_cislo"].ToString();
             }
 
             db.CloseConnection();

@@ -4,47 +4,7 @@
         Title="Banka App"
         Height="350"
         Width="500">
-    <Grid>
-        <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
-            <!-- Login Form -->
-            <GroupBox Header="Login">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Label Content="Email:"
-                           Grid.Row="0"
-                           Grid.Column="0" />
-                    <TextBox x:Name="EmailTextBox"
-                             Grid.Row="0"
-                             Grid.Column="1" />
-
-                    <Label Content="Password:"
-                           Grid.Row="1"
-                           Grid.Column="0" />
-                    <PasswordBox x:Name="PasswordBox"
-                                 Grid.Row="1"
-                                 Grid.Column="1" />
-
-                    <Button Content="Login"
-                            Click="LoginButton_Click"
-                            Grid.Row="2"
-                            Grid.Column="1" />
-                </Grid>
-            </GroupBox>
-
-            <!-- Data Display -->
-            <DataGrid x:Name="DataGrid"
-                      AutoGenerateColumns="True"
-                      Visibility="Collapsed" />
-        </StackPanel>
-    </Grid>
+    
+        
+    
 </Window>
