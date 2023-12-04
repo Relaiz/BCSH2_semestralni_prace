@@ -6,7 +6,7 @@ using System.Data;
 public class Ucet : INotifyPropertyChanged
 {
     private int _idUcet;
-    private int _cisloUctu;
+    private long _cisloUctu;
     private string _nazev;
     private int _klientIdKlient;
     private int _bankIdBank;
@@ -18,7 +18,7 @@ public class Ucet : INotifyPropertyChanged
         set { _idUcet = value; OnPropertyChanged(nameof(IdUcet)); }
     }
 
-    public int CisloUctu
+    public long CisloUctu
     {
         get { return _cisloUctu; }
         set { _cisloUctu = value; OnPropertyChanged(nameof(CisloUctu)); }
@@ -47,6 +47,16 @@ public class Ucet : INotifyPropertyChanged
         get { return _statusIdStatus; }
         set { _statusIdStatus = value; OnPropertyChanged(nameof(StatusIdStatus)); }
     }
+    private string _popisStatus;
+    public string PopisStatus
+    {
+        get { return _popisStatus; }
+        set
+        {
+            _popisStatus = value;
+            OnPropertyChanged(nameof(PopisStatus));
+        }
+    }
 
     // Add other properties as needed
 
@@ -66,7 +76,7 @@ public class Ucet : INotifyPropertyChanged
             Ucet ucet = new Ucet
             {
                 IdUcet = Convert.ToInt32(row["id_ucet"]),
-                CisloUctu = Convert.ToInt32(row["cislo_uctu"]),
+                CisloUctu = Convert.ToInt64(row["cislo_uctu"]),
                 Nazev = row["nazev"].ToString(),
                 KlientIdKlient = Convert.ToInt32(row["klient_id_klient"]),
                 BankIdBank = Convert.ToInt32(row["bank_id_bank"]),

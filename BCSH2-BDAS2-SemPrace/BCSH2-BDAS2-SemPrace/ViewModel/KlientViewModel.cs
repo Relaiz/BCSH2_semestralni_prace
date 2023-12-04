@@ -12,6 +12,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Oracle.ManagedDataAccess.Types;
+using System.Net.NetworkInformation;
 
 namespace BCSH2_BDAS2_SemPrace.ViewModel
 {
@@ -23,6 +24,9 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private string _email;
         private string _zamestnanec;
         private string _telephone;
+        private long _ucetNumber;
+        private string _ucetName;
+        private string _ucetStatus;
 
         private ObservableCollection<Ucet> listOfKlientUcty;
         public ObservableCollection<Ucet> ListOfKlientUcty
@@ -53,6 +57,35 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 selectedUcet = value;
                 OnPropertyChanged(nameof(SelectedUcet));
+            }
+        }
+        private long UcetNumber
+        {
+            get { return _ucetNumber; }
+            set
+            {
+                _ucetNumber = value;
+                OnPropertyChanged(nameof(UcetNumber));
+            }
+        }
+
+        private string UcetName
+        {
+            get { return _ucetName; }
+            set
+            {
+                _ucetName = value;
+                OnPropertyChanged(nameof(UcetName));
+            }
+        }
+
+        private string UcetStatus
+        {
+            get { return _ucetStatus; }
+            set
+            {
+                _ucetStatus = value;
+                OnPropertyChanged(nameof(UcetStatus));
             }
         }
 
@@ -116,17 +149,18 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private readonly OracleDatabaseService db;
 
 
+        
 
         public KlientViewModel(Klient klient)
         {
             db = new OracleDatabaseService();
             db.OpenConnection();
 
-            CurrentKlient = klient;
-            ListOfKlientUcty = new ObservableCollection<Ucet>();
-            //PopulateUctyListForKlient(klient.IdKlient);
+            currentKlient = klient;
+            listOfKlientUcty = new ObservableCollection<Ucet>();
+            
             FetchAndPopulateData();
-
+            PopulateUctyListForKlient(currentKlient.IdKlient);
             // Initialize your commands
             TranzakceZUctuCommand = new RelayCommand(TranzakceZUctu);
             ZalozitNovyCommand = new RelayCommand(ZalozitNovy);
@@ -171,7 +205,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             loginWindow.Show();
         }
 
-        private ObservableCollection<Ucet> PopulateUctyListForKlient(int klientId)
+        private void PopulateUctyListForKlient(int klientId)
         {
             OracleDatabaseService db = new OracleDatabaseService();
             db.OpenConnection();
@@ -205,7 +239,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     Ucet ucet = new Ucet
                     {
                         IdUcet = Convert.ToInt32(reader["id_ucet"]),
-                        CisloUctu = Convert.ToInt32(reader["cislo_uctu"]),
+                        CisloUctu = Convert.ToInt64(reader["cislo_uctu"]),
                         Nazev = reader["nazev"].ToString(),
                         KlientIdKlient = Convert.ToInt32(reader["klient_id_klient"]),
                         BankIdBank = Convert.ToInt32(reader["bank_id_bank"]),
@@ -216,12 +250,20 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     ucty.Add(ucet);
                 }
 
-                return ucty;
+                foreach(Ucet ucet in ucty)
+                {
+                    UcetNumber = ucet.CisloUctu;
+                    UcetName = ucet.Nazev;
+                    GetUcetStatus(ucet.IdUcet);
+                    listOfKlientUcty.Add(ucet);
+                }
+                
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error populating Ucty list for Klient: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return new ObservableCollection<Ucet>(); // Return an empty ObservableCollection in case of an error
+                 // Return an empty ObservableCollection in case of an error
             }
             finally
             {
@@ -281,6 +323,41 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             Zamestnanec = $"{assignedZamestnanec.Jmeno} {assignedZamestnanec.Prijmeni}";
 
             // You might need to add error handling if needed
+        }
+
+      
+
+        private void GetUcetStatus(Decimal idUcet)
+        {
+            try
+            {
+
+                db.OpenConnection();
+
+                OracleCommand cmd = db.Connection.CreateCommand();
+
+
+                cmd.CommandText = "SELECT f.popis FROM status f WHERE f.id_status= (SELECT u.status_id_status FROM ucet u WHERE u.id_ucet = :idUcet)";
+                cmd.Parameters.Add("id_ucet", OracleDbType.Decimal).Value = idUcet;
+
+
+
+                OracleDataReader reader = cmd.ExecuteReader();
+
+                string status = "";
+
+                if (reader.Read())
+                {
+                    status = reader["popis"].ToString();
+                }
+                reader.Close();
+
+                UcetStatus = status;
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

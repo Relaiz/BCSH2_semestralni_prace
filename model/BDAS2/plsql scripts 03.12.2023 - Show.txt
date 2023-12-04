@@ -1,0 +1,74 @@
+create or replace PROCEDURE AddNewKlient(
+    p_id_klient IN NUMBER,
+    p_cislo_prukazu IN NUMBER,
+    p_jmeno IN VARCHAR2,
+    p_prijmeni IN VARCHAR2,
+    p_klient_email IN VARCHAR2,
+    p_adresa_id_adres IN NUMBER,
+    p_bank_id_bank IN NUMBER,
+    p_telefoni_cislo IN VARCHAR2,
+    p_zame_id_zamestnanec IN NUMBER,
+    p_odesi_file_id_file IN NUMBER,
+    p_odes_file_id_klient IN NUMBER,
+    p_id_file1 IN NUMBER,
+    p_id_klient2 IN NUMBER
+) AS
+BEGIN
+    INSERT INTO klient (
+        id_klient,
+        cislo_prukazu,
+        jmeno,
+        prijmeni,
+        klient_email,
+        adresa_id_adres,
+        bank_id_bank,
+        telefoni_cislo,
+        zame_id_zamestnanec,
+        odesi_file_id_file,
+        odes_file_id_klient,
+        id_file1,
+        id_klient2
+    ) VALUES (
+        p_id_klient,
+        p_cislo_prukazu,
+        p_jmeno,
+        p_prijmeni,
+        p_klient_email,
+        p_adresa_id_adres,
+        p_bank_id_bank,
+        p_telefoni_cislo,
+        p_zame_id_zamestnanec,
+        p_odesi_file_id_file,
+        p_odes_file_id_klient,
+        p_id_file1,
+        p_id_klient2
+    );
+    insert into log_table (
+    tabulka ,
+    operace  ,
+    cas      ,
+    uzivatel
+    )    VALUES ('klient', 'INSERT', SYSDATE,User);                                            
+    -- Log the change
+    
+
+    COMMIT;
+END AddNewKlient;
+/
+--johndoe@gmail.com
+--password123
+
+select * from log_table;
+/
+
+CREATE VIEW Bankir_Klient_View AS
+SELECT
+    
+    cislo_prukazu,
+    jmeno,
+    prijmeni,
+    klient_email,
+    a.stat || ', ' || a.mesto || ', ' || a.ulice || ', ' || a.cislo_popisne AS adresa,
+    telefoni_cislo
+FROM klient k
+JOIN adresa a ON k.adresa_id_adres = a.id_adres;

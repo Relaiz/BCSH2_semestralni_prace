@@ -31,8 +31,10 @@ namespace BCSH2_BDAS2_SemPrace.View
             KlientViewModel viewModel = new KlientViewModel(klient);
             this.DataContext = viewModel;
 
+            accountsList.ItemsSource = ((KlientViewModel)DataContext).ListOfKlientUcty;
+
             // Subscribe to the event
-            ((KlientViewModel)DataContext).UpdateAccountsListRequested += (sender, args) => PopulateUctyListForKlient(klient.IdKlient);
+            
         }
 
         private void SaveChanges_Click(object sender, RoutedEventArgs e)

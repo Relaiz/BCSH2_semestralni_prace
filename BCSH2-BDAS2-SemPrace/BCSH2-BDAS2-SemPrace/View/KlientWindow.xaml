@@ -56,9 +56,12 @@
                  Style="{StaticResource ListBoxStyle}" Margin="10,42,10,10" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Ucet" DisplayMemberBinding="{Binding UcetNumber}" />
-                    <GridViewColumn Header="Nazev" DisplayMemberBinding="{Binding UcetName}" />
-                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding UcetStatus}" />
+                    <GridViewColumn Header="Ucet"
+                                    DisplayMemberBinding="{Binding CisloUctu}" />
+                    <GridViewColumn Header="Nazev"
+                                    DisplayMemberBinding="{Binding Nazev}" />
+                    <GridViewColumn Header="Status"
+                                    DisplayMemberBinding="{Binding PopisStatus}" />
                 </GridView>
             </ListView.View>
         </ListView>
