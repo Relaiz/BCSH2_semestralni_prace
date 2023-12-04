@@ -17,13 +17,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-    namespace BCSH2_BDAS2_SemPrace.View
+namespace BCSH2_BDAS2_SemPrace.View
+{
+    /// <summary>
+    /// Interaction logic for ZamestnanecWindow.xaml
+    /// </summary>
+    public partial class ZamestnanecWindow : Window
     {
-        /// <summary>
-        /// Interaction logic for ZamestnanecWindow.xaml
-        /// </summary>
-        public partial class ZamestnanecWindow : Window
-        {
         public Zamestnanec Zamestnanec { get; set; }
 
         public ZamestnanecWindow(Zamestnanec zamestnanec, String Pozice)
@@ -31,15 +31,15 @@ using System.Windows.Shapes;
             InitializeComponent();
             Zamestnanec = zamestnanec;
             DataContext = new ZamestnanecViewModel(zamestnanec); ;
-           
-            
-            
+
+
+
             nameZam.Content = $"{Zamestnanec.Jmeno} {Zamestnanec.Prijmeni}";
             telZam.Content = $"Tel: {Zamestnanec.TelefoniCislo}";
             emailZam.Content = $"Email: {Zamestnanec.EmailZamestnanec}";
-            praceZam.Content = $"{Pozice}"; 
+            praceZam.Content = $"{Pozice}";
             string pobockaName = GetPobockaName(Zamestnanec.IdZamestnanec);
-            pobockaZam.Content =$"{pobockaName}";string statusPopis = GetStatus(Zamestnanec.IdZamestnanec);
+            pobockaZam.Content = $"{pobockaName}"; string statusPopis = GetStatus(Zamestnanec.IdZamestnanec);
             statusZam.Content = $"{statusPopis}";
             PopulateKlientsList();
         }
@@ -77,7 +77,7 @@ using System.Windows.Shapes;
         {
             OracleDatabaseService db = new OracleDatabaseService();
             db.OpenConnection();
-           
+
             OracleCommand cmd = db.Connection.CreateCommand();
 
 
@@ -86,15 +86,14 @@ using System.Windows.Shapes;
 
             try
             {
-
                 OracleDataReader reader = cmd.ExecuteReader();
 
-            string status = "";
+                string status = "";
 
-            if (reader.Read())
-            {
-                status = reader["popis"].ToString();
-            }
+                if (reader.Read())
+                {
+                    status = reader["popis"].ToString();
+                }
                 reader.Close();
                 return status;
             }
@@ -107,34 +106,19 @@ using System.Windows.Shapes;
 
         private void PopulateKlientsList()
         {
-           OracleDatabaseService db = new OracleDatabaseService();
-                db.OpenConnection();
+            OracleDatabaseService db = new OracleDatabaseService();
+            db.OpenConnection();
 
-                OracleCommand cmd = db.Connection.CreateCommand();
+            OracleCommand cmd = db.Connection.CreateCommand();
             try
             {
-                
-                
-
-
-                
-
-                // Replace 'your_employee_id' with the actual employee ID
                 int zamId = Zamestnanec.IdZamestnanec;
 
                 List<Klient> clients = db.GetHierarchyInfoFromDatabase(zamId);
-                
-
-                    // Clear existing items in the ListView
-                    klientsList.Items.Clear();
-
-                // Add new items to the ListView
-                
-                    
-                    klientsList.ItemsSource=clients;
-
-
-                
+                // Clear existing items in the ListView
+                klientsList.Items.Clear();
+                // Add new items to the ListView               
+                klientsList.ItemsSource = clients;
             }
             catch (Exception ex)
             {
@@ -146,7 +130,7 @@ using System.Windows.Shapes;
                 db.CloseConnection();
             }
         }
-        
+
         private void ExitClick(object sender, RoutedEventArgs e)
         {
 
@@ -173,10 +157,10 @@ using System.Windows.Shapes;
             {
                 Console.WriteLine("LoginCommand cannot execute.");
             }
-           
+
         }
-       
-        
+
+
         private void ExitLog()
         {
             try
@@ -211,7 +195,7 @@ using System.Windows.Shapes;
             cmd.CommandText = "LogPackage.LogChange";
             cmd.CommandType = CommandType.StoredProcedure;
 
-                // Add parameters
+            // Add parameters
             cmd.Parameters.Add("p_operation_type", OracleDbType.Varchar2).Value = operationType;
             cmd.Parameters.Add("p_table_name", OracleDbType.Varchar2).Value = tableName;
             cmd.Parameters.Add("p_column_name", OracleDbType.Varchar2).Value = columnName;
@@ -219,7 +203,7 @@ using System.Windows.Shapes;
             cmd.Parameters.Add("p_new_value", OracleDbType.Varchar2).Value = newValue;
             cmd.Parameters.Add("p_changed_by", OracleDbType.Varchar2).Value = Zamestnanec.Jmeno + Zamestnanec.Prijmeni + Zamestnanec.IdZamestnanec;
 
-                // Execute the procedure
+            // Execute the procedure
             cmd.ExecuteNonQuery();
 
             db.CloseConnection();
@@ -277,4 +261,4 @@ using System.Windows.Shapes;
             return zamestnanec;
         }*/
     }
-    }
+}

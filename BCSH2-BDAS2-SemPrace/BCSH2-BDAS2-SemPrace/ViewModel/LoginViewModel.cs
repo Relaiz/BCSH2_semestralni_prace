@@ -139,22 +139,16 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     newUserWindow = new ZamestnanecWindow(zamestnanec, zamestnanecInfo.Pozice);
                 }
 
-
-
             }
             else if (IsKlientUser(userEmail))
             {
                 Klient klient = GetKlientFromLogin(userEmail);
                 SuccessfulLoginKlient?.Invoke(klient);
                 newUserWindow = new KlientWindow(klient);
+                Console.WriteLine($"User {klient.Jmeno} {klient.Prijmeni} logged in succesfully.");
+                CloseLoginWindow();
+                newUserWindow.Show();
             }
-           /* else if (IsZamestnanecUser(userEmail))
-            {
-                Zamestnanec zamestnanec = GetZamestnanecFromLogin(userEmail);
-
-                // Передать ZamestnanecModel в конструктор ZamestnanecWindow
-                newUserWindow = new ZamestnanecWindow(zamestnanec);
-            }*/
         }
 
         private void ZamLoginSuccess(Zamestnanec zamestnanec)

@@ -114,6 +114,8 @@
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModel\KlientViewModel.cs" />
+    <Compile Include="ViewModel\KlientZalozitUcetViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ShowKlientViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
@@ -123,6 +125,9 @@
     </Compile>
     <Compile Include="View\KlientWindow.xaml.cs">
       <DependentUpon>KlientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KlientZalozitUcetWindow.xaml.cs">
+      <DependentUpon>KlientZalozitUcetWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -151,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\KlientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KlientZalozitUcetWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
