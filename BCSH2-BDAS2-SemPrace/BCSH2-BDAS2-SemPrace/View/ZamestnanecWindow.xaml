@@ -44,14 +44,14 @@
                               MinWidth="0" />
         </Grid.ColumnDefinitions>
         <Label x:Name="nameZam"
-               Content=""
+               Content="{Binding FullName}"
                Margin="0,35,0,277"
                Background="#FFE2DDDD"
                Grid.Row="1"
                HorizontalAlignment="Center"
                Width="186" />
         <Label x:Name="praceZam"
-               Content=""
+               Content="{Binding Pozice}"
                VerticalAlignment="Top"
                Background="#FFE2DDDD"
                Grid.Row="1"
@@ -82,21 +82,21 @@
                RenderTransformOrigin="0.629,0.481"
                Grid.Row="1" />
         <Label x:Name="emailZam"
-               Content=""
+               Content="{Binding Email}"
                Margin="0,74,0,237"
                Background="#FFE2DDDD"
                Grid.Row="1"
                HorizontalAlignment="Center"
                Width="186" />
         <Label x:Name="telZam"
-               Content=""
+               Content="{Binding TelCislo}"
                Background="#FFE2DDDD"
                Grid.Row="1"
                Margin="0,108,0,203"
                HorizontalAlignment="Center"
                Width="186" />
         <Label x:Name="pobockaZam"
-               Content=""
+               Content="{Binding Pobocka}"
                Margin="0,217,0,94"
                Background="#FFE2DDDD"
                Grid.Row="1"
@@ -133,7 +133,7 @@
                 HorizontalAlignment="Left"
                 Width="108" />
         <Label x:Name="statusZam"
-               Content=""
+               Content="{Binding Status}"
                Margin="0,145,0,166"
                Background="#FFE2DDDD"
                Grid.Row="1"
@@ -142,7 +142,7 @@
         <Button x:Name="btnExit"
                 Style="{StaticResource ButtonStyle}"
                 Content="Exit"
-                Click="ExitClick"
+                
                 Margin="16,12,0,22"
                 Grid.Row="3"
                 HorizontalAlignment="Left"

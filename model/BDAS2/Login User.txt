@@ -1,0 +1,14 @@
+bankir
+
+email--johndoe@gmail.com
+password--password123
+
+
+admin
+
+email--admin
+password--admin
+
+Klient
+-- matthewharris@gmail.com
+-- B@truha34

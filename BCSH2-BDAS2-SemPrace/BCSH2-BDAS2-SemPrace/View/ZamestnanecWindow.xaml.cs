@@ -30,20 +30,33 @@ namespace BCSH2_BDAS2_SemPrace.View
         {
             InitializeComponent();
             Zamestnanec = zamestnanec;
+<<<<<<< Updated upstream
             DataContext = new ZamestnanecViewModel(zamestnanec); ;
 
 
 
             nameZam.Content = $"{Zamestnanec.Jmeno} {Zamestnanec.Prijmeni}";
+=======
+            DataContext = new ZamestnanecViewModel(zamestnanec, Pozice);
+
+            klientsList.ItemsSource = ((ZamestnanecViewModel)DataContext).ListOfKlients;
+
+            /*nameZam.Content = $"{Zamestnanec.Jmeno} {Zamestnanec.Prijmeni}";
+>>>>>>> Stashed changes
             telZam.Content = $"Tel: {Zamestnanec.TelefoniCislo}";
             emailZam.Content = $"Email: {Zamestnanec.EmailZamestnanec}";
             praceZam.Content = $"{Pozice}";
             string pobockaName = GetPobockaName(Zamestnanec.IdZamestnanec);
+<<<<<<< Updated upstream
             pobockaZam.Content = $"{pobockaName}"; string statusPopis = GetStatus(Zamestnanec.IdZamestnanec);
+=======
+            pobockaZam.Content =$"{pobockaName}";
+            string statusPopis = GetStatus(Zamestnanec.IdZamestnanec);
+>>>>>>> Stashed changes
             statusZam.Content = $"{statusPopis}";
-            PopulateKlientsList();
+            PopulateKlientsList();*/
         }
-        private string GetPobockaName(decimal id_zamestnanec)
+       /* private string GetPobockaName(decimal id_zamestnanec)
         {
             OracleDatabaseService db = new OracleDatabaseService();
             db.OpenConnection();
@@ -71,9 +84,9 @@ namespace BCSH2_BDAS2_SemPrace.View
             {
                 db.CloseConnection();
             }
-        }
+        }*/
 
-        private string GetStatus(decimal id_zamestnanec)
+        /*private string GetStatus(decimal id_zamestnanec)
         {
             OracleDatabaseService db = new OracleDatabaseService();
             db.OpenConnection();
@@ -102,9 +115,9 @@ namespace BCSH2_BDAS2_SemPrace.View
                 db.CloseConnection();
             }
 
-        }
+        }*/
 
-        private void PopulateKlientsList()
+        /*private void PopulateKlientsList()
         {
             OracleDatabaseService db = new OracleDatabaseService();
             db.OpenConnection();
@@ -129,6 +142,7 @@ namespace BCSH2_BDAS2_SemPrace.View
                 // Close the database connection
                 db.CloseConnection();
             }
+<<<<<<< Updated upstream
         }
 
         private void ExitClick(object sender, RoutedEventArgs e)
@@ -161,6 +175,13 @@ namespace BCSH2_BDAS2_SemPrace.View
         }
 
 
+=======
+        }*/
+        
+       
+       
+        
+>>>>>>> Stashed changes
         private void ExitLog()
         {
             try

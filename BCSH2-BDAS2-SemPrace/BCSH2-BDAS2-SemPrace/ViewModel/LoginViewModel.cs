@@ -156,7 +156,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
             try
             {
-                OracleDatabaseService db = new OracleDatabaseService();
+                
                 db.OpenConnection();
                 
                 string tableName = "zamestnanec";
@@ -171,6 +171,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
                 using (OracleCommand cmd = new OracleCommand(query, db.Connection))
                 {
+                    
                     cmd.Parameters.Add("tabulka", OracleDbType.Varchar2).Value = tableName;
                     cmd.Parameters.Add("operace", OracleDbType.Varchar2).Value = operation;
                     cmd.Parameters.Add("cas", OracleDbType.TimeStampLTZ).Value = currentTime;

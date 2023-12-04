@@ -18,7 +18,13 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 {
     public class ZamestnanecViewModel : INotifyPropertyChanged
     {
-        
+        private string _name;
+        private string _lastname;
+        private string _telCislo;
+        private string _email;
+        private string _pozice;
+        private string _pobocka;
+        private string _status;
         private Zamestnanec _currentZamestnanec;
         private ObservableCollection<Klient> listOfKlients;
 
@@ -31,6 +37,77 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 OnPropertyChanged(nameof(ListOfKlients));
             }
         }
+        public string Pozice
+        {
+            get => _pozice;
+            set
+            {
+                _pozice = value;
+                OnPropertyChanged(nameof(Pozice));
+            }
+        }
+
+        public string Pobocka
+        {
+            get => _pobocka;
+            set
+            {
+                _pobocka = value;
+                OnPropertyChanged(nameof(Pobocka));
+            }
+        }
+
+        public string Status
+        {
+            get => _status;
+            set
+            {
+                _status = value;
+                OnPropertyChanged(nameof(Status));
+            }
+        }
+
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                _email = value;
+                OnPropertyChanged(nameof(Email));
+            }
+        }
+        public string TelCislo
+        {
+            get => _telCislo;
+            set
+            {
+                _telCislo = value;
+                OnPropertyChanged(nameof(TelCislo));
+            }
+        }
+
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged(nameof(Name));
+            }
+        }
+
+        public string Lastname
+        {
+            get => _lastname;
+            set
+            {
+                _lastname = value;
+                OnPropertyChanged(nameof(Lastname));
+            }
+        }
+
+        public string FullName => $"{Name} {Lastname}";
+       
 
         private Klient selectedKlient;
         public Klient SelectedKlient
@@ -57,7 +134,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         public ICommand ExitZamestnanecCommand { get; }
         private readonly OracleDatabaseService db;
 
-        public ZamestnanecViewModel(Zamestnanec zamestnanec)
+        public ZamestnanecViewModel(Zamestnanec zamestnanec, String Pozice)
         {
             // LoadZamestnanciCommand = new RelayCommand(LoadZamestnanci);
 
@@ -65,6 +142,18 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             db.OpenConnection();
 
             CurrentZamestnanec = zamestnanec;
+            GetPobockaName(CurrentZamestnanec.IdZamestnanec);
+            GetStatus(CurrentZamestnanec.IdZamestnanec);
+            
+            _name = zamestnanec.Jmeno;
+            _lastname = zamestnanec.Prijmeni;
+            _email = zamestnanec.EmailZamestnanec;
+            _telCislo = zamestnanec.TelefoniCislo;
+            _pozice = Pozice;
+
+            listOfKlients = new ObservableCollection<Klient>();
+            listOfKlients.Add(SelectedKlient);
+            PopulateKlientsList();
             ExitZamestnanecCommand = new RelayCommand(Exit);
             ShowKlientCommand = new RelayCommand(ShowKlient);
         }
@@ -168,7 +257,116 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private void GetPobockaName(decimal id_zamestnanec)
+        {
+            
+            db.OpenConnection();
 
-      
+            OracleCommand cmd = db.Connection.CreateCommand();  // Создаем команду открытого соединения
+            cmd.CommandText = "SELECT f.nazev FROM pobocka f WHERE f.id_pobocka= (SELECT z.pobocka_id_pobocka FROM zamestnanec z WHERE z.id_zamestnanec = :id_zamestnanec)";
+            cmd.Parameters.Add("id_zamestnanec", OracleDbType.Decimal).Value = id_zamestnanec;
+
+            try
+            {
+                OracleDataReader reader = cmd.ExecuteReader();
+
+                string pobockaName = "";
+
+                if (reader.Read())
+                {
+                    pobockaName = reader["nazev"].ToString();
+                }
+
+                reader.Close();  // Закрываем DataReader
+
+                _pobocka= pobockaName;
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
+        private void GetStatus(decimal id_zamestnanec)
+        {
+            try
+            {
+                
+            db.OpenConnection();
+
+            OracleCommand cmd = db.Connection.CreateCommand();
+
+
+            cmd.CommandText = "SELECT f.popis FROM status f WHERE f.id_status= (SELECT z.status_id_status FROM zamestnanec z WHERE z.id_zamestnanec = :id_zamestnanec)";
+            cmd.Parameters.Add("id_zamestnanec", OracleDbType.Decimal).Value = id_zamestnanec;
+
+            
+
+                OracleDataReader reader = cmd.ExecuteReader();
+
+                string status = "";
+
+                if (reader.Read())
+                {
+                    status = reader["popis"].ToString();
+                }
+                reader.Close();
+
+                _status = status;
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+
+        }
+
+        private void PopulateKlientsList()
+        {
+           try
+           { 
+            db.OpenConnection();
+
+            OracleCommand cmd = db.Connection.CreateCommand();
+            
+
+
+
+
+
+
+                // Replace 'your_employee_id' with the actual employee ID
+                int zamId = _currentZamestnanec.IdZamestnanec;
+
+                List<Klient> clients = db.GetHierarchyInfoFromDatabase(zamId);
+
+
+                // Clear existing items in the ListView
+                listOfKlients.Clear();
+
+                // Add new items to the ListView
+
+
+                foreach (Klient klient in clients)
+                {
+                    listOfKlients.Add(klient);
+                }
+                
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error populating klients list: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                // Close the database connection
+                db.CloseConnection();
+            }
+        }
+
+
     }
 }
