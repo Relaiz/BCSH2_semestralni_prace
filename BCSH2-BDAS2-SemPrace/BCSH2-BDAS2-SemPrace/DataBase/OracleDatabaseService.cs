@@ -113,7 +113,6 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 CloseConnection();
             }
         }
-
         public bool CheckUserCredentials(string email, string password)
         {
             try
@@ -150,13 +149,10 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 CloseConnection();
             }
         }
-        
-
         public List<Klient> GetHierarchyInfoFromDatabase(int id_zamestnanec)
         {
             try
             {
-                
 
                 // Создайте команду для вызова функции
                 using (OracleCommand cmd = new OracleCommand("GetHierarchyInfo", connection))
@@ -207,9 +203,6 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 CloseConnection();
             }
         }
-
-
-
         public Klient GetKlientByJmenoPrijmeni(string jmeno, string prijmeni)
         {
             OpenConnection();
@@ -248,6 +241,60 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 CloseConnection();
             }
         }
-    }
+        public void CreateNewAccount(int klientId, string newAccountName)
+        {
+            try
+            {
+                OpenConnection();
 
+                using (OracleCommand cmd = new OracleCommand("CreateNewAccount", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("p_klient_id", OracleDbType.Decimal).Value = klientId;
+                    cmd.Parameters.Add("p_new_account_name", OracleDbType.Varchar2).Value = newAccountName;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error creating new account: {ex.Message}");
+                throw;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        // Update ExecuteQuery to take OracleCommand
+        private DataTable ExecuteQuery(OracleCommand cmd)
+        {
+            try
+            {
+                OpenConnection();
+                Console.WriteLine($"Executing query: {cmd.CommandText}");
+
+                using (OracleDataAdapter adapter = new OracleDataAdapter(cmd))
+                {
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    Console.WriteLine($"Query result: {dataTable.Rows.Count} rows");
+
+                    return dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error executing query: {ex.Message}");
+                throw;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+    }
 }

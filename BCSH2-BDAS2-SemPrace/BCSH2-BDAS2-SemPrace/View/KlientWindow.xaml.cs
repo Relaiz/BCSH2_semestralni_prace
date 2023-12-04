@@ -1,8 +1,13 @@
 ﻿using BCSH2_BDAS2_SemPrace.DataBase;
 using BCSH2_BDAS2_SemPrace.Model;
 using Oracle.ManagedDataAccess.Client;
+using System.Collections.Generic;
+using System;
 using System.Data;
 using System.Windows;
+using Oracle.ManagedDataAccess.Types;
+using BCSH2_BDAS2_SemPrace.ViewModel;
+using System.Windows.Controls;
 
 namespace BCSH2_BDAS2_SemPrace.View
 {
@@ -12,12 +17,22 @@ namespace BCSH2_BDAS2_SemPrace.View
     public partial class KlientWindow : Window
     {
         public Klient Klient { get; set; }
-
+        public ListView AccountsList
+        {
+            get { return accountsList; }
+        }
         public KlientWindow(Klient klient)
         {
             InitializeComponent();
+
             Klient = klient;
-            DataContext = Klient;
+
+            // Create an instance of KlientViewModel and set it as the DataContext
+            KlientViewModel viewModel = new KlientViewModel(klient);
+            this.DataContext = viewModel;
+
+            // Subscribe to the event
+            ((KlientViewModel)DataContext).UpdateAccountsListRequested += (sender, args) => PopulateUctyListForKlient(klient.IdKlient);
         }
 
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
@@ -104,6 +119,61 @@ namespace BCSH2_BDAS2_SemPrace.View
             return klient;
         }
 
+        private void PopulateUctyListForKlient(int klientId)
+        {
+            OracleDatabaseService db = new OracleDatabaseService();
+            db.OpenConnection();
+
+            OracleCommand cmd = db.Connection.CreateCommand();
+            try
+            {
+                // Call the PL/SQL procedure to get Ucty for the specified Klient ID
+                cmd.CommandText = "GetUctyForKlient";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Add Klient ID parameter
+                cmd.Parameters.Add("p_klient_id", OracleDbType.Int32).Value = klientId;
+
+                // Add output cursor parameter
+                cmd.Parameters.Add("p_cursor", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+                // Execute the procedure
+                cmd.ExecuteNonQuery();
+
+                // Retrieve Ucty information from the output cursor
+                OracleRefCursor refCursor = (OracleRefCursor)cmd.Parameters["p_cursor"].Value;
+                OracleDataReader reader = refCursor.GetDataReader();
+
+                // Clear existing items in the ListView
+                accountsList.Items.Clear();
+
+                // Create a list to store Ucty items
+                List<Ucet> ucty = new List<Ucet>();
+
+                // Populate the list with Ucty items
+                while (reader.Read())
+                {
+                    Ucet ucet = new Ucet
+                    {
+                        // Map Ucty properties from the reader
+                        // Example: UcetNumber = reader["ucet_number"].ToString(),
+                    };
+                    ucty.Add(ucet);
+                }
+
+                // Set the ItemsSource of the ListView to the Ucty list
+                accountsList.ItemsSource = ucty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error populating Ucty list for Klient: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                // Close the database connection
+                db.CloseConnection();
+            }
+        }
 
     }
 }

@@ -129,9 +129,6 @@ namespace BCSH2_BDAS2_SemPrace.Model
                 }
             }
         }
-        // Add properties for other fields in the klient table
-
-        // ... (rest of the class)
 
         public static ObservableCollection<Klient> ConvertDataTableToObservableCollection(DataTable dataTable)
         {
