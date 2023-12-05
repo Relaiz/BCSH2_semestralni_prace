@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\
 BCSH2_BDAS2_SemPrace
 none
 false
 DEBUG;TRACE
-D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\App.xaml
-71230389914
+C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\App.xaml
+11-1760673631
 
-37-1665134388
-33-337217863
-MainWindow.xaml;View\EditKlientWindow.xaml;View\KlientWindow.xaml;View\KlientZalozitUcetWindow.xaml;View\LoginWindow.xaml;View\ShowKlientWindow.xaml;View\ZamestnanecWindow.xaml;
+45-2071321852
+33-1065941111
+MainWindow.xaml;View\EditKlientWindow.xaml;View\KlientDetailUctuWindow.xaml;View\KlientObjednaniKartyWindow.xaml;View\KlientPlatbaWindow.xaml;View\KlientTranzakceZUctuWindow.xaml;View\KlientWindow.xaml;View\KlientZalozitUcetWindow.xaml;View\LoginWindow.xaml;View\ShowKlientWindow.xaml;View\ZamestnanecWindow.xaml;
 
-True
+False
 

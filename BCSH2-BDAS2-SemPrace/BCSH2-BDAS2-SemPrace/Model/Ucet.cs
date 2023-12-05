@@ -58,7 +58,16 @@ public class Ucet : INotifyPropertyChanged
         }
     }
 
-    // Add other properties as needed
+    private Zustatek _zustatek;
+    public Zustatek Zustatek
+    {
+        get { return _zustatek; }
+        set
+        {
+            _zustatek = value;
+            OnPropertyChanged(nameof(Zustatek));
+        }
+    }
 
     public event PropertyChangedEventHandler PropertyChanged;
 

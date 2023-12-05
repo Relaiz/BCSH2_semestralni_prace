@@ -1,0 +1,24 @@
+﻿<Window x:Class="BCSH2_BDAS2_SemPrace.View.KlientTranzakceZUctuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="KlientTranzakceZUctuWindow" Height="400" Width="600">
+    <Grid>
+        <ListView Name="TransactionsListView" ItemsSource="{Binding OperaceList}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Částka" DisplayMemberBinding="{Binding Castka}" Width="80"/>
+                    <GridViewColumn Header="Datum Začátku" DisplayMemberBinding="{Binding DatumZacatka}" Width="120"/>
+                    <GridViewColumn Header="Datum Konce" DisplayMemberBinding="{Binding DatumOkonceni}" Width="120"/>
+                    <GridViewColumn Header="Název" DisplayMemberBinding="{Binding Nazev}" Width="150"/>
+                    <GridViewColumn Header="Z Účtu" DisplayMemberBinding="{Binding ZUctu}" Width="80"/>
+                    <GridViewColumn Header="Do Účtu" DisplayMemberBinding="{Binding DoUctu}" Width="80"/>
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Zavřít Okno" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Command="{Binding ZavritOknoCommand}"/>
+    </Grid>
+</Window>

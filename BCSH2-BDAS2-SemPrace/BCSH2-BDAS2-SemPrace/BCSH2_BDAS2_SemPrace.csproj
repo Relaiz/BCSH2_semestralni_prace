@@ -114,6 +114,10 @@
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModel\KlientDetailUctuViewModel.cs" />
+    <Compile Include="ViewModel\KlientObjednaniKartyViewModel.cs" />
+    <Compile Include="ViewModel\KlientPlatbaViewModel.cs" />
+    <Compile Include="ViewModel\KlientTranzakceZUctuViewModel.cs" />
     <Compile Include="ViewModel\KlientViewModel.cs" />
     <Compile Include="ViewModel\KlientZalozitUcetViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -122,6 +126,18 @@
     <Compile Include="ViewModel\ZamestnanecViewModel.cs" />
     <Compile Include="View\EditKlientWindow.xaml.cs">
       <DependentUpon>EditKlientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KlientDetailUctuWindow.xaml.cs">
+      <DependentUpon>KlientDetailUctuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KlientObjednaniKartyWindow.xaml.cs">
+      <DependentUpon>KlientObjednaniKartyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KlientPlatbaWindow.xaml.cs">
+      <DependentUpon>KlientPlatbaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KlientTranzakceZUctuWindow.xaml.cs">
+      <DependentUpon>KlientTranzakceZUctuWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\KlientWindow.xaml.cs">
       <DependentUpon>KlientWindow.xaml</DependentUpon>
@@ -152,6 +168,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\EditKlientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KlientDetailUctuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KlientObjednaniKartyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KlientPlatbaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KlientTranzakceZUctuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -26,7 +26,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         public ICommand StornoCommand { get; }
 
         private readonly OracleDatabaseService db;
-        private readonly int klientId;  // Pass the klientId from the main window
+        private readonly int klientId;  
 
         public KlientZalozitUcetViewModel(int klientId)
         {
@@ -48,6 +48,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     db.CreateNewAccount(klientId, NewAccountName);
 
                     MessageBox.Show("New account created successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive)?.Close();
                 }
                 else {
                     MessageBox.Show("Name can't be empty!");
@@ -65,7 +66,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void Storno(object parameter)
         {
-            // Close the window or perform any other action
             Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive)?.Close();
         }
 

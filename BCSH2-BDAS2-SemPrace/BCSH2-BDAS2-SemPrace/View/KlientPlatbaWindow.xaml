@@ -1,0 +1,19 @@
+﻿<Window x:Class="BCSH2_BDAS2_SemPrace.View.KlientPlatbaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="KlientPlatbaWindow" Height="300" Width="400"
+        DataContext="{Binding KlientPlatbaViewModelInstance}">
+    <Grid>
+        <ComboBox Name="UctyComboBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" ItemsSource="{Binding UctyList}" DisplayMemberPath="Nazev" SelectedItem="{Binding SelectedUcet}"/>
+        <TextBox Name="CisloUctuTextBox" VerticalAlignment="Top" Margin="200,40,40,0" Text="{Binding UcetNumber}" Height="27"/>
+        <TextBox Name="CastkaTextBox" VerticalAlignment="Top" Margin="200,74,40,0" Text="{Binding Castka}" Height="28"/>
+        <TextBox Name="NazevTextBox" VerticalAlignment="Top" Margin="200,107,40,0" Text="{Binding Nazev}" Height="26"/>
+        <Button Content="Zaplatit" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,234,0,0" Command="{Binding VytvoritPlatbuCommand}" Height="40" Width="380"/>
+        <Label Content="Do uctu:" HorizontalAlignment="Left" Margin="140,40,0,0" VerticalAlignment="Top" Height="27"/>
+        <Label Content="Castka:" HorizontalAlignment="Left" Margin="144,75,0,0" VerticalAlignment="Top" Height="27"/>
+        <Label Content="Nazev Operace:" HorizontalAlignment="Left" Margin="102,107,0,0" VerticalAlignment="Top" Height="27"/>
+    </Grid>
+</Window>
