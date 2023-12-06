@@ -1,0 +1,379 @@
+CREATE VIEW Bankir_Klient_View AS
+SELECT
+    
+    cislo_prukazu,
+    jmeno,
+    prijmeni,
+    klient_email,
+    a.stat || ', ' || a.mesto || ', ' || a.ulice || ', ' || a.cislo_popisne || ', ' ||a.psc AS adresa,
+    telefoni_cislo
+FROM klient k
+JOIN adresa a ON k.adresa_id_adres = a.id_adres;
+/
+CREATE OR REPLACE PROCEDURE AddAddress(
+    p_ulice IN VARCHAR2,
+    p_mesto IN VARCHAR2,
+    p_cislo_popisne IN VARCHAR2,
+    p_psc IN CHAR,
+    p_stat IN VARCHAR2,
+    p_id_adres OUT NUMBER
+) AS
+BEGIN
+    -- check adresa 
+    SELECT id_adres INTO p_id_adres
+    FROM adresa
+    WHERE ulice = p_ulice
+      AND mesto = p_mesto
+      AND cislo_popisne = p_cislo_popisne
+      AND psc = p_psc
+      AND stat = p_stat;
+
+    -- if adresa not exist, add new adresa
+    IF p_id_adres IS NULL THEN
+        
+        SELECT adresa_sequence.NEXTVAL INTO p_id_adres FROM DUAL;
+
+        -- insert new adresa
+        INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat)
+        VALUES (p_id_adres, p_ulice, p_mesto, p_cislo_popisne, p_psc, p_stat);
+    END IF;
+
+    COMMIT;
+END;
+/
+CREATE OR REPLACE FUNCTION GetZamName(p_id_zamestnanec IN NUMBER)
+RETURN VARCHAR2
+AS
+    v_zamestnanec_name VARCHAR2(100); -- Замените тип данных на соответствующий тип вашего поля с именем работника
+BEGIN
+    SELECT jmeno || ' ' || prijmeni INTO v_zamestnanec_name
+    FROM zamestnanec
+    WHERE id_zamestnanec = p_id_zamestnanec;
+
+    RETURN v_zamestnanec_name;
+END;
+/
+CREATE OR REPLACE FUNCTION GetLoggedInUserName RETURN VARCHAR2 IS
+    v_username VARCHAR2(100);
+BEGIN
+    SELECT USER INTO v_username FROM DUAL;
+    RETURN v_username;
+END;
+
+/
+CREATE OR REPLACE TRIGGER adresa_log_trigger
+BEFORE INSERT OR UPDATE OR DELETE ON adresa
+FOR EACH ROW
+DECLARE
+    v_changed_by VARCHAR2(100);
+BEGIN
+    -- Получите имя работника из сеанса
+    v_changed_by := GetLoggedInUserName;
+
+    IF INSERTING THEN
+        -- Логируйте изменение при вставке новой записи
+        LogPackage.LogChange('INSERT', 'adresa', NULL, NULL, v_changed_by);
+    ELSIF UPDATING THEN
+        -- Логируйте изменение при обновлении записи
+        LogPackage.LogChange('UPDATE', 'adresa', :OLD.ULICE, :NEW.ULICE, v_changed_by);
+        -- Добавьте аналогичные строки для других колонок, если нужно
+    ELSIF DELETING THEN
+        -- Логируйте изменение при удалении записи
+        LogPackage.LogChange('DELETE', 'adresa', :OLD.ULICE, NULL, v_changed_by);
+        -- Добавьте аналогичные строки для других колонок, если нужно
+    END IF;
+END;
+/
+
+CREATE TABLE log_table (
+    tabulka      VARCHAR2(32),
+    operace      VARCHAR2(32),
+    cas          TIMESTAMP WITH LOCAL TIME ZONE,
+    uzivatel     VARCHAR2(32),
+    stara_hodnota VARCHAR2(100),  
+    nova_hodnota  VARCHAR2(100)   
+);
+/
+
+CREATE OR REPLACE PACKAGE LogPackage AS
+    PROCEDURE LogChange(
+        p_operation_type IN VARCHAR2,
+        p_table_name IN VARCHAR2,
+        p_old_value IN VARCHAR2,
+        p_new_value IN VARCHAR2,
+        p_changed_by IN VARCHAR2
+    );
+END LogPackage;
+/
+
+CREATE OR REPLACE PACKAGE BODY LogPackage AS
+    PROCEDURE LogChange(
+        p_operation_type IN VARCHAR2,
+        p_table_name IN VARCHAR2,
+        p_old_value IN VARCHAR2,
+        p_new_value IN VARCHAR2,
+        p_changed_by IN VARCHAR2
+    ) AS
+    BEGIN
+        INSERT INTO log_table (tabulka, operace, cas, uzivatel, stara_hodnota, nova_hodnota)
+        VALUES (p_table_name, p_operation_type, SYSTIMESTAMP, p_changed_by, p_old_value, p_new_value);
+
+        COMMIT;
+    END;
+END LogPackage;
+/
+CREATE OR REPLACE PROCEDURE AddKlient(
+    p_cislo_prukazu IN NUMBER,
+    p_jmeno IN VARCHAR2,
+    p_prijmeni IN VARCHAR2,
+    p_klient_email IN VARCHAR2,
+    p_adresa_id_adres IN NUMBER,
+    p_bank_id_bank IN NUMBER,
+    p_telefoni_cislo IN VARCHAR2,
+    p_zame_id_zamestnanec IN NUMBER
+) AS
+    v_id_klient NUMBER;
+BEGIN
+    -- Получаем новое значение id_klient из последовательности
+    SELECT KLIENT_SEQUENCE.NEXTVAL INTO v_id_klient FROM DUAL;
+
+    -- Вставляем новую запись в таблицу klient
+    INSERT INTO klient (
+        id_klient,
+        cislo_prukazu,
+        jmeno,
+        prijmeni,
+        klient_email,
+        adresa_id_adres,
+        bank_id_bank,
+        telefoni_cislo,
+        zame_id_zamestnanec
+    ) VALUES (
+        v_id_klient,
+        p_cislo_prukazu,
+        p_jmeno,
+        p_prijmeni,
+        p_klient_email,
+        p_adresa_id_adres,
+        p_bank_id_bank,
+        p_telefoni_cislo,
+        p_zame_id_zamestnanec
+    );
+
+    COMMIT;
+END;
+/
+CREATE OR REPLACE TRIGGER log_successful_login_trigger
+AFTER LOGON ON DATABASE
+DECLARE
+    v_username VARCHAR2(100);
+BEGIN
+    -- Получите имя пользователя
+    v_username := GetLoggedInUserName;
+
+    -- Логируйте успешный вход
+    INSERT INTO log_table (tabulka, operace, cas, uzivatel)
+    VALUES ('login', 'successful_login', SYSTIMESTAMP, v_username);
+
+    COMMIT;
+END;
+/
+CREATE TABLE successful_logins (
+    id_login NUMBER GENERATED BY DEFAULT ON NULL AS IDENTITY,
+    user_name VARCHAR2(100),
+    log_time TIMESTAMP WITH LOCAL TIME ZONE
+);
+/
+CREATE OR REPLACE TRIGGER successful_login_trigger
+AFTER INSERT ON successful_logins
+FOR EACH ROW
+BEGIN
+    -- Логируйте успешный вход
+    INSERT INTO log_table (tabulka, operace, cas, uzivatel, stara_hodnota, nova_hodnota)
+    VALUES ('successful_logins', 'successful_login', :NEW.log_time, :NEW.user_name, NULL, NULL);
+END successful_login_trigger;
+/
+
+
+
+
+CREATE OR REPLACE TRIGGER successful_logout_trigger
+BEFORE DELETE ON successful_logins
+FOR EACH ROW
+BEGIN
+    -- Логируйте успешный выход
+    INSERT INTO log_table (tabulka, operace, cas, uzivatel, stara_hodnota, nova_hodnota)
+    VALUES ('successful_logins', 'successful_logout', SYSTIMESTAMP, :OLD.user_name, NULL, NULL);
+END successful_logout_trigger;
+/
+
+
+CREATE OR REPLACE PROCEDURE AddZamLogin(
+    p_zamestnanec_id_zamestnanec NUMBER,
+    p_email VARCHAR2,
+    p_heslo VARCHAR2,
+    p_is_admin NUMBER,
+    p_klient_id_klient NUMBER,
+    p_id_file NUMBER,
+    p_id_klient NUMBER
+)
+AS
+BEGIN
+    INSERT INTO login (
+        zamestnanec_id_zamestnanec,
+        email,
+        heslo,
+        is_admin,
+        klient_id_klient,
+        id_file,
+        id_klient
+    ) VALUES (
+        p_zamestnanec_id_zamestnanec,
+        p_email,
+        p_heslo,
+        p_is_admin,
+        p_klient_id_klient,
+        p_id_file,
+        p_id_klient
+    );
+END AddZamLogin;
+/
+CREATE OR REPLACE PROCEDURE AddKlientLogin(
+    p_zamestnanec_id_zamestnanec NUMBER,
+    p_email VARCHAR2,
+    p_heslo VARCHAR2,
+    p_is_admin NUMBER,
+    p_klient_id_klient NUMBER,
+    p_id_file NUMBER,
+    p_id_klient NUMBER
+)
+AS
+BEGIN
+    INSERT INTO login (
+        zamestnanec_id_zamestnanec,
+        email,
+        heslo,
+        is_admin,
+        klient_id_klient,
+        id_file,
+        id_klient
+    ) VALUES (
+        p_zamestnanec_id_zamestnanec,
+        p_email,
+        p_heslo,
+        p_is_admin,
+        p_klient_id_klient,
+        p_id_file,
+        p_id_klient
+    );
+END AddKlientLogin;
+/
+CREATE OR REPLACE FUNCTION GetAddressId(
+    p_ulice IN VARCHAR2,
+    p_mesto IN VARCHAR2,
+    p_cislo_popisne IN VARCHAR2,
+    p_psc IN CHAR,
+    p_stat IN VARCHAR2
+) RETURN NUMBER
+IS
+    v_id_adres NUMBER;
+BEGIN
+    -- Check if the address exists
+    SELECT id_adres INTO v_id_adres
+    FROM adresa
+    WHERE ulice = p_ulice
+      AND mesto = p_mesto
+      AND cislo_popisne = p_cislo_popisne
+      AND psc = p_psc
+      AND stat = p_stat;
+
+    -- Return the address ID
+    RETURN v_id_adres;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        -- Address not found, return NULL
+        RETURN NULL;
+END;
+/
+
+--DROP SEQUENCE adresa_sequence;
+CREATE SEQUENCE adresa_sequence
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+/
+CREATE TABLE adresa (
+    id_adres      NUMBER NOT NULL,
+    ulice         VARCHAR2(32) NOT NULL,
+    mesto         VARCHAR2(32) NOT NULL,
+    cislo_popisne VARCHAR2(10) NOT NULL,
+    psc           CHAR(10) NOT NULL,
+    stat          VARCHAR2(32) NOT NULL
+);
+
+CREATE INDEX adresa_id_idx ON
+    adresa (
+        id_adres
+    ASC );
+
+ALTER TABLE adresa ADD CONSTRAINT adresa_pk PRIMARY KEY ( id_adres );
+/
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Oak Street', 'Springfield', '123', '12345', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Maple Avenue', 'Rivertown', '456', '67890', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Pine Road', 'Mountain View', '789', '54321', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Main Street', 'Cityville', '101', '98765', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Cedar Lane', 'Harbor City', '202', '45678', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Elm Boulevard', 'Laketown', '303', '34567', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Birch Drive', 'Hilltop', '404', '87654', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Willow Court', 'Meadowville', '505', '23456', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Cherry Lane', 'Sunnydale', '606', '78901', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Sycamore Street', 'Oceanview', '707', '10987', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Hickory Lane', 'Greenfield', '808', '65432', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Poplar Road', 'Riverdale', '909', '21098', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Cypress Avenue', 'Hillside', '111', '87654', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Chestnut Drive', 'Meadowview', '222', '54321', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Palm Court', 'Sunset City', '333', '12345', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Linden Lane', 'Beachside', '444', '87654', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Magnolia Avenue', 'Lighthouse Bay', '555', '78901', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Spruce Street', 'Valleytown', '666', '21098', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Ash Road', 'Highland', '777', '45678', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Fir Avenue', 'Parkville', '888', '65432', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Willow Lane', 'Meadowville', '999', '34567', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Rose Street', 'Springfield', '777', '21098', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Pine Avenue', 'Mountain View', '555', '54321', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Cedar Road', 'Hilltop', '333', '87654', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Maple Drive', 'Rivertown', '111', '10987', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Sycamore Lane', 'Oceanview', '888', '98765', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Birch Court', 'Cityville', '666', '23456', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Cherry Road', 'Sunnydale', '444', '78901', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Poplar Lane', 'Laketown', '222', '21098', 'USA');
+INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat) VALUES (adresa_sequence.NEXTVAL, 'Hickory Avenue', 'Harbor City', '999', '45678', 'USA');
+/
+
+CREATE OR REPLACE PROCEDURE AddAddress(
+    p_ulice IN VARCHAR2,
+    p_mesto IN VARCHAR2,
+    p_cislo_popisne IN VARCHAR2,
+    p_psc IN CHAR,
+    p_stat IN VARCHAR2,
+    p_id_adres OUT NUMBER
+)
+AS
+BEGIN
+    -- Call the function to get the address ID
+    p_id_adres := GetAddressId(p_ulice, p_mesto, p_cislo_popisne, p_psc, p_stat);
+
+    -- If address does not exist, add a new address
+    IF p_id_adres IS NULL THEN
+        -- Get a new value for id_adres from the sequence
+        SELECT adresa_sequence.NEXTVAL INTO p_id_adres FROM DUAL;
+
+        -- Insert new address
+        INSERT INTO adresa (id_adres, ulice, mesto, cislo_popisne, psc, stat)
+        VALUES (p_id_adres, p_ulice, p_mesto, p_cislo_popisne, p_psc, p_stat);
+    END IF;
+
+    COMMIT;
+END;
+/

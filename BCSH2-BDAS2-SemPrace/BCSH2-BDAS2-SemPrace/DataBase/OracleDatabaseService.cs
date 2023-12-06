@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Types;
 using System.Security.Cryptography;
 using BCSH2_BDAS2_SemPrace.Model;
-using System.Collections.ObjectModel;
 
 namespace BCSH2_BDAS2_SemPrace.DataBase
 {
@@ -154,50 +153,35 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
         {
             try
             {
-
-                // Создайте команду для вызова функции
+                List<Klient> result = new List<Klient>();
                 using (OracleCommand cmd = new OracleCommand("GetHierarchyInfo", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("result", OracleDbType.RefCursor).Direction = ParameterDirection.ReturnValue;
-                    // Параметр для входного значения id_zamestnanec
                     cmd.Parameters.Add("p_id_zamestnanec", OracleDbType.Decimal).Value = id_zamestnanec;
 
-                    // Параметр для выходного значения курсора
-
-
-                    // Выполните команду
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
-                        List<string> resultList = new List<string>();
-                        string firstName = "";
-                        string lastName = "";
-
                         while (reader.Read())
                         {
                             string full_name = reader["full_name"].ToString();
-                            resultList.Add(full_name);
+                            string[] names = full_name.Split(' ');
+
+                            string firstName = names[0];
+                            string lastName = names[1];
+
+                            result.Add(new Klient { Jmeno = firstName, Prijmeni = lastName });
                         }
-                        foreach (string fullName in resultList)
-                        {
-                            string[] names = fullName.Split(' ');
-                            firstName = names[0];
-                            lastName = names[1];
-
-                        }
-
-                        List<Klient> result = new List<Klient>();
-                        result.Add(new Klient { Jmeno = firstName, Prijmeni = lastName });
-
-                        return result;
                     }
                 }
+
+                return result;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
-                return null; // или бросьте исключение в зависимости от вашего подхода
+                return null;
             }
             finally
             {
@@ -224,15 +208,15 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                     klient = new Klient
                     {
 
-
+                        
                         CisloPrukazu = Convert.ToInt32(reader["cislo_prukazu"]),
                         Jmeno = reader["jmeno"].ToString(),
-                        Prijmeni = reader["prijmeni"].ToString(),
-                        KlientEmail = reader["klient_email"].ToString(),
+                        Prijmeni= reader["prijmeni"].ToString(),
+                        KlientEmail= reader["klient_email"].ToString(),
                         Adresa = reader["adresa"].ToString()
                     };
                 }
-
+                  
                 reader.Close();
 
                 return klient;
@@ -297,6 +281,7 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 CloseConnection();
             }
         }
+
         public void OrderNewCard(int ucetId, string jmeno, string prijmeni, int cisloKarty, string platebniSystem, DateTime platnost, string typ)
         {
             try
@@ -366,6 +351,5 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
 
             return zustatek;
         }
-
     }
 }

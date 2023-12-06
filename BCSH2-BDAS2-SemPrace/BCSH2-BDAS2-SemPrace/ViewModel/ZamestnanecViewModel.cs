@@ -129,10 +129,11 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
         }
 
-        
+        public ICommand PridatKlientCommand { get; }
         public ICommand ShowKlientCommand { get; }
         public ICommand ExitZamestnanecCommand { get; }
         private readonly OracleDatabaseService db;
+
 
         public ZamestnanecViewModel(Zamestnanec zamestnanec, String Pozice)
         {
@@ -150,16 +151,25 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             _email = zamestnanec.EmailZamestnanec;
             _telCislo = zamestnanec.TelefoniCislo;
             _pozice = Pozice;
-
+            
             listOfKlients = new ObservableCollection<Klient>();
             listOfKlients.Add(SelectedKlient);
             PopulateKlientsList();
             ExitZamestnanecCommand = new RelayCommand(Exit);
             ShowKlientCommand = new RelayCommand(ShowKlient);
+            PridatKlientCommand = new RelayCommand(PridatKlient);
         }
 
-        
 
+        private void PridatKlient(object parameter)
+        {
+            Window newUserWindow = null;
+            ZamestnanecViewModel zamestnanecViewModel = new ZamestnanecViewModel(_currentZamestnanec,Pozice);
+            PridatKlientViewModel pridatKlientViewModel = new PridatKlientViewModel(zamestnanecViewModel, CurrentZamestnanec);
+
+            newUserWindow = new PridatKlientWindow(pridatKlientViewModel);
+            newUserWindow.Show();
+        }
         private void EditKlient(object parameter)
         {
 
@@ -195,21 +205,36 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             // Show the login window
             loginWindow.Show();
         }
+        private void ExitSuccessfulLogin(string username)
+        {
+            db.OpenConnection();
+            string tempQuery = "DELETE FROM successful_logins WHERE user_name = :username";
+
+            using (OracleCommand tempCmd = new OracleCommand(tempQuery, db.Connection))
+            {
+                tempCmd.Parameters.Add("user_name", OracleDbType.Varchar2).Value = username;
+                tempCmd.ExecuteNonQuery();
+            }
+            db.CloseConnection();
+        }
+
+        
         private void zamExit(Zamestnanec zamestnanec)
         {
             try
-            { 
-            string tableName = "zamestnanec";
-            string operation = "exit from account";
-            DateTime currentTime = DateTime.Now;
+            {
+                /*string tableName = "zamestnanec";
+                string operation = "exit from account";
+                DateTime currentTime = DateTime.Now;*/
+                
             string username = $"{zamestnanec.Jmeno} {zamestnanec.Prijmeni}";
 
+                ExitSuccessfulLogin(username);
 
+            /*string query = "INSERT INTO log_table (tabulka, operace, cas, uzivatel) " +
+                              "VALUES (:tabulka, :operace, :cas, :uzivatel)";*/
 
-            string query = "INSERT INTO log_table (tabulka, operace, cas, uzivatel) " +
-                              "VALUES (:tabulka, :operace, :cas, :uzivatel)";
-
-            using (OracleCommand cmd = new OracleCommand(query, db.Connection))
+            /*using (OracleCommand cmd = new OracleCommand(query, db.Connection))
             {
                 cmd.Parameters.Add("tabulka", OracleDbType.Varchar2).Value = tableName;
                 cmd.Parameters.Add("operace", OracleDbType.Varchar2).Value = operation;
@@ -226,7 +251,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 {
                     Console.WriteLine("Error add.");
                 }
-            }
+            }*/
         }
             catch (Exception ex)
             {
@@ -320,6 +345,10 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
 
         }
+        public void UpdateList()
+        {
+            PopulateKlientsList();
+        }
 
         private void PopulateKlientsList()
         {
@@ -351,8 +380,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 {
                     listOfKlients.Add(klient);
                 }
-                
 
+                OnPropertyChanged(nameof(listOfKlients));
 
 
             }
@@ -366,7 +395,10 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 db.CloseConnection();
             }
         }
-
+        private void HandleKlientAdded(object sender, EventArgs e)
+        {
+            PopulateKlientsList();
+        }
 
     }
 }

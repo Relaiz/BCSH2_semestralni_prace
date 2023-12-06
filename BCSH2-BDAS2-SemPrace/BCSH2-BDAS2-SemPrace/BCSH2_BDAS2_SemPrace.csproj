@@ -121,6 +121,7 @@
     <Compile Include="ViewModel\KlientViewModel.cs" />
     <Compile Include="ViewModel\KlientZalozitUcetViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\PridatKlientViewModel.cs" />
     <Compile Include="ViewModel\ShowKlientViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ZamestnanecViewModel.cs" />
@@ -147,6 +148,9 @@
     </Compile>
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PridatKlientWindow.xaml.cs">
+      <DependentUpon>PridatKlientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ShowKlientWindow.xaml.cs">
       <DependentUpon>ShowKlientWindow.xaml</DependentUpon>
@@ -196,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PridatKlientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

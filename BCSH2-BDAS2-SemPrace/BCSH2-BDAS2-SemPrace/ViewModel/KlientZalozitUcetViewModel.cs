@@ -26,14 +26,14 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         public ICommand StornoCommand { get; }
 
         private readonly OracleDatabaseService db;
-        private readonly int klientId;  
+        private readonly int klientId;  // Pass the klientId from the main window
 
         public KlientZalozitUcetViewModel(int klientId)
         {
             db = new OracleDatabaseService();
             db.OpenConnection();
             this.klientId = klientId;
-
+            NewAccountName = "Bezny ucet";
             UlozCommand = new RelayCommand(Uloz);
             StornoCommand = new RelayCommand(Storno);
 
@@ -47,8 +47,19 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 {
                     db.CreateNewAccount(klientId, NewAccountName);
 
-                    MessageBox.Show("New account created successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                    Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive)?.Close();
+
+                    MessageBoxResult result = MessageBox.Show("New account created successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (result == MessageBoxResult.OK)
+                    {
+                        // Закрываем текущее окно
+                        Window actualnWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+
+                        if (actualnWindow != null)
+                        {
+                            // Закрываем текущее окно
+                            actualnWindow.Close();
+                        }
+                    }
                 }
                 else {
                     MessageBox.Show("Name can't be empty!");
@@ -66,6 +77,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void Storno(object parameter)
         {
+            // Close the window or perform any other action
             Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive)?.Close();
         }
 

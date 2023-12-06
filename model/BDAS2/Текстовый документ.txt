@@ -1,0 +1,26 @@
+CREATE TABLE log_table (
+    tabulka  VARCHAR2(32),
+    operace  VARCHAR2(32),
+    cas      TIMESTAMP WITH LOCAL TIME ZONE,
+    uzivatel VARCHAR2(32)
+);
+
+CREATE OR REPLACE TRIGGER generate_account_number
+BEFORE INSERT ON ucet
+FOR EACH ROW
+DECLARE
+    v_random_number NUMBER;
+BEGIN
+    -- Generate a random account number (assuming 10-digit account numbers)
+    v_random_number := TRUNC(DBMS_RANDOM.VALUE(1000000000, 9999999999));
+
+    -- Assign the generated number to the :NEW.column_name
+    :NEW.cislo_uctu := v_random_number;
+END generate_account_number;
+/
+
+
+drop SEQUENCE ucet_id_seq;
+/
+create sequence ucet_id_seq;
+/
