@@ -302,7 +302,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                                 actualnWindow.Close();
                                 Window noveWindow = new KlientZalozitUcetWindow(_klient.IdKlient);
                                 noveWindow.Show();
-                                OnKlientAdded();
+                                
                                 _zamestnanecViewModel?.UpdateList();
                             }
                         }

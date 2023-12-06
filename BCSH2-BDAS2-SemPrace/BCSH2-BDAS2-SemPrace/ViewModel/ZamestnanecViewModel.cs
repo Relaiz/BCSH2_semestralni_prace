@@ -380,8 +380,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 {
                     listOfKlients.Add(klient);
                 }
-                
 
+                OnPropertyChanged(nameof(listOfKlients));
 
 
             }

@@ -281,5 +281,75 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 CloseConnection();
             }
         }
+
+        public void OrderNewCard(int ucetId, string jmeno, string prijmeni, int cisloKarty, string platebniSystem, DateTime platnost, string typ)
+        {
+            try
+            {
+                using (OracleCommand cmd = Connection.CreateCommand())
+                {
+                    // Set the command text to call the PL/SQL procedure
+                    cmd.CommandText = "OrderNewCard";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Add parameters to the command
+                    cmd.Parameters.Add("p_ucet_id_ucet", OracleDbType.Int32).Value = ucetId;
+                    cmd.Parameters.Add("p_jmeno", OracleDbType.Varchar2).Value = jmeno;
+                    cmd.Parameters.Add("p_prijmeni", OracleDbType.Varchar2).Value = prijmeni;
+                    cmd.Parameters.Add("p_cislo_karty", OracleDbType.Int32).Value = cisloKarty;
+                    cmd.Parameters.Add("p_platebni_system", OracleDbType.Varchar2).Value = platebniSystem;
+                    cmd.Parameters.Add("p_platnost", OracleDbType.Date).Value = platnost;
+                    cmd.Parameters.Add("p_typ", OracleDbType.Varchar2).Value = typ;
+
+                    // Execute the procedure
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (e.g., log, throw)
+                Console.WriteLine($"Error ordering new card: {ex.Message}");
+                // Optionally rethrow the exception if you want to handle it at a higher level
+                throw;
+            }
+        }
+        public Zustatek GetZustatekForUcet(int ucetId)
+        {
+            Zustatek zustatek = null;
+
+            try
+            {
+                OpenConnection();
+
+                OracleCommand cmd = Connection.CreateCommand();
+                cmd.CommandText = "SELECT id_zustatek, volna_castka, blokovane_castka, \"date\", ucet_id_ucet FROM zustatek WHERE ucet_id_ucet = :p_ucet_id";
+                cmd.Parameters.Add("p_ucet_id", OracleDbType.Int32).Value = ucetId;
+
+                using (OracleDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        zustatek = new Zustatek
+                        {
+                            IdZustatek = Convert.ToInt32(reader["id_zustatek"]),
+                            BlokovaneCastka = Convert.ToDecimal(reader["blokovane_castka"]),
+                            VolnaCastka = Convert.ToDecimal(reader["volna_castka"]),
+                            Datum = Convert.ToDateTime(reader["date"]),
+                            IdUcet = Convert.ToInt32(reader["ucet_id_ucet"])
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting Zustatek for Ucet: {ex.Message}");
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return zustatek;
+        }
     }
 }
