@@ -130,6 +130,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         public ICommand ObjednatKartuCommand { get; }
         public ICommand ZavritOknoCommand { get; }
         public ICommand ZablokovatKartuCommand { get; }
+        public ICommand SaveUcetNameCommand { get; }
 
         private Ucet _currentUcet;
         private Klient _currentKlient;
@@ -147,6 +148,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             ObjednatKartuCommand = new RelayCommand(ObjednatKartu);
             ZavritOknoCommand = new RelayCommand(ZavritOkno);
             ZablokovatKartuCommand = new RelayCommand(ZablokovatKartu);
+            SaveUcetNameCommand = new RelayCommand(SaveUcetName);
         }
 
         private void InitializeLabels()
@@ -302,6 +304,32 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
 
             return karty;
+        }
+
+        private void SaveUcetName(object parameter)
+        {
+            db.OpenConnection();
+            try
+            {
+                // Call the PL/SQL procedure to update Klient data
+                OracleCommand cmd = db.Connection.CreateCommand();
+                cmd.CommandText = "UpdateNazevUctu";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("p_id_ucet", OracleDbType.Int32).Value = _currentUcet.IdUcet;
+                cmd.Parameters.Add("p_nazev", OracleDbType.Varchar2).Value = NazevUctu;
+
+
+                cmd.ExecuteNonQuery();
+
+                // Refresh data after saving                
+                db.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive)?.Close();
         }
 
 

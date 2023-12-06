@@ -44,10 +44,11 @@
         </Grid.ColumnDefinitions>
 
         <!-- Left side displaying Klient data -->
-        <Label x:Name="klientPrijmeniJmeno" Content="{Binding FullName}" Style="{StaticResource LabelStyle}" Margin="10,10,0,338" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
-        <Label x:Name="klientEmail" Content="{Binding Email}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,42,0,305" />
-        <Label x:Name="klientZamestnanec" Content="{Binding Zamestnanec}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,75,0,274" />
-        <Label x:Name="klientTel" Content="{Binding Telephone}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,106,0,238" />
+        <TextBox x:Name="NameTextBox" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="10,10,165,338" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+        <TextBox x:Name="SurnameTextBox" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" Margin="175,10,0,338" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+        <Label x:Name="klientEmail" Content="{Binding Email}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,77,0,270" />
+        <Label x:Name="klientZamestnanec" Content="{Binding Zamestnanec}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,109,0,240" />
+        <TextBox x:Name="klientTel" Text="{Binding Telephone, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="0" Margin="10,42,0,302" />
         <Label x:Name="klientZustatek" Content="{Binding Zustatek}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,146,0,202" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
         <Label x:Name="klientZustatekBlock" Content="{Binding ZustatekBlocked}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,190,0,158" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
 
@@ -70,9 +71,10 @@
 
         <!-- Buttons for Klient's accounts -->
         <Button Content="Tranzakce Z Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding TranzakceZUctuCommand}" Margin="10,10,410,10" Grid.Row="2" Grid.Column="1" />
-        <Button Content="Steal Me Egor" Style="{StaticResource ButtonStyle}" Command="{Binding ZalozitNovyCommand}" Margin="101,265,91,69" Grid.Row="1" />
+        <Button Content="Steal Me Egor" Style="{StaticResource ButtonStyle}" Command="{Binding ZalozitNovyCommand}" Margin="10,299,182,35" Grid.Row="1" />
         <Button Content="Detail Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding DetailUctuCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="2" Grid.Column="1" Margin="152,10,270,10"  />
-        <Button Content="Schuzky" Style="{StaticResource ButtonStyle}" Command="{Binding SchuzkaClickCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="2" Grid.Column="1" Margin="295,10,128,10"  />
+        <Button Content="Schuzky" Style="{StaticResource ButtonStyle}" Command="{Binding SchuzkaClickCommand}"  RenderTransformOrigin="-1.41,-0.667" Grid.Row="2" Grid.Column="1" Margin="295,10,128,10"  />
+        <Button Content="Ulozit Data" Style="{StaticResource ButtonStyle}" Command="{Binding SaveDataCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="1" Margin="186,242,7,92"  />
         <Button x:Name="btnExit"
             Style="{StaticResource ButtonStyle}"
             Content="Exit"

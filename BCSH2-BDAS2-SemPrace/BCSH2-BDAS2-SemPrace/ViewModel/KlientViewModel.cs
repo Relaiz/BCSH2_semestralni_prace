@@ -12,7 +12,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Oracle.ManagedDataAccess.Types;
-using System.Net.NetworkInformation;
 
 namespace BCSH2_BDAS2_SemPrace.ViewModel
 {
@@ -38,14 +37,14 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 OnPropertyChanged(nameof(ListOfKlientUcty));
             }
         }
-        private Klient currentKlient;
+        private Klient _currentKlient;
 
         public Klient CurrentKlient
         {
-            get { return currentKlient; }
+            get { return _currentKlient; }
             set
             {
-                currentKlient = value;
+                _currentKlient = value;
                 OnPropertyChanged(nameof(CurrentKlient));
             }
         }
@@ -167,6 +166,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         public ICommand ZalozitNovyCommand { get; }
         public ICommand DetailUctuCommand { get; }
         public ICommand ExitKlientCommand { get; }
+        public ICommand SaveDataCommand { get; }
         public ICommand VytvoritPlatbuCommand { get; }
         private readonly OracleDatabaseService db;
         public KlientViewModel(Klient klient)
@@ -174,8 +174,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             db = new OracleDatabaseService();
             db.OpenConnection();
 
-            currentKlient = klient;
-            listOfKlientUcty = new ObservableCollection<Ucet>();            
+            _currentKlient = klient;
+            listOfKlientUcty = new ObservableCollection<Ucet>();
             RefreshListView();
             FetchAndPopulateData();
             // Initialize your commands
@@ -184,6 +184,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             DetailUctuCommand = new RelayCommand(DetailUctu);
             ExitKlientCommand = new RelayCommand(ExitKlient);
             VytvoritPlatbuCommand = new RelayCommand(VytvoritPlatbu);
+            SaveDataCommand = new RelayCommand(SaveData);
         }
 
         private void TranzakceZUctu(object parameter)
@@ -199,7 +200,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private void ZalozitNovy(object parameter)
         {
             // Create a new instance of KlientZalozitUcetWindow
-            KlientZalozitUcetWindow zalozitUcetWindow = new KlientZalozitUcetWindow(currentKlient.IdKlient);
+            KlientZalozitUcetWindow zalozitUcetWindow = new KlientZalozitUcetWindow(_currentKlient.IdKlient);
 
             // Show the window
             zalozitUcetWindow.ShowDialog();
@@ -257,11 +258,12 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 KlientDetailUctuViewModel detailUctuViewModel = new KlientDetailUctuViewModel(SelectedUcet, CurrentKlient);
 
                 // Create the KlientDetailUctuWindow
-                KlientDetailUctuWindow detailUctuWindow = new KlientDetailUctuWindow(selectedUcet, currentKlient);
+                KlientDetailUctuWindow detailUctuWindow = new KlientDetailUctuWindow(selectedUcet, _currentKlient);
                 detailUctuWindow.DataContext = detailUctuViewModel;
 
                 // Show the window
-                detailUctuWindow.Show();
+                detailUctuWindow.ShowDialog();
+                RefreshListView();
             }
             else
             {
@@ -269,7 +271,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 MessageBox.Show("Please select an Ucet", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
 
         private void ExitKlient(object parameter)
         {
@@ -285,13 +286,14 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             // Show the login window
             loginWindow.Show();
         }
+
         private void VytvoritPlatbu(object parameter)
         {
             // Create an instance of KlientPlatbaViewModel
-            KlientPlatbaViewModel klientPlatbaViewModel = new KlientPlatbaViewModel(currentKlient, listOfKlientUcty);
+            KlientPlatbaViewModel klientPlatbaViewModel = new KlientPlatbaViewModel(_currentKlient, listOfKlientUcty);
 
             // Create the KlientPlatbaWindow
-            KlientPlatbaWindow klientPlatbaWindow = new KlientPlatbaWindow(currentKlient, listOfKlientUcty);
+            KlientPlatbaWindow klientPlatbaWindow = new KlientPlatbaWindow(_currentKlient, listOfKlientUcty);
             klientPlatbaWindow.DataContext = klientPlatbaViewModel;
 
             // Show the window as a dialog
@@ -392,14 +394,41 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 db.CloseConnection();
             }
         }
+
+        private void SaveData(object parameter)
+        {
+            db.OpenConnection();
+            try
+            {
+                // Call the PL/SQL procedure to update Klient data
+                OracleCommand cmd = db.Connection.CreateCommand();
+                cmd.CommandText = "UpdateKlientData";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("p_id_klient", OracleDbType.Int32).Value = _currentKlient.IdKlient;
+                cmd.Parameters.Add("p_jmeno", OracleDbType.Varchar2).Value = Name;
+                cmd.Parameters.Add("p_prijmeni", OracleDbType.Varchar2).Value = Surname;
+                cmd.Parameters.Add("p_tc", OracleDbType.Varchar2).Value = Telephone;
+
+                cmd.ExecuteNonQuery();
+
+                // Refresh data after saving                
+                db.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        
         private void FetchAndPopulateData()
         {
-            Name = currentKlient.Jmeno;
-            Surname = currentKlient.Prijmeni;
-            Email = currentKlient.KlientEmail;
-            Telephone = currentKlient.TelefoniCislo;
+            Name = _currentKlient.Jmeno;
+            Surname = _currentKlient.Prijmeni;
+            Email = _currentKlient.KlientEmail;
+            Telephone = _currentKlient.TelefoniCislo;
 
-            Zamestnanec assignedZamestnanec = GetAssignedZamestnanec(currentKlient.ZameIdZamestnanec);
+            Zamestnanec assignedZamestnanec = GetAssignedZamestnanec(_currentKlient.ZameIdZamestnanec);
             Zamestnanec = $"{assignedZamestnanec.Jmeno} {assignedZamestnanec.Prijmeni}";
 
             FetchTotalZustatkyForKlient();
@@ -407,7 +436,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void RefreshListView()
         {
-            List<Ucet> ucty = GetUctyForKlient(currentKlient.IdKlient);
+            List<Ucet> ucty = GetUctyForKlient(_currentKlient.IdKlient);
             FetchTotalZustatkyForKlient();
 
             // Clear the existing items
