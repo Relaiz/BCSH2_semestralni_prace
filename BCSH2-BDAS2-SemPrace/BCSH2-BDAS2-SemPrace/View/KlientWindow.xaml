@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:BCSH2_BDAS2_SemPrace.View"
         mc:Ignorable="d"
         Title="KlientWindow"
-        Height="450"
-        Width="800"
+        Height="500"
+        Width="850"
         ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
@@ -48,6 +48,8 @@
         <Label x:Name="klientEmail" Content="{Binding Email}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,42,0,305" />
         <Label x:Name="klientZamestnanec" Content="{Binding Zamestnanec}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,75,0,274" />
         <Label x:Name="klientTel" Content="{Binding Telephone}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,106,0,238" />
+        <Label x:Name="klientZustatek" Content="{Binding Zustatek}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,146,0,202" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
+        <Label x:Name="klientZustatekBlock" Content="{Binding ZustatekBlocked}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,190,0,158" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
 
         <!-- Right side displaying Klient's accounts -->
         <ListView x:Name="accountsList"
@@ -56,11 +58,11 @@
                  Style="{StaticResource ListBoxStyle}" Margin="10,42,10,10" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Ucet"
+                    <GridViewColumn Header="Ucet" Width="150"
                                     DisplayMemberBinding="{Binding CisloUctu}" />
-                    <GridViewColumn Header="Nazev"
+                    <GridViewColumn Header="Nazev" Width="100"
                                     DisplayMemberBinding="{Binding Nazev}" />
-                    <GridViewColumn Header="Status"
+                    <GridViewColumn Header="Status" Width="100"
                                     DisplayMemberBinding="{Binding PopisStatus}" />
                 </GridView>
             </ListView.View>
@@ -68,16 +70,27 @@
 
         <!-- Buttons for Klient's accounts -->
         <Button Content="Tranzakce Z Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding TranzakceZUctuCommand}" Margin="10,10,410,10" Grid.Row="2" Grid.Column="1" />
-        <Button Content="Zalozit Novy" Style="{StaticResource ButtonStyle}" Command="{Binding ZalozitNovyCommand}" Margin="295,10,127,10" Grid.Row="2" Grid.Column="1" />
+        <Button Content="Steal Me Egor" Style="{StaticResource ButtonStyle}" Command="{Binding ZalozitNovyCommand}" Margin="101,265,91,69" Grid.Row="1" />
         <Button Content="Detail Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding DetailUctuCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="2" Grid.Column="1" Margin="152,10,270,10"  />
+        <Button Content="Schuzky" Style="{StaticResource ButtonStyle}" Command="{Binding SchuzkaClickCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="2" Grid.Column="1" Margin="295,10,128,10"  />
         <Button x:Name="btnExit"
             Style="{StaticResource ButtonStyle}"
             Content="Exit"
             Command="{Binding ExitKlientCommand}"
-            Margin="10,5,0,15"
+            Margin="10,10,0,10"
             Grid.Row="2"
             HorizontalAlignment="Left"
             Width="108" />
         <Label x:Name="klientAccNumsTitle" Content="Vaše účty:" Style="{StaticResource LabelStyle}" Margin="10,10,10,338" Grid.Row="1" Grid.Column="1" />
+        <Label Content="Zustatek" HorizontalAlignment="Left" Margin="105,144,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Sitka Banner" FontSize="16"/>
+        <Label Content="Blokovane Prostredky" HorizontalAlignment="Left" Margin="18,188,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Sitka Banner" FontSize="16"/>
+        <Button x:Name="btnPlatba"
+            Style="{StaticResource ButtonStyle}"
+            Content="Nova Platba"
+            Command="{Binding VytvoritPlatbuCommand}"
+            Margin="179,10,0,10"
+            Grid.Row="2"
+            HorizontalAlignment="Left"
+            Width="108" />
     </Grid>
 </Window>

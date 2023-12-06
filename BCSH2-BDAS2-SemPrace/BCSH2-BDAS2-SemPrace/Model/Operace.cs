@@ -1,21 +1,104 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Data;
 
-namespace BCSH2_BDAS2_SemPrace.Model
+public class Operace : INotifyPropertyChanged
 {
-    public class Operace
+    private int _idOperace;
+    private decimal _castka;
+    private DateTime _datumZacatka;
+    private DateTime _datumOkonceni;
+    private string _nazev;
+    private int _zUctu;
+    private int _doUctu;
+    private int _idUcet;
+    private int _idStatus;
+
+    public int IdOperace
     {
-        public int IdOperace { get; set; }
-        public decimal Castka { get; set; }
-        public DateTime DatumZacatka { get; set; }
-        public DateTime DatumOkonceni { get; set; }
-        public string Nazev { get; set; }
-        public int ZUctu { get; set; }
-        public int DoUctu { get; set; }
-        public int IdUcet { get; set; }
-        public int IdStatus { get; set; }
+        get { return _idOperace; }
+        set { _idOperace = value; OnPropertyChanged(nameof(IdOperace)); }
+    }
+
+    public decimal Castka
+    {
+        get { return _castka; }
+        set { _castka = value; OnPropertyChanged(nameof(Castka)); }
+    }
+
+    public DateTime DatumZacatka
+    {
+        get { return _datumZacatka; }
+        set { _datumZacatka = value; OnPropertyChanged(nameof(DatumZacatka)); }
+    }
+
+    public DateTime DatumOkonceni
+    {
+        get { return _datumOkonceni; }
+        set { _datumOkonceni = value; OnPropertyChanged(nameof(DatumOkonceni)); }
+    }
+
+    public string Nazev
+    {
+        get { return _nazev; }
+        set { _nazev = value; OnPropertyChanged(nameof(Nazev)); }
+    }
+
+    public int ZUctu
+    {
+        get { return _zUctu; }
+        set { _zUctu = value; OnPropertyChanged(nameof(ZUctu)); }
+    }
+
+    public int DoUctu
+    {
+        get { return _doUctu; }
+        set { _doUctu = value; OnPropertyChanged(nameof(DoUctu)); }
+    }
+
+    public int IdUcet
+    {
+        get { return _idUcet; }
+        set { _idUcet = value; OnPropertyChanged(nameof(IdUcet)); }
+    }
+
+    public int IdStatus
+    {
+        get { return _idStatus; }
+        set { _idStatus = value; OnPropertyChanged(nameof(IdStatus)); }
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+    public static ObservableCollection<Operace> ConvertDataTableToObservableCollection(DataTable dataTable)
+    {
+        ObservableCollection<Operace> operaceList = new ObservableCollection<Operace>();
+
+        foreach (DataRow row in dataTable.Rows)
+        {
+            Operace operace = new Operace
+            {
+                IdOperace = Convert.ToInt32(row["id_operace"]),
+                Castka = Convert.ToDecimal(row["castka"]),
+                DatumZacatka = Convert.ToDateTime(row["datum_zacatka"]),
+                DatumOkonceni = Convert.ToDateTime(row["datum_okonceni"]),
+                Nazev = row["nazev"].ToString(),
+                ZUctu = Convert.ToInt32(row["z_uctu"]),
+                DoUctu = Convert.ToInt32(row["do_uctu"]),
+                IdUcet = Convert.ToInt32(row["ucet_id_ucet"]),
+                IdStatus = Convert.ToInt32(row["status_id_status"])
+                // Set other properties based on your Operace class
+            };
+
+            operaceList.Add(operace);
+        }
+
+        return operaceList;
     }
 }

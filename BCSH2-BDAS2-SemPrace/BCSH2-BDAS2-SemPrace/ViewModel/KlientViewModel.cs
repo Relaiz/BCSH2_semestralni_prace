@@ -99,7 +99,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 OnPropertyChanged(nameof(FullName));
             }
         }
-
         public string Surname
         {
             get { return _surname; }
@@ -142,36 +141,59 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
         }
 
+        private decimal _zustatek;
+        public decimal Zustatek
+        {
+            get { return _zustatek; }
+            set
+            {
+                _zustatek = value;
+                OnPropertyChanged(nameof(Zustatek));
+            }
+        }
+
+        private decimal _zustatekBlocked;
+        public decimal ZustatekBlocked
+        {
+            get { return _zustatekBlocked; }
+            set
+            {
+                _zustatekBlocked = value;
+                OnPropertyChanged(nameof(ZustatekBlocked));
+            }
+        }
+
         public ICommand TranzakceZUctuCommand { get; }
         public ICommand ZalozitNovyCommand { get; }
         public ICommand DetailUctuCommand { get; }
         public ICommand ExitKlientCommand { get; }
+        public ICommand VytvoritPlatbuCommand { get; }
         private readonly OracleDatabaseService db;
-
-
-        
-
         public KlientViewModel(Klient klient)
         {
             db = new OracleDatabaseService();
             db.OpenConnection();
 
             currentKlient = klient;
-            listOfKlientUcty = new ObservableCollection<Ucet>();
-            
+            listOfKlientUcty = new ObservableCollection<Ucet>();            
+            RefreshListView();
             FetchAndPopulateData();
-            PopulateUctyListForKlient(currentKlient.IdKlient);
             // Initialize your commands
             TranzakceZUctuCommand = new RelayCommand(TranzakceZUctu);
             ZalozitNovyCommand = new RelayCommand(ZalozitNovy);
             DetailUctuCommand = new RelayCommand(DetailUctu);
             ExitKlientCommand = new RelayCommand(ExitKlient);
+            VytvoritPlatbuCommand = new RelayCommand(VytvoritPlatbu);
         }
 
         private void TranzakceZUctu(object parameter)
         {
-            // Implement logic for Tranzakce Z Uctu command
-            // Open a new window or perform any other action
+            // Create a new instance of KlientZalozitUcetWindow
+            KlientTranzakceZUctuWindow tranzakceWindow = new KlientTranzakceZUctuWindow(selectedUcet);
+
+            // Show the window
+            tranzakceWindow.ShowDialog();
+            RefreshListView();
         }
 
         private void ZalozitNovy(object parameter)
@@ -181,14 +203,73 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
             // Show the window
             zalozitUcetWindow.ShowDialog();
+            RefreshListView();
         }
 
+        // Fetch total Zustatek and Blokovana Castka for the entire Klient
+        private void FetchTotalZustatkyForKlient()
+        {
+            decimal totalZustatek = 0;
+            decimal totalBlockedCastka = 0;
+
+            foreach (var ucet in ListOfKlientUcty)
+            {
+                decimal volnaCastka;
+                decimal blockedCastka;
+
+                // Fetch Zustatek for the Ucet
+                FetchZustatekForUcet(ucet.IdUcet, out volnaCastka, out blockedCastka);
+
+                // Sum up Zustatek and Blocked Castka
+                totalZustatek += volnaCastka;
+                totalBlockedCastka += blockedCastka;
+            }
+
+            // Set TotalZustatek and TotalBlockedCastka properties
+            Zustatek = totalZustatek;
+            ZustatekBlocked = totalBlockedCastka;
+        }
+
+        private void FetchZustatekForUcet(int ucetId, out decimal volnaCastka, out decimal blockedCastka)
+        {
+            // Call the GetZustatekForUcet function from OracleDatabaseService
+            Zustatek zustatek = db.GetZustatekForUcet(ucetId);
+
+            // Initialize output variables
+            volnaCastka = 0;
+            blockedCastka = 0;
+
+            // Check if Zustatek is not null
+            if (zustatek != null)
+            {
+                // Set the output variables
+                volnaCastka = zustatek.VolnaCastka;
+                blockedCastka = zustatek.BlokovaneCastka;
+            }
+        }
 
         private void DetailUctu(object parameter)
         {
-            // Implement logic for Detail Uctu command
-            // Open a new window or perform any other action
+            // Check if the selected Ucet is not null
+            if (selectedUcet != null)
+            {
+                // Create an instance of KlientDetailUctuViewModel
+                KlientDetailUctuViewModel detailUctuViewModel = new KlientDetailUctuViewModel(SelectedUcet, CurrentKlient);
+
+                // Create the KlientDetailUctuWindow
+                KlientDetailUctuWindow detailUctuWindow = new KlientDetailUctuWindow(selectedUcet, currentKlient);
+                detailUctuWindow.DataContext = detailUctuViewModel;
+
+                // Show the window
+                detailUctuWindow.Show();
+            }
+            else
+            {
+                // Show a message that no Ucet is selected
+                MessageBox.Show("Please select an Ucet", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+
 
         private void ExitKlient(object parameter)
         {
@@ -197,18 +278,31 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             // Close the current window
             Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
-           // zamExit(CurrentZamestnanec);
+            // zamExit(CurrentZamestnanec);
             // Закрываем текущее окно
             currentWindow?.Close();
 
             // Show the login window
             loginWindow.Show();
         }
+        private void VytvoritPlatbu(object parameter)
+        {
+            // Create an instance of KlientPlatbaViewModel
+            KlientPlatbaViewModel klientPlatbaViewModel = new KlientPlatbaViewModel(currentKlient, listOfKlientUcty);
 
-        private void PopulateUctyListForKlient(int klientId)
+            // Create the KlientPlatbaWindow
+            KlientPlatbaWindow klientPlatbaWindow = new KlientPlatbaWindow(currentKlient, listOfKlientUcty);
+            klientPlatbaWindow.DataContext = klientPlatbaViewModel;
+
+            // Show the window as a dialog
+            klientPlatbaWindow.ShowDialog();
+        }
+
+        private List<Ucet> GetUctyForKlient(int klientId)
         {
             OracleDatabaseService db = new OracleDatabaseService();
             db.OpenConnection();
+            List<Ucet> ucty = new List<Ucet>();
 
             OracleCommand cmd = db.Connection.CreateCommand();
             try
@@ -230,9 +324,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 OracleRefCursor refCursor = (OracleRefCursor)cmd.Parameters["p_cursor"].Value;
                 OracleDataReader reader = refCursor.GetDataReader();
 
-                // Create a list to store Ucty items
-                ObservableCollection<Ucet> ucty = new ObservableCollection<Ucet>();
-
                 // Populate the ObservableCollection with Ucty items
                 while (reader.Read())
                 {
@@ -244,34 +335,25 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                         KlientIdKlient = Convert.ToInt32(reader["klient_id_klient"]),
                         BankIdBank = Convert.ToInt32(reader["bank_id_bank"]),
                         StatusIdStatus = Convert.ToInt32(reader["status_id_status"])
-                        // Set other properties based on your Ucet class
                     };
 
                     ucty.Add(ucet);
                 }
 
-                foreach(Ucet ucet in ucty)
-                {
-                    UcetNumber = ucet.CisloUctu;
-                    UcetName = ucet.Nazev;
-                    GetUcetStatus(ucet.IdUcet);
-                    listOfKlientUcty.Add(ucet);
-                }
-                
-                
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error populating Ucty list for Klient: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                 // Return an empty ObservableCollection in case of an error
+                // Return an empty ObservableCollection in case of an error
             }
             finally
             {
                 // Close the database connection
                 db.CloseConnection();
-            }
-        }
 
+            }
+            return ucty;
+        }
         private Zamestnanec GetAssignedZamestnanec(int zameId)
         {
             OracleDatabaseService db = new OracleDatabaseService();
@@ -312,52 +394,32 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         }
         private void FetchAndPopulateData()
         {
-            // 1) Fetch and populate data for the Klient
             Name = currentKlient.Jmeno;
             Surname = currentKlient.Prijmeni;
             Email = currentKlient.KlientEmail;
             Telephone = currentKlient.TelefoniCislo;
 
-            // 2) Fetch assigned worker's name and surname
             Zamestnanec assignedZamestnanec = GetAssignedZamestnanec(currentKlient.ZameIdZamestnanec);
             Zamestnanec = $"{assignedZamestnanec.Jmeno} {assignedZamestnanec.Prijmeni}";
 
-            // You might need to add error handling if needed
+            FetchTotalZustatkyForKlient();
         }
 
-      
-
-        private void GetUcetStatus(Decimal idUcet)
+        private void RefreshListView()
         {
-            try
+            List<Ucet> ucty = GetUctyForKlient(currentKlient.IdKlient);
+            FetchTotalZustatkyForKlient();
+
+            // Clear the existing items
+            ListOfKlientUcty.Clear();
+
+            // Add new items using foreach
+            foreach (var ucet in ucty)
             {
-
-                db.OpenConnection();
-
-                OracleCommand cmd = db.Connection.CreateCommand();
-
-
-                cmd.CommandText = "SELECT f.popis FROM status f WHERE f.id_status= (SELECT u.status_id_status FROM ucet u WHERE u.id_ucet = :idUcet)";
-                cmd.Parameters.Add("id_ucet", OracleDbType.Decimal).Value = idUcet;
-
-
-
-                OracleDataReader reader = cmd.ExecuteReader();
-
-                string status = "";
-
-                if (reader.Read())
-                {
-                    status = reader["popis"].ToString();
-                }
-                reader.Close();
-
-                UcetStatus = status;
+                ListOfKlientUcty.Add(ucet);
             }
-            finally
-            {
-                db.CloseConnection();
-            }
+
+            OnPropertyChanged(nameof(ListOfKlientUcty));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -367,11 +429,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public event EventHandler UpdateAccountsListRequested;
-
-        private void OnUpdateAccountsListRequested()
-        {
-            UpdateAccountsListRequested?.Invoke(this, EventArgs.Empty);
-        }
     }
+
 }

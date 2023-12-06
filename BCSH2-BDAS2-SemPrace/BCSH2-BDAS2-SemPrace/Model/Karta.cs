@@ -8,7 +8,7 @@ public class Karta : INotifyPropertyChanged
     private int _idKarta;
     private string _jmeno;
     private string _prijmeni;
-    private int _cisloKarty;
+    private long _cisloKarty;
     private string _platebniSystem;
     private DateTime _platnost;
     private string _typ;
@@ -32,7 +32,7 @@ public class Karta : INotifyPropertyChanged
         set { _prijmeni = value; OnPropertyChanged(nameof(Prijmeni)); }
     }
 
-    public int CisloKarty
+    public long CisloKarty
     {
         get { return _cisloKarty; }
         set { _cisloKarty = value; OnPropertyChanged(nameof(CisloKarty)); }
