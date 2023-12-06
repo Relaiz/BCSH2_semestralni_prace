@@ -2,6 +2,7 @@
 using BCSH2_BDAS2_SemPrace.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,24 +24,13 @@ namespace BCSH2_BDAS2_SemPrace.View
     {
         public Zamestnanec Zamestnanec { get; set; }
         public Klient Klient { get; set; }
-        public PridatKlientWindow(Zamestnanec zamestnanec)
+        public PridatKlientWindow(Zamestnanec zamestnanec, ObservableCollection<Klient> klientList)
         {
-            
             InitializeComponent();
             Zamestnanec = zamestnanec;
-
-            DataContext = new PridatKlientViewModel(zamestnanec);
-
+            DataContext = new PridatKlientViewModel(zamestnanec,klientList);
         }
 
-        public PridatKlientWindow(PridatKlientViewModel pridatKlientViewModel)
-        {
-
-            InitializeComponent();
-            
-
-            DataContext = pridatKlientViewModel;
-
-        }
+       
     }
 }

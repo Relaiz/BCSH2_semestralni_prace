@@ -119,7 +119,7 @@
                 Width="108" />
         <Button x:Name="fileZam"
                 Style="{StaticResource ButtonStyle}"
-                Click="PoslatFileClick"
+                
                 Content="Poslat File"
                 Margin="141,12,0,22"
                 Grid.Row="3"
@@ -128,7 +128,7 @@
                 HorizontalAlignment="Left"
                 Width="108" />
         <Button x:Name="editKlient"
-                Click="EditKlientClick"
+                
                 Style="{StaticResource ButtonStyle}"
                 Content="Edit Klient"
                 Margin="254,12,0,22"

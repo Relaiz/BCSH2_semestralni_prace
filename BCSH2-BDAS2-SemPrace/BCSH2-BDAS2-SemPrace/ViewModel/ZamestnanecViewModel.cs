@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private string _status;
         private Zamestnanec _currentZamestnanec;
         private ObservableCollection<Klient> listOfKlients;
+
 
         public ObservableCollection<Klient> ListOfKlients
         {
@@ -134,41 +136,35 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         public ICommand ExitZamestnanecCommand { get; }
         private readonly OracleDatabaseService db;
 
-
         public ZamestnanecViewModel(Zamestnanec zamestnanec, String Pozice)
-        {
-            // LoadZamestnanciCommand = new RelayCommand(LoadZamestnanci);
-
+        {           
             db = new OracleDatabaseService();
             db.OpenConnection();
-
             CurrentZamestnanec = zamestnanec;
             GetPobockaName(CurrentZamestnanec.IdZamestnanec);
-            GetStatus(CurrentZamestnanec.IdZamestnanec);
-            
+            GetStatus(CurrentZamestnanec.IdZamestnanec);           
             _name = zamestnanec.Jmeno;
             _lastname = zamestnanec.Prijmeni;
             _email = zamestnanec.EmailZamestnanec;
             _telCislo = zamestnanec.TelefoniCislo;
-            _pozice = Pozice;
-            
+            _pozice = Pozice;           
             listOfKlients = new ObservableCollection<Klient>();
             listOfKlients.Add(SelectedKlient);
-            PopulateKlientsList();
+            PopulateKlientsList();           
             ExitZamestnanecCommand = new RelayCommand(Exit);
             ShowKlientCommand = new RelayCommand(ShowKlient);
             PridatKlientCommand = new RelayCommand(PridatKlient);
         }
-
-
+        
         private void PridatKlient(object parameter)
         {
-            Window newUserWindow = null;
-            ZamestnanecViewModel zamestnanecViewModel = new ZamestnanecViewModel(_currentZamestnanec,Pozice);
-            PridatKlientViewModel pridatKlientViewModel = new PridatKlientViewModel(zamestnanecViewModel, CurrentZamestnanec);
 
-            newUserWindow = new PridatKlientWindow(pridatKlientViewModel);
-            newUserWindow.Show();
+            ZamestnanecViewModel zamestnanecViewModel = new ZamestnanecViewModel(_currentZamestnanec,Pozice);
+            PridatKlientViewModel pridatKlientViewModel = new PridatKlientViewModel(CurrentZamestnanec,ListOfKlients);
+            PridatKlientWindow pridatKlientWindow = new PridatKlientWindow(CurrentZamestnanec,ListOfKlients);
+            pridatKlientWindow.DataContext = pridatKlientViewModel;
+            pridatKlientWindow.Show();
+            PopulateKlientsList();        
         }
         private void EditKlient(object parameter)
         {
@@ -182,8 +178,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 string jmeno = SelectedKlient.Jmeno;
                 string prijmeni = SelectedKlient.Prijmeni;
                 Klient klient = db.GetKlientByJmenoPrijmeni(jmeno, prijmeni);
-
-
                 ShowKlientWindow showKlientWindow = new ShowKlientWindow(klient);
                 showKlientWindow.DataContext = klient;
                 showKlientWindow.Show();
@@ -194,15 +188,9 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private void Exit(object parameter)
         {
             LoginWindow loginWindow = new LoginWindow();
-
-            // Close the current window
             Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-
-            zamExit(CurrentZamestnanec);
-            // Закрываем текущее окно
-            currentWindow?.Close();
-
-            // Show the login window
+            zamExit(CurrentZamestnanec);         
+            currentWindow?.Close();           
             loginWindow.Show();
         }
         private void ExitSuccessfulLogin(string username)
@@ -223,35 +211,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         {
             try
             {
-                /*string tableName = "zamestnanec";
-                string operation = "exit from account";
-                DateTime currentTime = DateTime.Now;*/
-                
-            string username = $"{zamestnanec.Jmeno} {zamestnanec.Prijmeni}";
-
+                string username = $"{zamestnanec.Jmeno} {zamestnanec.Prijmeni}";
                 ExitSuccessfulLogin(username);
-
-            /*string query = "INSERT INTO log_table (tabulka, operace, cas, uzivatel) " +
-                              "VALUES (:tabulka, :operace, :cas, :uzivatel)";*/
-
-            /*using (OracleCommand cmd = new OracleCommand(query, db.Connection))
-            {
-                cmd.Parameters.Add("tabulka", OracleDbType.Varchar2).Value = tableName;
-                cmd.Parameters.Add("operace", OracleDbType.Varchar2).Value = operation;
-                cmd.Parameters.Add("cas", OracleDbType.TimeStampLTZ).Value = currentTime;
-                cmd.Parameters.Add("uzivatel", OracleDbType.Varchar2).Value = username;
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
-                {
-                    Console.WriteLine("Success add in  log_table.");
-                }
-                else
-                {
-                    Console.WriteLine("Error add.");
-                }
-            }*/
         }
             catch (Exception ex)
             {
@@ -261,36 +222,19 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 db.CloseConnection();
             }
-        }
-
-        private void LoadZamestnanci(object parameter)
-        {
-            // Используйте _databaseService для выполнения запроса к базе данных Oracle и обновите Zamestnanci
-            string query = "SELECT * FROM zamestnanec";
-            DataTable result = db.ExecuteQuery(query);
-
-            // Преобразуйте результат в ObservableCollection<ZamestnanecModel> и обновите Zamestnanci
-            // ...
-        }
-
-        // Добавьте другие методы и обработчики команд по необходимости
-
+        } 
+        
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
         private void GetPobockaName(decimal id_zamestnanec)
         {
-            
             db.OpenConnection();
-
             OracleCommand cmd = db.Connection.CreateCommand();  // Создаем команду открытого соединения
             cmd.CommandText = "SELECT f.nazev FROM pobocka f WHERE f.id_pobocka= (SELECT z.pobocka_id_pobocka FROM zamestnanec z WHERE z.id_zamestnanec = :id_zamestnanec)";
             cmd.Parameters.Add("id_zamestnanec", OracleDbType.Decimal).Value = id_zamestnanec;
-
             try
             {
                 OracleDataReader reader = cmd.ExecuteReader();
@@ -301,9 +245,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 {
                     pobockaName = reader["nazev"].ToString();
                 }
-
-                reader.Close();  // Закрываем DataReader
-
+                reader.Close();  
                 _pobocka= pobockaName;
             }
             finally
@@ -311,94 +253,99 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 db.CloseConnection();
             }
         }
-
         private void GetStatus(decimal id_zamestnanec)
         {
             try
             {
                 
             db.OpenConnection();
-
             OracleCommand cmd = db.Connection.CreateCommand();
-
-
             cmd.CommandText = "SELECT f.popis FROM status f WHERE f.id_status= (SELECT z.status_id_status FROM zamestnanec z WHERE z.id_zamestnanec = :id_zamestnanec)";
             cmd.Parameters.Add("id_zamestnanec", OracleDbType.Decimal).Value = id_zamestnanec;
-
-            
-
                 OracleDataReader reader = cmd.ExecuteReader();
-
                 string status = "";
-
                 if (reader.Read())
                 {
                     status = reader["popis"].ToString();
                 }
                 reader.Close();
-
                 _status = status;
             }
             finally
             {
                 db.CloseConnection();
             }
-
         }
-        public void UpdateList()
+        
+
+        public List<Klient> GetHierarchyInfoFromDatabase(int id_zamestnanec)
         {
-            PopulateKlientsList();
-        }
-
-        private void PopulateKlientsList()
-        {
-           try
-           { 
-            db.OpenConnection();
-
-            OracleCommand cmd = db.Connection.CreateCommand();
-            
-
-
-
-
-
-
-                // Replace 'your_employee_id' with the actual employee ID
-                int zamId = _currentZamestnanec.IdZamestnanec;
-
-                List<Klient> clients = db.GetHierarchyInfoFromDatabase(zamId);
-
-
-                // Clear existing items in the ListView
-                listOfKlients.Clear();
-
-                // Add new items to the ListView
-
-
-                foreach (Klient klient in clients)
+            try
+            {
+                db.OpenConnection();
+                List<Klient> result = new List<Klient>();
+                using (OracleCommand cmd = new OracleCommand("GetHierarchyInfo", db.Connection))
                 {
-                    listOfKlients.Add(klient);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("result", OracleDbType.RefCursor).Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add("p_id_zamestnanec", OracleDbType.Decimal).Value = id_zamestnanec;
+
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string full_name = reader["full_name"].ToString();
+                            string[] names = full_name.Split(' ');
+
+                            string firstName = names[0];
+                            string lastName = names[1];
+
+                            result.Add(new Klient { Jmeno = firstName, Prijmeni = lastName });
+                        }
+                    }
                 }
 
-                OnPropertyChanged(nameof(listOfKlients));
-
-
+                return result;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error populating klients list: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Console.WriteLine($"Error: {ex.Message}");
+                return null;
             }
             finally
             {
-                // Close the database connection
                 db.CloseConnection();
             }
         }
-        private void HandleKlientAdded(object sender, EventArgs e)
-        {
-            PopulateKlientsList();
-        }
 
+        /*private void RefreshListView()
+        {
+            List<Ucet> ucty = GetUctyForKlient(currentKlient.IdKlient);
+            FetchTotalZustatkyForKlient();
+
+            // Clear the existing items
+            ListOfKlientUcty.Clear();
+
+            // Add new items using foreach
+            foreach (var ucet in ucty)
+            {
+                ListOfKlientUcty.Add(ucet);
+            }
+
+            OnPropertyChanged(nameof(ListOfKlientUcty));
+        }
+*/
+        private void PopulateKlientsList()
+        {
+
+            List<Klient> clients = GetHierarchyInfoFromDatabase(CurrentZamestnanec.IdZamestnanec);
+            listOfKlients.Clear();
+            foreach (var klient in clients)
+            {
+                ListOfKlients.Add(klient);
+            }
+            OnPropertyChanged(nameof(ListOfKlients));
+        }
     }
 }

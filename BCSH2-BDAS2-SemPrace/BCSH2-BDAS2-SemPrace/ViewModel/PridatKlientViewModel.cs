@@ -40,44 +40,42 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private string _mesto;
         private string _cisloPopisne;
         private string _heslo;
-        private Klient _klient= new Klient();
-        public event EventHandler KlientAdded;
-        private ZamestnanecViewModel _zamestnanecViewModel;
-        protected virtual void OnKlientAdded()
-        {
-            KlientAdded?.Invoke(this, EventArgs.Empty);
-        }
-        public ICommand CreateClientCommand { get; }
-        
+        private Klient _klient;      
+        private ZamestnanecViewModel _zamestnanecViewModel;    
+        public ICommand CreateClientCommand { get; }       
         private readonly OracleDatabaseService db;
-
         private Zamestnanec _asignZamestnanec;
-
-
+        public ObservableCollection<Klient> KlientList { get; set; }
         public PridatKlientViewModel()
         {
             db = new OracleDatabaseService();
             db.OpenConnection();
             Heslo = "abcde";
-            
+            AddedKlient = new Klient();
             CreateClientCommand = new RelayCommand(PridatKlient);
         }
-        public PridatKlientViewModel(Zamestnanec zamestnanec)
+        public PridatKlientViewModel(Zamestnanec zamestnanec, ObservableCollection<Klient> klientList)
         {
             db = new OracleDatabaseService();
             db.OpenConnection();
             Heslo = "abcde";
+            KlientList = klientList; 
             AsignZam = zamestnanec;
             CreateClientCommand = new RelayCommand(PridatKlient);
+            AddedKlient = new Klient();
         }
-        public PridatKlientViewModel(ZamestnanecViewModel ZamestnanecViewModel,Zamestnanec zamestnanec)
+
+        private Klient AddedKlient
         {
-            db = new OracleDatabaseService();
-            db.OpenConnection();
-            AsignZam = zamestnanec;
-            Heslo = "abcde";
-            CreateClientCommand = new RelayCommand(PridatKlient);
-            _zamestnanecViewModel = ZamestnanecViewModel;
+            get { return _klient; }
+            set
+            {
+                if (_klient != value)
+                {
+                    _klient = value;
+                    OnPropertyChanged(nameof(AddedKlient));
+                }
+            }
         }
 
         private Zamestnanec AsignZam
@@ -99,7 +97,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             try
             {
                 db.OpenConnection();
-
                 string query = "BEGIN :result := GetAddressId(:ulice, :mesto, :cislo_popisne, :psc, :stat); END;";
                 using (OracleCommand cmd = new OracleCommand(query, db.Connection))
                 {
@@ -109,15 +106,11 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     cmd.Parameters.Add("cislo_popisne", OracleDbType.Varchar2).Value = cisloPopisne;
                     cmd.Parameters.Add("psc", OracleDbType.Char).Value = psc;
                     cmd.Parameters.Add("stat", OracleDbType.Varchar2).Value = stat;
-
                     cmd.ExecuteNonQuery();
-
                     var result = cmd.Parameters["result"].Value;
-
                     if (result != DBNull.Value)
                     {
                         OracleDecimal oracleDecimal = (OracleDecimal)result;
-
                         // Check if the OracleDecimal is not Null
                         if (!oracleDecimal.IsNull)
                         {
@@ -151,17 +144,12 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 string mesto = Mesto;
                 string cisloPopisne = CisloPopisne;
                 string psc = PSC;
-                string stat = Stat;
-
-                // Используем новую функцию для проверки существования адреса
+                string stat = Stat;               
                 int? id_adres = GetAddressId(ulice, mesto, cisloPopisne, psc, stat);
-
                 db.OpenConnection();
-
                 if (id_adres == null || id_adres == 0)
                 {
                     string query = "BEGIN AddAddress(:ulice, :mesto, :cislo_popisne, :psc, :stat, :id_adres); END;";
-
                     using (OracleCommand cmd = new OracleCommand(query, db.Connection))
                     {
                         cmd.Parameters.Add("ulice", OracleDbType.Varchar2).Value = ulice;
@@ -170,18 +158,11 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                         cmd.Parameters.Add("psc", OracleDbType.Char).Value = psc;
                         cmd.Parameters.Add("stat", OracleDbType.Varchar2).Value = stat;
                         cmd.Parameters.Add("id_adres", OracleDbType.Int32).Direction = ParameterDirection.Output;
-
                         cmd.ExecuteNonQuery();
-
-                        // Check if the output parameter is DBNull
                         if (cmd.Parameters["id_adres"].Value != DBNull.Value)
                         {
                             OracleDecimal oracleDecimal = (OracleDecimal)cmd.Parameters["id_adres"].Value;
-
-                            // Use ToInt32 method of OracleDecimal to convert to integer
                             id_adres = oracleDecimal.ToInt32();
-
-                            // Initialize _adresa object
                             _adresa = new Adresa
                             {
                                 IdAdres = id_adres.Value,
@@ -213,8 +194,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 using (OracleCommand cmd = new OracleCommand("AddKlientLogin", db.Connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Добавьте параметры и их значения в соответствии с вашими данными
                     cmd.Parameters.Add("p_zamestnanec_id_zamestnanec", OracleDbType.Int32).Value = null;
                     cmd.Parameters.Add("p_email", OracleDbType.Varchar2).Value = _klient.KlientEmail;
                     cmd.Parameters.Add("p_heslo", OracleDbType.Varchar2).Value = Heslo;
@@ -222,9 +201,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     cmd.Parameters.Add("p_klient_id_klient", OracleDbType.Int32).Value = _klient.IdKlient;
                     cmd.Parameters.Add("p_id_file", OracleDbType.Int32).Value = null;
                     cmd.Parameters.Add("p_id_klient", OracleDbType.Int32).Value = null;
-
                     cmd.ExecuteNonQuery();
-
                     Console.WriteLine("Success adding login data.");
                 }
             }
@@ -240,7 +217,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private void PridatKlient(object parameter)
         {
             CheckOrAddAdresa();
-
             try
             {
                 db.OpenConnection();
@@ -259,17 +235,11 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     OracleParameter idKlientParam = new OracleParameter("p_id_klient", OracleDbType.Int32);
                     idKlientParam.Direction = ParameterDirection.Output;
                     cmd.Parameters.Add(idKlientParam);
-
                     cmd.ExecuteNonQuery();
-
                     if (cmd.Parameters["p_id_klient"].Value != DBNull.Value)
                     {
                         OracleDecimal oracleDecimal = (OracleDecimal)cmd.Parameters["p_id_klient"].Value;
-
-                        // Use ToInt32 method of OracleDecimal to convert to integer
                         idKlient = oracleDecimal.ToInt32();
-
-                        // int idKlient = Convert.ToInt32(idKlientParam.Value);
                         Klient klient = new Klient
                         {
                             IdKlient = idKlient,
@@ -285,29 +255,24 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                             OdesiFileIdFile = null,
                             IdFile1 = null,
                             IdKlient2 = null
-
                         };
-                        _klient = klient;
+                        AddedKlient = klient;
+                        KlientList.Add(AddedKlient);
                         InsertLoginData();
                         Console.WriteLine("Success adding klient.");
-                        MessageBoxResult result = MessageBox.Show("Success adding klient.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                        
+                        MessageBoxResult result = MessageBox.Show("Klient vytvořena!", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                         if (result == MessageBoxResult.OK)
                         {
-                            // Закрываем текущее окно
                             Window actualnWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
-
                             if (actualnWindow != null)
                             {
-                                // Закрываем текущее окно
                                 actualnWindow.Close();
-                                Window noveWindow = new KlientZalozitUcetWindow(_klient.IdKlient);
-                                noveWindow.Show();
-                                
-                                _zamestnanecViewModel?.UpdateList();
+                                KlientZalozitUcetViewModel klientZalozitUcetViewModel = new KlientZalozitUcetViewModel(AddedKlient.IdKlient);
+                                KlientZalozitUcetWindow klientZalozitUcetWindow = new KlientZalozitUcetWindow(AddedKlient.IdKlient);
+                                klientZalozitUcetWindow.Show();                                
                             }
-                        }
-
-                       
+                        }  
                     }
                 }
             }
@@ -475,7 +440,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         {
             get
             {
-                // Ваша логика валидации
                 return Validate(columnName);
             }
         }
@@ -554,23 +518,17 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 {
                     return "Adresa: CisloPopisne nemuze byt prazdne";
                 }
-            }
-            
+            }            
             else if (columnName == nameof(CisloPrukaz))
             {
                 if (string.IsNullOrEmpty(CisloPrukaz.ToString()))
                 {
                     return "CisloPrukaz nemuze byt prazdne";
                 }
-            } 
-            
-            return null;
-
-            
-            
+            }          
+            return null;    
         }
         private bool _isDataValid;
-
         public bool IsDataValid
         {
             get { return _isDataValid; }
@@ -594,20 +552,13 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                            string.IsNullOrEmpty(this["Stat"]) &&
                            string.IsNullOrEmpty(this["Ulice"]) &&
                            string.IsNullOrEmpty(this["Mesto"]) &&
-
-                          CisloPrukaz !=0; 
+                           CisloPrukaz !=0; 
         }
-
-
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             ValidateAll();
         }
     }
-
-
 }

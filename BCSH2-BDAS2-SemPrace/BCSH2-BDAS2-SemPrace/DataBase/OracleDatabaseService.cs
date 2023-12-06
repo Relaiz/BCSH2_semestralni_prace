@@ -149,45 +149,7 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 CloseConnection();
             }
         }
-        public List<Klient> GetHierarchyInfoFromDatabase(int id_zamestnanec)
-        {
-            try
-            {
-                List<Klient> result = new List<Klient>();
-                using (OracleCommand cmd = new OracleCommand("GetHierarchyInfo", connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("result", OracleDbType.RefCursor).Direction = ParameterDirection.ReturnValue;
-                    cmd.Parameters.Add("p_id_zamestnanec", OracleDbType.Decimal).Value = id_zamestnanec;
-
-                    using (OracleDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string full_name = reader["full_name"].ToString();
-                            string[] names = full_name.Split(' ');
-
-                            string firstName = names[0];
-                            string lastName = names[1];
-
-                            result.Add(new Klient { Jmeno = firstName, Prijmeni = lastName });
-                        }
-                    }
-                }
-
-                return result;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                return null;
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
+       
         public Klient GetKlientByJmenoPrijmeni(string jmeno, string prijmeni)
         {
             OpenConnection();
