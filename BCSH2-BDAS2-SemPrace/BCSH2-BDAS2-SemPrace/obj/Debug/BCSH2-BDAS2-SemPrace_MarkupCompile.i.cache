@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\App.xaml
-71230389914
+8350847702
 
-37-1665134388
+391872051881
 33-337217863
-MainWindow.xaml;View\EditKlientWindow.xaml;View\KlientWindow.xaml;View\KlientZalozitUcetWindow.xaml;View\LoginWindow.xaml;View\ShowKlientWindow.xaml;View\ZamestnanecWindow.xaml;
+MainWindow.xaml;View\EditKlientWindow.xaml;View\KlientWindow.xaml;View\KlientZalozitUcetWindow.xaml;View\LoginWindow.xaml;View\PridatKlientWindow.xaml;View\ShowKlientWindow.xaml;View\ZamestnanecWindow.xaml;
 
-True
+False
 

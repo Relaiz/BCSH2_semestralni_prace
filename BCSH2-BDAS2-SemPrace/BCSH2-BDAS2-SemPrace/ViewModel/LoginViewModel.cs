@@ -117,6 +117,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
                     SuccessfulLoginZamestnanec?.Invoke(zamestnanec);
                     newUserWindow = new ZamestnanecWindow(zamestnanec,zamestnanecInfo.Pozice);
+                    CloseLoginWindow();
+                    newUserWindow.Show();
                 }
 
                 else if(zamestnanecInfo.Pozice== "Banker")
@@ -146,10 +148,26 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 SuccessfulLoginKlient?.Invoke(klient);
                 newUserWindow = new KlientWindow(klient);
                 Console.WriteLine($"User {klient.Jmeno} {klient.Prijmeni} logged in succesfully.");
+                KlientLoginSuccess(klient);
                 CloseLoginWindow();
                 newUserWindow.Show();
             }
         }
+        private void LogSuccessfulLogin(string username)
+        {
+            
+            // Вставить запись во временную таблицу
+            string tempQuery = "INSERT INTO successful_logins (user_name, log_time) VALUES (:username, SYSTIMESTAMP)";
+
+            using (OracleCommand tempCmd = new OracleCommand(tempQuery, db.Connection))
+            {
+                tempCmd.Parameters.Add("user_name", OracleDbType.Varchar2).Value = username;
+                tempCmd.ExecuteNonQuery();
+            }
+        }
+       
+        
+
 
         private void ZamLoginSuccess(Zamestnanec zamestnanec)
         {
@@ -158,36 +176,13 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 
                 db.OpenConnection();
-                
-                string tableName = "zamestnanec";
-                string operation = "successful_login";
-                DateTime currentTime = DateTime.Now;
+               
                 string username = $"{zamestnanec.Jmeno} {zamestnanec.Prijmeni}";
 
+                LogSuccessfulLogin(username);
 
 
-                string query = "INSERT INTO log_table (tabulka, operace, cas, uzivatel) " +
-                                  "VALUES (:tabulka, :operace, :cas, :uzivatel)";
-
-                using (OracleCommand cmd = new OracleCommand(query, db.Connection))
-                {
-                    
-                    cmd.Parameters.Add("tabulka", OracleDbType.Varchar2).Value = tableName;
-                    cmd.Parameters.Add("operace", OracleDbType.Varchar2).Value = operation;
-                    cmd.Parameters.Add("cas", OracleDbType.TimeStampLTZ).Value = currentTime;
-                    cmd.Parameters.Add("uzivatel", OracleDbType.Varchar2).Value = username;
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        Console.WriteLine("Success add in  log_table.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error add.");
-                    }
-                }
+             
             }
 
             catch (Exception ex)
@@ -202,7 +197,27 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void KlientLoginSuccess(Klient klient)
         {
+            try
+            {
 
+                db.OpenConnection();
+
+                string username = $"{klient.Jmeno} {klient.Prijmeni}";
+
+                LogSuccessfulLogin(username);
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
         }
         private bool IsAdminUser(string email)
         {

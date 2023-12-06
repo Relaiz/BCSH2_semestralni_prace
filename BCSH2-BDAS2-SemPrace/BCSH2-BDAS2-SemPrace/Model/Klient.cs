@@ -13,7 +13,7 @@ namespace BCSH2_BDAS2_SemPrace.Model
     public class Klient : INotifyPropertyChanged
     {
         private int _idKlient;
-        private int _cisloPrukazu;
+        private long _cisloPrukazu;
         private string _jmeno;
         private string _prijmeni;
         private string _klientEmail;
@@ -43,7 +43,7 @@ namespace BCSH2_BDAS2_SemPrace.Model
             set { _idKlient = value; OnPropertyChanged(nameof(IdKlient)); }
         }
 
-        public int CisloPrukazu
+        public long CisloPrukazu
         {
             get { return _cisloPrukazu; }
             set { _cisloPrukazu = value; OnPropertyChanged(nameof(CisloPrukazu)); }
@@ -139,7 +139,7 @@ namespace BCSH2_BDAS2_SemPrace.Model
                 Klient klient = new Klient
                 {
                     IdKlient = Convert.ToInt32(row["id_klient"]),
-                    CisloPrukazu = Convert.ToInt32(row["cislo_prukazu"]),
+                    CisloPrukazu = Convert.ToInt64(row["cislo_prukazu"]),
                     Jmeno = row["jmeno"].ToString(),
                     Prijmeni = row["prijmeni"].ToString(),
                     KlientEmail = row["klient_email"].ToString(),

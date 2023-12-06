@@ -33,7 +33,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             db = new OracleDatabaseService();
             db.OpenConnection();
             this.klientId = klientId;
-
+            NewAccountName = "Bezny ucet";
             UlozCommand = new RelayCommand(Uloz);
             StornoCommand = new RelayCommand(Storno);
 
@@ -47,7 +47,19 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 {
                     db.CreateNewAccount(klientId, NewAccountName);
 
-                    MessageBox.Show("New account created successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    MessageBoxResult result = MessageBox.Show("New account created successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (result == MessageBoxResult.OK)
+                    {
+                        // Закрываем текущее окно
+                        Window actualnWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+
+                        if (actualnWindow != null)
+                        {
+                            // Закрываем текущее окно
+                            actualnWindow.Close();
+                        }
+                    }
                 }
                 else {
                     MessageBox.Show("Name can't be empty!");

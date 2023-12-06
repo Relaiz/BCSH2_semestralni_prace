@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BCSH2_BDAS2_SemPrace.View"
         mc:Ignorable="d"
-        Title="ZamestnanecWindow"
+        Title=""
         Height="450"
         Width="800"
         ResizeMode="NoResize">
@@ -62,25 +62,29 @@
         <ListView x:Name="klientsList"
                   ItemsSource="{Binding ListOfKlients}"
                   SelectedItem="{Binding SelectedKlient}"
-                  Margin="10,70,10,117"
+                  Margin="10,70,10,10"
                   Grid.Row="1"
                   Grid.Column="1">
             <ListView.View>
-        <GridView>
-            <!-- Add columns for name and surname -->
-            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Jmeno}" />
-            <GridViewColumn Header="Surname" DisplayMemberBinding="{Binding Prijmeni}" />
-            <!-- Other columns as needed -->
-        </GridView>
-    </ListView.View>
+                <GridView>
+                    <!-- Add columns for name and surname -->
+                    <GridViewColumn Header="Name"
+                                    DisplayMemberBinding="{Binding Jmeno}" />
+                    <GridViewColumn Header="Surname"
+                                    DisplayMemberBinding="{Binding Prijmeni}" />
+                    <!-- Other columns as needed -->
+                </GridView>
+            </ListView.View>
         </ListView>
         <Label x:Name="klients"
                Content="List of klients"
-               Margin="10,33,320,277"
+               Margin="10,33,320,0"
                Background="#FFE2DDDD"
                Grid.Column="1"
                RenderTransformOrigin="0.629,0.481"
-               Grid.Row="1" />
+               Grid.Row="1"
+               Height="28"
+               VerticalAlignment="Top" />
         <Label x:Name="emailZam"
                Content="{Binding Email}"
                Margin="0,74,0,237"
@@ -107,7 +111,7 @@
         <Button x:Name="btnAdd"
                 Style="{StaticResource ButtonStyle}"
                 Content="Pridat Klient"
-                Click="PridatKlientClick"
+                Command="{Binding PridatKlientCommand}"
                 Margin="27,12,0,22"
                 Grid.Row="3"
                 Grid.Column="1"
@@ -142,13 +146,12 @@
         <Button x:Name="btnExit"
                 Style="{StaticResource ButtonStyle}"
                 Content="Exit"
-                
+                Command="{Binding ExitZamestnanecCommand}"
                 Margin="16,12,0,22"
                 Grid.Row="3"
                 HorizontalAlignment="Left"
                 Width="108" />
-        <Button x:Name="showKlient" 
-                
+        <Button x:Name="showKlient"
                 Content="Ukaz Klient"
                 Style="{StaticResource ButtonStyle}"
                 Command="{Binding ShowKlientCommand}"
