@@ -51,6 +51,8 @@
         <TextBox x:Name="klientTel" Text="{Binding Telephone, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="0" Margin="10,42,0,302" />
         <Label x:Name="klientZustatek" Content="{Binding Zustatek}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,146,0,202" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
         <Label x:Name="klientZustatekBlock" Content="{Binding ZustatekBlocked}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,190,0,158" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
+        <Label Content="Mesicni platby" HorizontalAlignment="Left" Margin="18,227,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Sitka Banner" FontSize="16"/>
+        <Label x:Name="klientMesicniPlatby" Content="{Binding MesicniPlatby}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,231,0,117" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
 
         <!-- Right side displaying Klient's accounts -->
         <ListView x:Name="accountsList"
@@ -74,7 +76,7 @@
         <Button Content="Zalozit Ucet" Style="{StaticResource ButtonStyle}" Command="{Binding ZalozitNovyCommand}" Margin="380,10,42,10" Grid.Row="2" Grid.Column="1" />
         <Button Content="Detail Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding DetailUctuCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="2" Grid.Column="1" Margin="135,10,287,10"  />
         <Button Content="Schuzky" Style="{StaticResource ButtonStyle}" Command="{Binding SchuzkaClickCommand}"  RenderTransformOrigin="-1.41,-0.667" Grid.Row="2" Grid.Column="1" Margin="258,10,165,10"  />
-        <Button Content="Ulozit Data" Style="{StaticResource ButtonStyle}" Command="{Binding SaveDataCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="1" Margin="186,242,7,92"  />
+        <Button Content="Ulozit Data" Style="{StaticResource ButtonStyle}" Command="{Binding SaveDataCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="1" Margin="183,275,10,59"  />
         <Button x:Name="btnExit"
             Style="{StaticResource ButtonStyle}"
             Content="Exit"

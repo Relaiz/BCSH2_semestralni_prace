@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="KlientTranzakceZUctuWindow" Height="400" Width="600">
     <Grid>
-        <ListView Name="TransactionsListView" ItemsSource="{Binding OperaceList}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <ListView Name="TransactionsListView" ItemsSource="{Binding OperaceList}" Margin="0,0,0,33">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Částka" DisplayMemberBinding="{Binding Castka}" Width="80"/>

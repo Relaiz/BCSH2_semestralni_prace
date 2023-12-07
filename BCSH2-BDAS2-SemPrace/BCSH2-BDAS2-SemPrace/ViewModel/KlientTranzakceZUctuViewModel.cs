@@ -4,6 +4,7 @@ using BCSH2_BDAS2_SemPrace.Model;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -28,7 +29,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     OnPropertyChanged(nameof(OperaceList));
                 }
             }
-        }
+        }        
 
         public KlientTranzakceZUctuViewModel(Ucet selectedUcet)
         {
@@ -77,7 +78,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 db.CloseConnection();
             }
-        }
+        }        
 
         private void ZavritOkno(object parameter)
         {
