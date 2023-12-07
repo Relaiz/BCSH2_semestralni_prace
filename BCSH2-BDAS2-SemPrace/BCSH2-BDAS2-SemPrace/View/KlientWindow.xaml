@@ -71,9 +71,9 @@
 
         <!-- Buttons for Klient's accounts -->
         <Button Content="Tranzakce Z Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding TranzakceZUctuCommand}" Margin="10,10,410,10" Grid.Row="2" Grid.Column="1" />
-        <Button Content="Steal Me Egor" Style="{StaticResource ButtonStyle}" Command="{Binding ZalozitNovyCommand}" Margin="10,299,182,35" Grid.Row="1" />
-        <Button Content="Detail Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding DetailUctuCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="2" Grid.Column="1" Margin="152,10,270,10"  />
-        <Button Content="Schuzky" Style="{StaticResource ButtonStyle}" Command="{Binding SchuzkaClickCommand}"  RenderTransformOrigin="-1.41,-0.667" Grid.Row="2" Grid.Column="1" Margin="295,10,128,10"  />
+        <Button Content="Zalozit Ucet" Style="{StaticResource ButtonStyle}" Command="{Binding ZalozitNovyCommand}" Margin="380,10,42,10" Grid.Row="2" Grid.Column="1" />
+        <Button Content="Detail Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding DetailUctuCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="2" Grid.Column="1" Margin="135,10,287,10"  />
+        <Button Content="Schuzky" Style="{StaticResource ButtonStyle}" Command="{Binding SchuzkaClickCommand}"  RenderTransformOrigin="-1.41,-0.667" Grid.Row="2" Grid.Column="1" Margin="258,10,165,10"  />
         <Button Content="Ulozit Data" Style="{StaticResource ButtonStyle}" Command="{Binding SaveDataCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="1" Margin="186,242,7,92"  />
         <Button x:Name="btnExit"
             Style="{StaticResource ButtonStyle}"

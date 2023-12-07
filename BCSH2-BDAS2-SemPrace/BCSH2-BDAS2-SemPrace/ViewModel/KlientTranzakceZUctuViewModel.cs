@@ -47,7 +47,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             try
             {
                 OracleCommand cmd = db.Connection.CreateCommand();
-                cmd.CommandText = "SELECT * FROM operace WHERE ucet_id_ucet = :ucetId";
+                cmd.CommandText = "SELECT * FROM operace_view WHERE ucet_id_ucet = :ucetId";
                 cmd.Parameters.Add("ucetId", OracleDbType.Int32).Value = _selectedUcet.IdUcet;
 
                 OracleDataReader reader = cmd.ExecuteReader();
@@ -60,10 +60,10 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                         DatumZacatka = reader.GetDateTime(reader.GetOrdinal("datum_zacatka")),
                         DatumOkonceni = reader.GetDateTime(reader.GetOrdinal("datum_okonceni")),
                         Nazev = reader.GetString(reader.GetOrdinal("nazev")),
-                        ZUctu = reader.GetInt32(reader.GetOrdinal("z_uctu")),
-                        DoUctu = reader.GetInt32(reader.GetOrdinal("do_uctu")),
+                        ZUctu = reader.GetInt64(reader.GetOrdinal("z_uctu_cislo")),
+                        DoUctu = reader.GetInt64(reader.GetOrdinal("do_uctu_cislo")),
                         IdUcet = reader.GetInt32(reader.GetOrdinal("ucet_id_ucet")),
-                        IdStatus = reader.GetInt32(reader.GetOrdinal("status_id_status"))
+                        PopisStatusu = reader.GetString(reader.GetOrdinal("status_popis")),
                     };
 
                     OperaceList.Add(operace);

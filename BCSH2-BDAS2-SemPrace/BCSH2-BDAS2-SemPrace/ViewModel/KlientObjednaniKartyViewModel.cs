@@ -122,22 +122,26 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     );
 
                     // Show a success message
-                    MessageBox.Show("New card ordered successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBoxResult result = MessageBox.Show("Karta objednana!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (result == MessageBoxResult.OK)
+                    {
+                        // Close the window
+                        Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive)?.Close();
+                    }
 
-                    // Close the window
-                    Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive)?.Close();
+
 
                 }
                 catch (Exception ex)
                 {
                     // Handle exceptions (e.g., log, show error message)
-                    MessageBox.Show($"Error ordering new card: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Chyba objednani nove karty: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
             {
                 // Show a message to the user that Platebni System and Card Type must be selected
-                MessageBox.Show("Please select Platebni System and Card Type", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Prosim, vyberte platebni system a typ karty!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

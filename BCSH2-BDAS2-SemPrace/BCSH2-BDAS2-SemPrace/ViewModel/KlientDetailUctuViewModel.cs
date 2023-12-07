@@ -163,25 +163,12 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             // Check if the selected Ucet is not null
             if (_currentUcet != null)
             {
-                // Create an instance of the KlientObjednaniKartyViewModel
-                KlientObjednaniKartyViewModel objednaniKartyViewModel = new KlientObjednaniKartyViewModel(_currentUcet, _currentKlient);
-
-                // Set the Name and Surname from the current Klient
-                objednaniKartyViewModel.KlientName = _currentKlient.Jmeno;
-                objednaniKartyViewModel.KlientSurname = _currentKlient.Prijmeni;
-
-                // Open the KlientObjednaniKartyWindow as a dialog
-                KlientObjednaniKartyWindow objednaniKartyWindow = new KlientObjednaniKartyWindow(_currentUcet, _currentKlient);
-                objednaniKartyWindow.DataContext = objednaniKartyViewModel;
-
-                // Subscribe to the CloseRequested event to handle the window closing
-                objednaniKartyViewModel.CloseRequested += (sender, args) => objednaniKartyWindow.Close();
+                KlientObjednaniKartyWindow objednaniKartyWindow = new KlientObjednaniKartyWindow(_currentUcet, _currentKlient);          
 
                 // Show the window as a dialog
                 objednaniKartyWindow.ShowDialog();
-
                 UpdateListKaret();
-            }
+            }            
         }
 
         private void ZavritOkno(object parameter)
@@ -224,12 +211,11 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         {
             if (SelectedKarta != null)
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to block this card?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                MessageBoxResult result = MessageBox.Show("Jste se jiste, ze chcete zablokovat tuto kartu?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    // User clicked Yes, proceed with blocking the card
-                    // Implement the logic to block the card, for example, by removing it from the database
+                    db.OpenConnection();
                     try
                     {
                         OracleCommand cmd = db.Connection.CreateCommand();
@@ -241,18 +227,19 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                         if (rowsAffected > 0)
                         {
                             // Card successfully blocked
-                            MessageBox.Show("Card successfully blocked.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show("Karta uspesne zablokovana.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                             // Optionally, refresh the list of cards
                             UpdateListKaret();
+                            db.CloseConnection();
                         }
                         else
                         {
-                            MessageBox.Show("Failed to block the card.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Nepodarilo se zablokovat kartu.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Error blocking the card: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show($"Chyba blokovani: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
@@ -261,7 +248,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private List<Karta> GetKartyForUcet(int ucetId)
         {
             List<Karta> karty = new List<Karta>();
-
+            db.OpenConnection();
             try
             {
                 OracleCommand cmd = db.Connection.CreateCommand();
@@ -300,9 +287,9 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             catch (Exception ex)
             {
                 // Handle exceptions (e.g., log, throw)
-                Console.WriteLine($"Error getting cards for Ucet: {ex.Message}");
+                Console.WriteLine($"Chyba dostanuti kart k uctu: {ex.Message}");
             }
-
+            db.CloseConnection();
             return karty;
         }
 
@@ -327,7 +314,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Chyba ulozeni dat: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive)?.Close();
         }
@@ -346,7 +333,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 ListKaret.Add(karta);
             }
-
             OnPropertyChanged(nameof(ListKaret));
         }
 

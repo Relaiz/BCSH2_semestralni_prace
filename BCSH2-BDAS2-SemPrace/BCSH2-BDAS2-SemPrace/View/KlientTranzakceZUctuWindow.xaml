@@ -10,9 +10,9 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Částka" DisplayMemberBinding="{Binding Castka}" Width="80"/>
-                    <GridViewColumn Header="Datum Začátku" DisplayMemberBinding="{Binding DatumZacatka}" Width="120"/>
-                    <GridViewColumn Header="Datum Konce" DisplayMemberBinding="{Binding DatumOkonceni}" Width="120"/>
-                    <GridViewColumn Header="Název" DisplayMemberBinding="{Binding Nazev}" Width="150"/>
+                    <GridViewColumn Header="Datum Začátku" DisplayMemberBinding="{Binding DatumZacatka}" Width="90"/>
+                    <GridViewColumn Header="Datum Konce" DisplayMemberBinding="{Binding DatumOkonceni}" Width="90"/>
+                    <GridViewColumn Header="Název" DisplayMemberBinding="{Binding Nazev}" Width="75"/>
                     <GridViewColumn Header="Z Účtu" DisplayMemberBinding="{Binding ZUctu}" Width="80"/>
                     <GridViewColumn Header="Do Účtu" DisplayMemberBinding="{Binding DoUctu}" Width="80"/>
                     <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="80"/>

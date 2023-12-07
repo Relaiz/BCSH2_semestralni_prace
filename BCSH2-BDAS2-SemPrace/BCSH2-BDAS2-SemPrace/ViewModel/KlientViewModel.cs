@@ -189,7 +189,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void TranzakceZUctu(object parameter)
         {
-            // Create a new instance of KlientZalozitUcetWindow
             KlientTranzakceZUctuWindow tranzakceWindow = new KlientTranzakceZUctuWindow(selectedUcet);
 
             // Show the window
@@ -199,7 +198,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void ZalozitNovy(object parameter)
         {
-            // Create a new instance of KlientZalozitUcetWindow
             KlientZalozitUcetWindow zalozitUcetWindow = new KlientZalozitUcetWindow(_currentKlient.IdKlient);
 
             // Show the window
@@ -254,37 +252,42 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             // Check if the selected Ucet is not null
             if (selectedUcet != null)
             {
-                // Create an instance of KlientDetailUctuViewModel
-                KlientDetailUctuViewModel detailUctuViewModel = new KlientDetailUctuViewModel(SelectedUcet, CurrentKlient);
-
-                // Create the KlientDetailUctuWindow
                 KlientDetailUctuWindow detailUctuWindow = new KlientDetailUctuWindow(selectedUcet, _currentKlient);
-                detailUctuWindow.DataContext = detailUctuViewModel;
 
-                // Show the window
                 detailUctuWindow.ShowDialog();
                 RefreshListView();
             }
             else
             {
                 // Show a message that no Ucet is selected
-                MessageBox.Show("Please select an Ucet", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Prosim, vyberte ucet", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void ExitKlient(object parameter)
         {
+            LogoutLog(_currentKlient);
             LoginWindow loginWindow = new LoginWindow();
 
             // Close the current window
-            Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-
-            // zamExit(CurrentZamestnanec);
-            // Закрываем текущее окно
-            currentWindow?.Close();
+            Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive).Close();            
 
             // Show the login window
             loginWindow.Show();
+        }
+
+        private void LogoutLog(Klient klient)
+        {
+            db.OpenConnection();
+            string username = $"{klient.Jmeno} {klient.Prijmeni}";
+            string tempQuery = "DELETE FROM successful_logins WHERE user_name = :username";
+
+            using (OracleCommand tempCmd = new OracleCommand(tempQuery, db.Connection))
+            {
+                tempCmd.Parameters.Add("user_name", OracleDbType.Varchar2).Value = username;
+                tempCmd.ExecuteNonQuery();
+            }
+            db.CloseConnection();
         }
 
         private void VytvoritPlatbu(object parameter)
@@ -345,7 +348,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error populating Ucty list for Klient: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Chyba populaci uctu pro klienta: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 // Return an empty ObservableCollection in case of an error
             }
             finally
@@ -375,7 +378,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     {
                         Jmeno = reader["jmeno"].ToString(),
                         Prijmeni = reader["prijmeni"].ToString(),
-                        // Add other properties as needed
                     };
 
                     return assignedZamestnanec;
@@ -385,7 +387,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error fetching Zamestnanec: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Chyba dostanuti Zamestnancu: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return null;
             }
             finally
@@ -417,7 +419,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Chyba ulozeni dat: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         

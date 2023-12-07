@@ -199,15 +199,11 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         {
             try
             {
-
                 db.OpenConnection();
 
                 string username = $"{klient.Jmeno} {klient.Prijmeni}";
 
                 LogSuccessfulLogin(username);
-
-
-
             }
 
             catch (Exception ex)
