@@ -36,6 +36,31 @@ namespace BCSH2_BDAS2_SemPrace.Model
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        private string _adresa;
+        public string Adresa
+        {
+            get { return _adresa; }
+            set
+            {
+                if (_adresa != value)
+                {
+                    _adresa = value;
+                    OnPropertyChanged(nameof(Adresa));
+                }
+            }
+        }
+
+        private List<Ucet> _ucty;
+        public List<Ucet> Ucty
+        {
+            get { return _ucty; }
+            set
+            {
+                _ucty = value;
+                OnPropertyChanged(nameof(Ucty));
+            }
+        }
+
 
         public int IdKlient
         {
@@ -115,20 +140,7 @@ namespace BCSH2_BDAS2_SemPrace.Model
             set { _idKlient2 = value; OnPropertyChanged(nameof(IdKlient2)); }
         }
 
-        private string _adresa;
-
-        public string Adresa
-        {
-            get { return _adresa; }
-            set
-            {
-                if (_adresa != value)
-                {
-                    _adresa = value;
-                    OnPropertyChanged(nameof(Adresa));
-                }
-            }
-        }
+        
 
         public static ObservableCollection<Klient> ConvertDataTableToObservableCollection(DataTable dataTable)
         {
@@ -150,9 +162,23 @@ namespace BCSH2_BDAS2_SemPrace.Model
                     OdesiFileIdFile = row["odesi_file_id_file"] as int?,
                     OdesFileIdKlient = row["odes_file_id_klient"] as int?,
                     IdFile1 = row["id_file1"] as int?,
-                    IdKlient2 = row["id_klient2"] as int?
-                    // Set other properties based on your Klient class
+                    IdKlient2 = row["id_klient2"] as int ?,
+                    Ucty = new List<Ucet>()                   
                 };
+
+                if (!string.IsNullOrEmpty(row["id_ucet"].ToString()))
+                {
+                    Ucet ucet = new Ucet
+                    {
+                        IdUcet = Convert.ToInt32(row["id_ucet"]),
+                        CisloUctu = Convert.ToInt32(row["cislo_uctu"]),
+                        Nazev = row["nazev_ucetu"].ToString(),
+                        StatusIdStatus = Convert.ToInt32(row["status_id_status"])
+                        
+                    };
+
+                    klient.Ucty.Add(ucet);
+                }
 
                 klientList.Add(klient);
             }

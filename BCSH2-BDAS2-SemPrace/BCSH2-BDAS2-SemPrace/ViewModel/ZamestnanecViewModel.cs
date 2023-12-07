@@ -13,30 +13,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace BCSH2_BDAS2_SemPrace.ViewModel
 {
     public class ZamestnanecViewModel : INotifyPropertyChanged
     {
-        private string _name;
-        private string _lastname;
+        private string _jmeno;
+        private string _prijmeni;
         private string _telCislo;
         private string _email;
         private string _pozice;
         private string _pobocka;
         private string _status;
-        private Zamestnanec _currentZamestnanec;
-        private ObservableCollection<Klient> listOfKlients;
+        private Zamestnanec _actualniZamestnanec;
+        private ObservableCollection<Klient> _listKlientu;
 
 
-        public ObservableCollection<Klient> ListOfKlients
+        public ObservableCollection<Klient> ListKlientu
         {
-            get { return listOfKlients; }
+            get { return _listKlientu; }
             set
             {
-                listOfKlients = value;
-                OnPropertyChanged(nameof(ListOfKlients));
+                _listKlientu = value;
+                OnPropertyChanged(nameof(ListKlientu));
             }
         }
         public string Pozice
@@ -88,80 +89,118 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
         }
 
-        public string Name
+        public string Jmeno
         {
-            get => _name;
+            get => _jmeno;
             set
             {
-                _name = value;
-                OnPropertyChanged(nameof(Name));
+                _jmeno = value;
+                OnPropertyChanged(nameof(Jmeno));
             }
         }
 
-        public string Lastname
+        public string Prijmeni
         {
-            get => _lastname;
+            get => _prijmeni;
             set
             {
-                _lastname = value;
-                OnPropertyChanged(nameof(Lastname));
+                _prijmeni = value;
+                OnPropertyChanged(nameof(Prijmeni));
             }
         }
 
-        public string FullName => $"{Name} {Lastname}";
+        public string CeleJmeno => $"{Jmeno} {Prijmeni}";
        
 
-        private Klient selectedKlient;
-        public Klient SelectedKlient
+        private Klient _actualmiKlient;
+        public Klient AktualniKlient
         {
-            get { return selectedKlient; }
+            get { return _actualmiKlient; }
             set
             {
-                selectedKlient = value;
-                OnPropertyChanged(nameof(SelectedKlient));
+                _actualmiKlient = value;
+                OnPropertyChanged(nameof(AktualniKlient));
             }
         }
-        public Zamestnanec CurrentZamestnanec
+        public Zamestnanec AktualniZamestnanec
         {
-            get { return _currentZamestnanec; }
+            get { return _actualniZamestnanec; }
             set
             {
-                _currentZamestnanec = value;
-                OnPropertyChanged(nameof(CurrentZamestnanec));
+                _actualniZamestnanec = value;
+                OnPropertyChanged(nameof(AktualniZamestnanec));
             }
         }
 
         public ICommand PridatKlientCommand { get; }
-        public ICommand ShowKlientCommand { get; }
+        public ICommand UkazKlientCommand { get; }
         public ICommand ExitZamestnanecCommand { get; }
+        public ICommand SmazatKlientCommand { get; }
+        public ICommand UpravitKlientCommand { get; }
+        public ICommand UpravitZamestnanecCommand { get; }
+
         private readonly OracleDatabaseService db;
 
         public ZamestnanecViewModel(Zamestnanec zamestnanec, String Pozice)
         {           
             db = new OracleDatabaseService();
             db.OpenConnection();
-            CurrentZamestnanec = zamestnanec;
-            GetPobockaName(CurrentZamestnanec.IdZamestnanec);
-            GetStatus(CurrentZamestnanec.IdZamestnanec);           
-            _name = zamestnanec.Jmeno;
-            _lastname = zamestnanec.Prijmeni;
+            AktualniZamestnanec = zamestnanec;
+            GetPobockaName(AktualniZamestnanec.IdZamestnanec);
+            GetStatus(AktualniZamestnanec.IdZamestnanec);           
+            _jmeno = zamestnanec.Jmeno;
+            _prijmeni = zamestnanec.Prijmeni;
             _email = zamestnanec.EmailZamestnanec;
             _telCislo = zamestnanec.TelefoniCislo;
             _pozice = Pozice;           
-            listOfKlients = new ObservableCollection<Klient>();
-            listOfKlients.Add(SelectedKlient);
+            _listKlientu = new ObservableCollection<Klient>();          
             PopulateKlientsList();           
             ExitZamestnanecCommand = new RelayCommand(Exit);
-            ShowKlientCommand = new RelayCommand(ShowKlient);
+            UkazKlientCommand = new RelayCommand(UkazKlient);
             PridatKlientCommand = new RelayCommand(PridatKlient);
+            SmazatKlientCommand = new RelayCommand(SmazatKlient);
+            //UpravitKlientCommandnew = new RelayCommand();
+            //UpravitZamestnanecCommand=new RelayCommand();
         }
         
+
+        private void SmazatKlient(object parameter)
+        {
+            if (AktualniKlient == null)
+            {
+                System.Windows.MessageBox.Show("Nejprve vyberte klienta ze seznamu.", "Upozorneni", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                try
+                {
+                    db.OpenConnection();
+                    using (OracleCommand command = new OracleCommand("SmazatKlient",db.Connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Add("p_jmeno", OracleDbType.Varchar2).Value =AktualniKlient.Jmeno;
+                        command.Parameters.Add("p_prijmeni", OracleDbType.Varchar2).Value =AktualniKlient.Prijmeni;
+                        command.ExecuteNonQuery();
+                        
+                    }
+                    PopulateKlientsList();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+                finally 
+                {
+                    db.CloseConnection();
+                }
+            }          
+        }
         private void PridatKlient(object parameter)
         {
 
-            ZamestnanecViewModel zamestnanecViewModel = new ZamestnanecViewModel(_currentZamestnanec,Pozice);
-            PridatKlientViewModel pridatKlientViewModel = new PridatKlientViewModel(CurrentZamestnanec,ListOfKlients);
-            PridatKlientWindow pridatKlientWindow = new PridatKlientWindow(CurrentZamestnanec,ListOfKlients);
+            ZamestnanecViewModel zamestnanecViewModel = new ZamestnanecViewModel(_actualniZamestnanec,Pozice);
+            PridatKlientViewModel pridatKlientViewModel = new PridatKlientViewModel(AktualniZamestnanec,ListKlientu);
+            PridatKlientWindow pridatKlientWindow = new PridatKlientWindow(AktualniZamestnanec,ListKlientu);
             pridatKlientWindow.DataContext = pridatKlientViewModel;
             pridatKlientWindow.Show();
             PopulateKlientsList();        
@@ -171,12 +210,12 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         }
 
-        private void ShowKlient(object parameter)
+        private void UkazKlient(object parameter)
         {
-            if (SelectedKlient != null)
+            if (AktualniKlient != null)
             {
-                string jmeno = SelectedKlient.Jmeno;
-                string prijmeni = SelectedKlient.Prijmeni;
+                string jmeno = AktualniKlient.Jmeno;
+                string prijmeni = AktualniKlient.Prijmeni;
                 Klient klient = db.GetKlientByJmenoPrijmeni(jmeno, prijmeni);
                 ShowKlientWindow showKlientWindow = new ShowKlientWindow(klient);
                 showKlientWindow.DataContext = klient;
@@ -188,8 +227,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private void Exit(object parameter)
         {
             LoginWindow loginWindow = new LoginWindow();
-            Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-            zamExit(CurrentZamestnanec);         
+            Window currentWindow = System.Windows.Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+            zamExit(AktualniZamestnanec);         
             currentWindow?.Close();           
             loginWindow.Show();
         }
@@ -213,7 +252,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 string username = $"{zamestnanec.Jmeno} {zamestnanec.Prijmeni}";
                 ExitSuccessfulLogin(username);
-        }
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
@@ -317,35 +356,17 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 db.CloseConnection();
             }
-        }
-
-        /*private void RefreshListView()
-        {
-            List<Ucet> ucty = GetUctyForKlient(currentKlient.IdKlient);
-            FetchTotalZustatkyForKlient();
-
-            // Clear the existing items
-            ListOfKlientUcty.Clear();
-
-            // Add new items using foreach
-            foreach (var ucet in ucty)
-            {
-                ListOfKlientUcty.Add(ucet);
-            }
-
-            OnPropertyChanged(nameof(ListOfKlientUcty));
-        }
-*/
+        }       
         private void PopulateKlientsList()
         {
 
-            List<Klient> clients = GetHierarchyInfoFromDatabase(CurrentZamestnanec.IdZamestnanec);
-            listOfKlients.Clear();
+            List<Klient> clients = GetHierarchyInfoFromDatabase(AktualniZamestnanec.IdZamestnanec);
+            _listKlientu.Clear();
             foreach (var klient in clients)
             {
-                ListOfKlients.Add(klient);
+                ListKlientu.Add(klient);
             }
-            OnPropertyChanged(nameof(ListOfKlients));
+            OnPropertyChanged(nameof(ListKlientu));
         }
     }
 }

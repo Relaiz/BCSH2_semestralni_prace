@@ -2,7 +2,12 @@ bankir
 
 email--johndoe@gmail.com
 password--password123
-+1 (555) 789-0123
+
+add Klient
+test@gmail.com
++1 (000) 000-0000
+
+
 
 admin
 

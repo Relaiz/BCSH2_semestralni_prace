@@ -33,7 +33,7 @@ namespace BCSH2_BDAS2_SemPrace.View
 
             DataContext = new ZamestnanecViewModel(zamestnanec, Pozice);
 
-            klientsList.ItemsSource = ((ZamestnanecViewModel)DataContext).ListOfKlients;
+            klientsList.ItemsSource = ((ZamestnanecViewModel)DataContext).ListKlientu;
         }    
     }
 }

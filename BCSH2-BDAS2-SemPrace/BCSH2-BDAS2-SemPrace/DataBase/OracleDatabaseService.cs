@@ -169,16 +169,33 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 {
                     klient = new Klient
                     {
-
-                        
-                        CisloPrukazu = Convert.ToInt32(reader["cislo_prukazu"]),
                         Jmeno = reader["jmeno"].ToString(),
-                        Prijmeni= reader["prijmeni"].ToString(),
-                        KlientEmail= reader["klient_email"].ToString(),
-                        Adresa = reader["adresa"].ToString()
+                        Prijmeni = reader["prijmeni"].ToString(),
+                        CisloPrukazu = Convert.ToInt32(reader["cislo_prukazu"]),
+                        KlientEmail = reader["klient_email"].ToString(),
+                        TelefoniCislo = reader["telefoni_cislo"].ToString(),
+                        Adresa = reader["adresa"].ToString(),
+                        Ucty = new List<Ucet>()
                     };
+                    string[] idUcetArray = reader["id_ucet"].ToString().Split(',');
+                    string[] cisloUctuArray = reader["cislo_uctu"].ToString().Split(',');
+                    string[] nazevUcetuArray = reader["nazev_ucetu"].ToString().Split(',');
+                    string[] statusPopisArray = reader["status_popis"].ToString().Split(',');
+
+                    for (int i = 0; i < idUcetArray.Length; i++)
+                    {
+                        Ucet ucet = new Ucet
+                        {
+                            IdUcet = Convert.ToInt32(idUcetArray[i].Trim()),
+                            CisloUctu = Convert.ToInt64(cisloUctuArray[i].Trim()),
+                            Nazev = nazevUcetuArray[i].Trim(),
+                            PopisStatus = statusPopisArray[i].Trim()
+                        };
+
+                        klient.Ucty.Add(ucet);
+                    }
                 }
-                  
+
                 reader.Close();
 
                 return klient;

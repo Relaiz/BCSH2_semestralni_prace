@@ -111,10 +111,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     if (result != DBNull.Value)
                     {
                         OracleDecimal oracleDecimal = (OracleDecimal)result;
-                        // Check if the OracleDecimal is not Null
                         if (!oracleDecimal.IsNull)
                         {
-                            // Convert OracleDecimal to Int32
                             id_adres = oracleDecimal.ToInt32();
                         }
                         else
