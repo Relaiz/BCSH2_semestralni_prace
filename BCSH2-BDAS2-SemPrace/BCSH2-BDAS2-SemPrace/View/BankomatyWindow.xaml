@@ -72,5 +72,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Zavrit"
+                Command="{Binding ZavritCommand}"
+                Style="{StaticResource ButtonStyle}"
+                Margin="422,15,251,15" />
     </Grid>
 </Window>

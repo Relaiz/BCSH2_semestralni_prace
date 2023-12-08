@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BCSH2_BDAS2_SemPrace.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,13 +16,14 @@ using System.Windows.Shapes;
 namespace BCSH2_BDAS2_SemPrace.View
 {
     /// <summary>
-    /// Логика взаимодействия для PobockyWindow.xaml
+    
     /// </summary>
-    public partial class PobockyWindow : Window
+    public partial class UpravitPobockuWindow : Window
     {
-        public PobockyWindow()
+        public  UpravitPobockuWindow(Pobocka pobocka)
         {
             InitializeComponent();
+            DataContext = pobocka;
         }
     }
 }

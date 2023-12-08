@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BCSH2_BDAS2_SemPrace.View"
         mc:Ignorable="d"
-        Title="PridatBankomatWindow" Height="400" Width="400"
+        Title="Pridat Bankomat" Height="400" Width="400"
         ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="ButtonStyle"

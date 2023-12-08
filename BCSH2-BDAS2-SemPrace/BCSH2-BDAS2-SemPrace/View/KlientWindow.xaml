@@ -162,14 +162,7 @@
                 RenderTransformOrigin="-0.251,0.057"
                 Grid.Row="2"
                 Grid.Column="1"
-                Margin="135,10,287,10" />
-        <Button Content="Schuzky"
-                Style="{StaticResource ButtonStyle}"
-                Command="{Binding SchuzkaClickCommand}"
-                RenderTransformOrigin="-1.41,-0.667"
-                Grid.Row="2"
-                Grid.Column="1"
-                Margin="258,10,165,10" />
+                Margin="194,10,228,10" />
         <Button Content="Ulozit Data"
                 Style="{StaticResource ButtonStyle}"
                 Command="{Binding SaveDataCommand}"
@@ -210,14 +203,6 @@
                 Command="{Binding VytvoritPlatbuCommand}"
                 Margin="179,10,0,10"
                 Grid.Row="2"
-                HorizontalAlignment="Left"
-                Width="108" />
-        <Button x:Name="btnZalozitShuzku"
-                Style="{StaticResource ButtonStyle}"
-                Content="Zchuzky"
-                Command="{Binding ShuzkyCommand}"
-                Margin="18,275,0,59"
-                Grid.Row="1"
                 HorizontalAlignment="Left"
                 Width="108" />
     </Grid>

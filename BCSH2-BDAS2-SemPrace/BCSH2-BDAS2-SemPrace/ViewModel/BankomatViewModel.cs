@@ -30,6 +30,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         public ICommand PridatBankomatCommand { get; private set; }
         public ICommand OdebratBankomaCommand { get; private set; }
         public ICommand UpravitBankomaCommand { get; private set; }
+        public ICommand ZavritCommand { get; private set; }
+        
         public Zamestnanec Admin { get; set; }
         public BankomatViewModel(Zamestnanec zamestnanec)
         {
@@ -42,6 +44,31 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             Admin = zamestnanec;
             PridatBankomatCommand = new RelayCommand(PridatBankomat);
             OdebratBankomaCommand = new RelayCommand(OdebratBankomat);
+            UpravitBankomaCommand= new RelayCommand(UpravitBankomat);
+            ZavritCommand = new RelayCommand(Zavrit);
+        }
+
+        private void Zavrit(object obj)
+        {
+            Window actualnWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+            if (actualnWindow != null)
+            {
+                actualnWindow.Close();
+            }
+        }
+
+        private void UpravitBankomat(object obj)
+        {
+            if (AktualniBankomat != null)
+            {
+                UpravitBankomatWindow upravitBankomatWindow = new UpravitBankomatWindow(AktualniBankomat);
+                UpravitBankomatModelView upravitBankomatModelView = new UpravitBankomatModelView(AktualniBankomat);
+                upravitBankomatWindow.DataContext = upravitBankomatModelView;
+                upravitBankomatWindow.ShowDialog();
+                listBankomatu.Clear();
+                LoadBankomaty();
+            }
+            
         }
 
         private void OdebratBankomat(object obj)
@@ -141,7 +168,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 db.OpenConnection();
                 Bankomat bankomat = null;
-                string query = "SELECT id_bankomat,nazev,bank_id_bank,id_status,popis, adresa FROM bankomat_details";
+                string query = "SELECT id_bankomat,nazev,bank_id_bank,id_status,popis,id_adres, adresa FROM bankomat_details";
 
                 using (OracleCommand cmd = new OracleCommand(query, db.Connection))
                 {
@@ -156,6 +183,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                                 IdBank = Convert.ToInt32(reader["bank_id_bank"]),
                                 IdStatus = Convert.ToInt32(reader["id_status"]),
                                 StatusPopis = reader["popis"].ToString(),
+                                IdAdresa = Convert.ToInt32(reader["id_adres"]),
                                 Adresa = reader["adresa"].ToString()
                             };
                             listBankomatu.Add(bankomat);

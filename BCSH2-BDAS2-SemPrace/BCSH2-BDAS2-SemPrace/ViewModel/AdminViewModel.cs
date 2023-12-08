@@ -233,7 +233,11 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void AddPobocka(object parameter)
         {
-            // Логика добавления филиала
+            PobockyWindov pobockyWindov = new PobockyWindov();
+            PobockyViewModel pobockyViewModel = new PobockyViewModel(Admin);
+            pobockyWindov.DataContext = pobockyViewModel;
+            pobockyWindov.ShowDialog();
+
         }
         private void ExitKlient(object parameter)
         {

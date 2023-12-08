@@ -92,13 +92,9 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void CloseLoginWindow()
         {
-            // Находим главное окно
             Window loginWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
-
-            // Проверяем, является ли текущее окно главным окном
             if (loginWindow != null)
             {
-                // Закрываем текущее окно входа
                 loginWindow.Close();
             }
         }
@@ -163,7 +159,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private void LogSuccessfulLogin(string username)
         {
             
-            // Вставить запись во временную таблицу
             string tempQuery = "INSERT INTO successful_logins (user_name, log_time) VALUES (:username, SYSTIMESTAMP)";
 
             using (OracleCommand tempCmd = new OracleCommand(tempQuery, db.Connection))
@@ -172,10 +167,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 tempCmd.ExecuteNonQuery();
             }
         }
-       
-        
-
-
         private void ZamLoginSuccess(Zamestnanec zamestnanec)
         {
 
@@ -273,7 +264,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
             if (result.Rows.Count > 0)
             {
-                // Assuming you have a Klient class with appropriate properties
                 Klient klient = new Klient
                 {
                     IdKlient = Convert.ToInt32(result.Rows[0]["id_klient"]),
@@ -284,14 +274,11 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     AdresaIdAdres = Convert.ToInt32(result.Rows[0]["adresa_id_adres"]),
                     BankIdBank = Convert.ToInt32(result.Rows[0]["bank_id_bank"]),
                     TelefoniCislo = result.Rows[0]["telefoni_cislo"].ToString(),
-                   // StatusIdStatus = Convert.ToInt32(result.Rows[0]["status_id_status"]),
                     ZameIdZamestnanec = Convert.ToInt32(result.Rows[0]["zame_id_zamestnanec"]),
-
                     OdesiFileIdFile = result.Rows[0]["odesi_file_id_file"] as int?,
                     OdesFileIdKlient = result.Rows[0]["odes_file_id_klient"] as int?,
                     IdFile1 = result.Rows[0]["id_file1"] as int?,
                     IdKlient2 = result.Rows[0]["id_klient2"] as int?
-                    // Set other properties based on your Zamestnanec class
                 };
 
                 return klient;
@@ -307,7 +294,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
             if (result.Rows.Count > 0)
             {
-                // Assuming you have a Zamestnanec class with appropriate properties
+
                 Zamestnanec zamestnanec = new Zamestnanec
                 {
                     IdZamestnanec = Convert.ToInt32(result.Rows[0]["id_zamestnanec"]),
@@ -326,7 +313,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     OdesilaniFileIdKlient = result.Rows[0]["odesilani_file_id_klient"] as int?,
                     IdFile1= result.Rows[0]["id_file1"] as int?,
                     IdKlient1= result.Rows[0]["id_klient1"] as int?
-                    // Set other properties based on your Zamestnanec class
                 };
 
                 return zamestnanec;
@@ -335,17 +321,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             return null;
         }
         private void HandleSuccessfulLoginZamestnanec(Zamestnanec loggedInUser)
-        {
-            // Здесь вы можете выполнить действия, связанные с успешным входом пользователя,
-            // например, открыть окно для пользователя или выполнить другие действия
-           
-
-           
+        {           
             Console.WriteLine($"User {loggedInUser.Jmeno} logged in successfully.");
-
-            // Пример: Открыть окно для пользователя
-
-            // Закрыть окно входа
             CloseLoginWindow();
         }
     }

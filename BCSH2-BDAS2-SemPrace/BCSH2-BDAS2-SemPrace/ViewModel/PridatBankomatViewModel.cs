@@ -41,7 +41,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             db = new OracleDatabaseService();
             db.OpenConnection();
             Admin = zamestnanec;
-            PridatBankomatCommand = new RelayCommand(PridatBanker);
+            PridatBankomatCommand = new RelayCommand(PridatBankomat);
             Statusy = new ObservableCollection<Status>();        
             LoadStatusy();
         }
@@ -166,7 +166,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
         }
 
-        private void PridatBanker(object parameter)
+        private void PridatBankomat(object parameter)
         {
             CheckOrAddAdresa();
             try
