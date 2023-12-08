@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B17E6950-EB7C-142C-3B19-B6A4113B7135" name="ADRESA">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>1F06CAC3-BB6F-83C5-94AB-677A60972974</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id adres" id="082D0CC1-719A-F2B2-D257-9DD50727C9A6">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>28B493D8-ACB5-C3C0-485D-C4DB0F7CA120</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ulice" id="5DFF5FED-4D70-54BF-DC12-DCE9C1A27061">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>13CAE211-2612-F028-D5EA-8DE010B0B26B</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mesto" id="D7DEDCB9-82AB-1274-DC56-DFE7B3005843">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>C38525A3-7EA5-F81A-AA89-8E31582BDF40</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cislo popisne" id="85623F7F-E498-F73F-962D-FB7A38D2B3AE">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>986A1F0E-CB67-DBDE-6E48-C1948D48585A</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="psc" id="3794262C-541A-1287-8013-21289E5E1119">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>31C844EA-5237-D41B-733D-523916A43B52</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="stat" id="0C65A8BA-B31E-327D-E241-6644F27D7C01">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>725DCE60-36DD-26C1-775A-95DC4A575972</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A6AA5848-3CF7-2F8B-6305-05F6C7052C82" name="ADRESA PK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>D7D24B1B-5CB6-6547-055B-602EB3EEC112</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>082D0CC1-719A-F2B2-D257-9DD50727C9A6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

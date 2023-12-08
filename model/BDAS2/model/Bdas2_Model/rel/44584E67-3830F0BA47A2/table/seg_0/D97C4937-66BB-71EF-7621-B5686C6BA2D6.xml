@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D97C4937-66BB-71EF-7621-B5686C6BA2D6" name="STATUS">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>5091E14C-56F2-EB64-1F5D-A1A92DC30BFE</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_status" id="FCE3F821-0622-FCA0-77B5-AB5C33DDD3A6">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>0FD19A55-0E97-4D4E-EB36-0EF6F5527906</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="popis" id="DA294D6B-A027-C00B-88F3-B90087CDEBEA">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>CE6F4C41-18AF-5BCA-9D4E-FCDDC026F3CA</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E91796FA-3261-6F8E-6A47-9A7AA1262F3A" name="STATUS_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>8F917EFD-DD49-7EAB-1E04-BC05EAAF745C</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCE3F821-0622-FCA0-77B5-AB5C33DDD3A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

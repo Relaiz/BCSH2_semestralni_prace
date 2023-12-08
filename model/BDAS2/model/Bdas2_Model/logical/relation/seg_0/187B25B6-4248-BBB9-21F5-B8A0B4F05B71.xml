@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Karta UCET FK" directorySegmentName="seg_0" id="187B25B6-4248-BBB9-21F5-B8A0B4F05B71">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-08 22:30:14 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>D3BA8E46-0E18-07C1-86DE-04FEFAE92F43</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>ma</nameOnSource>
+<nameOnTarget>patri</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>AAC834DD-B566-0332-14D7-CAB77987372A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>EDC5B98B-05DB-E06C-4D71-C5B238AB231B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

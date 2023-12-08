@@ -1,0 +1,194 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="54558471-A83D-62B0-B1FB-CF47C0B31441" name="ODESILANI_FILE">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>BD5DAFBB-AE4D-CB11-7A29-272C91D2A29D</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_file" id="30482480-DE5C-67D7-AC81-4D2C2C904D14">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>7664EB96-ED03-8931-0726-E715F4321699</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazev_file" id="3FF315CD-BC6E-4D1C-D229-377154B64936">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>91FC943A-C27C-13D1-280D-811B4CED26AA</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="file" id="4D999160-5A88-E70F-B550-E6104195FFE4">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>D6837656-09CE-F400-5238-C0D4BB533B8F</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prijemce_file" id="C5FBB0F9-07E6-0DC7-28BF-244B05BA9DD1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>47F005CD-F347-5E97-6FA9-997A37EB67CB</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="format_file" id="6AA0FB20-040B-34D7-9762-2544A1DF248D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>BDF15573-F307-1D4E-0411-978466D2A1F7</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ZAME_id_zamestnanec" id="EC8F6A62-5394-755F-84AD-E7DE5DEB1F2B">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>00BCDA1A-45C1-C0CB-BFEE-EF38FBF72573</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CB710877-EF82-F473-566F-C0773A7B2F2A" referredColumn="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
+</associations>
+</Column>
+<Column name="Klient_id_klient" id="99F3DFA7-0CB2-9467-D7B7-E9911CD6E5A9">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>4C90EC30-E788-AC4C-92E6-85F3C619DE89</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C05AC24C-48C4-EA3A-92D3-45DE714AF5CB" referredColumn="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
+</associations>
+</Column>
+<Column name="id_file1" id="CD4CBF4D-5DA4-BD94-B199-DE08A6DF39BE">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>68A77590-5153-B8E0-B78F-C8A91DD9156B</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_klient1" id="E093B3A9-30A8-77D5-8C7C-9DE7E4B4A886">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>99765648-0F77-C770-33D9-58601B624C44</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5F8A37E2-D66C-2B73-CA44-27D43D4B7C06" name="ODESILANI_FILE_PK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>EBB5D99F-748D-4E7D-2C81-0416ACA9A174</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30482480-DE5C-67D7-AC81-4D2C2C904D14"/>
+<colUsage columnID="99F3DFA7-0CB2-9467-D7B7-E9911CD6E5A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6A0FE71B-155A-1693-6C61-DB198CBA0853" name="ODESILANI_FILE__ID">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:38:10 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30482480-DE5C-67D7-AC81-4D2C2C904D14"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="19AB9746-3325-3621-FD0E-485A75136C0B" name="ODES_FILE_PRIJ_KLIE">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:38:10 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99F3DFA7-0CB2-9467-D7B7-E9911CD6E5A9"/>
+<colUsage columnID="C5FBB0F9-07E6-0DC7-28BF-244B05BA9DD1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E2DF32CF-72EE-5475-4107-3BD350CD9E9F" name="ODES_FILE_PRIJ_ZAM">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:38:10 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C5FBB0F9-07E6-0DC7-28BF-244B05BA9DD1"/>
+<colUsage columnID="EC8F6A62-5394-755F-84AD-E7DE5DEB1F2B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="264B7FE3-4B8F-18BD-071C-F8110E12EF83" name="ODESILANI_FILE_Klient_FK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>7C361E0F-4FAF-E327-FF5E-7776E7331EF1</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99F3DFA7-0CB2-9467-D7B7-E9911CD6E5A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="553AF1D9-67DC-48FF-A77D-9A5824E43792" name="ODES_FILE_ZAM_FK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>77404E39-15C3-547B-16E8-F07F27D010B0</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC8F6A62-5394-755F-84AD-E7DE5DEB1F2B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

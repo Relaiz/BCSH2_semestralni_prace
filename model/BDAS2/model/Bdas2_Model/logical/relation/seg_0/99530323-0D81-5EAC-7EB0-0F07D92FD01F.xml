@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="UCET Klient FK" directorySegmentName="seg_0" id="99530323-0D81-5EAC-7EB0-0F07D92FD01F">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-08 22:28:49 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>061DB3B5-3976-F274-B14D-0E62EBD6867F</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>380C6C86-03B1-510C-BB29-321ED73B9B1C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>AAC834DD-B566-0332-14D7-CAB77987372A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

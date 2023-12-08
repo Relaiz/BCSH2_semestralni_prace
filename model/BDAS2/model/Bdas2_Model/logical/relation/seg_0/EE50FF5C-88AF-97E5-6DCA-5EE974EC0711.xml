@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FILE_ZAMESTNANEC" directorySegmentName="seg_0" id="EE50FF5C-88AF-97E5-6DCA-5EE974EC0711">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>EBB5D99F-748D-4E7D-2C81-0416ACA9A174</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BD5DAFBB-AE4D-CB11-7A29-272C91D2A29D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BF3EDEF1-0743-8F11-2A37-3EA90AA99E74</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

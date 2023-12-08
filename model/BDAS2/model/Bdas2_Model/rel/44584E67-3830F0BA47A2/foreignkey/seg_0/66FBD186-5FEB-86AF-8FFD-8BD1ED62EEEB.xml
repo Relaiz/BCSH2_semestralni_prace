@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="66FBD186-5FEB-86AF-8FFD-8BD1ED62EEEB" containerWithKeyObject="A76D7B8A-CB2D-0B83-14A0-D33E3448943F" localFKIndex="2F73C28A-E3A3-4C20-2476-91BD60205DCB" name="ZAM_ODES_FILE_FK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>EE50FF5C-88AF-97E5-6DCA-5EE974EC0711</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<referredTableLongName>ODESILANI_FILE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>54558471-A83D-62B0-B1FB-CF47C0B31441</referredTableID>
+<keyObject>5F8A37E2-D66C-2B73-CA44-27D43D4B7C06</keyObject>
+<referredKeyID>5F8A37E2-D66C-2B73-CA44-27D43D4B7C06</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_file,Klient_id_klient</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

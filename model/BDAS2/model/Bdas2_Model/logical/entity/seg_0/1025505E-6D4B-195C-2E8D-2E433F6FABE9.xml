@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1025505E-6D4B-195C-2E8D-2E433F6FABE9" name="POBOCKA">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-08 21:35:56 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id pobocka" id="F9C68AF4-FB03-DA60-C581-F1F4C9DA6FDC">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-08 21:36:03 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazev" id="237F9F83-38EE-635B-012C-4BB1822B7A18">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-08 21:36:34 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Bank id bank" id="E0BEC736-06D3-E5EC-4C21-45CB8B2EA5BB">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-12 14:39:49 UTC</createdTime>
+<generatorID>2C29B580-6632-8488-4CAD-F1DCA0E14666</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>DF81F5D7-9A4A-3F76-5919-97DEF1CD693D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefoni cislo" id="4FA27E86-47F2-7BF8-D4BD-567ABD2599BE">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-20 21:21:16 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id status" id="8B74CE46-6477-A850-AD78-C6B35A44D1B2">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-23 21:06:42 UTC</createdTime>
+<generatorID>3ABE5479-AB9A-7BDD-FC77-0AEF526E24FE</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>0FD19A55-0E97-4D4E-EB36-0EF6F5527906</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id zamestnanec" id="3F97EF78-D86A-65A0-66A2-540E269562F7">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:14:51 UTC</createdTime>
+<generatorID>875341B0-23DA-4F99-647B-CF8660F0EFE1</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>8C93F709-BA40-5F61-2F81-243B7BAC8762</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ADRESA id adres" id="35287D8D-85DB-F0BF-C54A-18CC325EDDF1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>E121F511-85CF-6A96-D84D-94B2A9566FDD</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>082D0CC1-719A-F2B2-D257-9DD50727C9A6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_file" id="AB3FE2FD-45F5-5670-D87E-C6EF9D48D91B">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>875341B0-23DA-4F99-647B-CF8660F0EFE1</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>B88ED4CA-BA65-6119-1818-8D3146DA24AC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id klient" id="DDAD9CA0-2B8A-1E6B-B8E1-6A6929917D48">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>875341B0-23DA-4F99-647B-CF8660F0EFE1</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>9168FB0A-FA73-FA73-7562-D4EA3B17EFFD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4F654F15-8199-2A8F-6C56-363B8C5430B6" name="POBOCKA PK">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-14 09:09:46 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F9C68AF4-FB03-DA60-C581-F1F4C9DA6FDC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

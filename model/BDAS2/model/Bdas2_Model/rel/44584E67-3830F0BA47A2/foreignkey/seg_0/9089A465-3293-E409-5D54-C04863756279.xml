@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9089A465-3293-E409-5D54-C04863756279" containerWithKeyObject="734ED027-8F5A-BB02-C40E-BC51F3788DEB" localFKIndex="6274CF57-0A4A-EDBA-66F9-C8024BA968A5" name="KLIENT_SCHUZKA_SCHUZKA_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3FEF4F5A-A7AC-702F-FC66-FD1D9D8BDC88</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<referredTableLongName>SCHUZKA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4E62C16C-8FF2-44CF-9423-3542876B30C3</referredTableID>
+<keyObject>C2165BDF-5088-F67B-46AE-990813F5CEF2</keyObject>
+<referredKeyID>C2165BDF-5088-F67B-46AE-990813F5CEF2</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_schuzka</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

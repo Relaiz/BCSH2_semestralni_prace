@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Klient_ADRESA_FK" directorySegmentName="seg_0" id="EABA136B-20EC-3DFA-2711-0B4CB6C1A48D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>089B61BF-67BD-63B6-95B2-7E90A1513B2D</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>A6AA5848-3CF7-2F8B-6305-05F6C7052C82</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B17E6950-EB7C-142C-3B19-B6A4113B7135</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>380C6C86-03B1-510C-BB29-321ED73B9B1C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

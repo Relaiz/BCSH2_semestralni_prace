@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F783DF70-B17D-22A6-1D1C-AEE9D8AB0234" containerWithKeyObject="5A0AD7D8-CAB4-D230-E474-D13CC5BAECB2" localFKIndex="DEB91B6B-A70A-3A51-2958-430304BCE25C" name="POBOCKA_STATUS_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3ABE5479-AB9A-7BDD-FC77-0AEF526E24FE</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<referredTableLongName>STATUS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D97C4937-66BB-71EF-7621-B5686C6BA2D6</referredTableID>
+<keyObject>E91796FA-3261-6F8E-6A47-9A7AA1262F3A</keyObject>
+<referredKeyID>E91796FA-3261-6F8E-6A47-9A7AA1262F3A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_status</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

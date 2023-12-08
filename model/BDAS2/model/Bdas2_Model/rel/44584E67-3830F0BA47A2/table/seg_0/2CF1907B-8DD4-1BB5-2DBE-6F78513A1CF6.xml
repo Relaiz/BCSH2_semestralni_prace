@@ -1,0 +1,163 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2CF1907B-8DD4-1BB5-2DBE-6F78513A1CF6" name="BANKOMAT">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>B4A71E2F-6D49-864D-099D-6F19965F374C</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_bankomat" id="CF29E2C9-6360-BA87-969E-4B26EFCFDB6D">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>ADE02185-9972-9C39-3DBC-A9381A41F3CF</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADRESA_id_adres" id="2EA9FEC3-65A4-BEEB-F9E3-AEED92505C7B">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>9DA76AC8-F860-3ECA-303C-F19D1B958FA2</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B9131321-6DF9-5A7E-1BD2-AF740F224480" referredColumn="28B493D8-ACB5-C3C0-485D-C4DB0F7CA120"/>
+</associations>
+</Column>
+<Column name="Bank_id_bank" id="58DB8265-97A2-D34E-F6B5-8B27F31A5B59">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>173E7ED8-2A73-4D10-D480-67E7E4256C6B</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="765EA6D2-7233-6493-B648-A7BF46E31062" referredColumn="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B"/>
+</associations>
+</Column>
+<Column name="nazev" id="41113A35-4523-4228-99BB-B238BD17AC51">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>BD917E4E-BC1D-5E30-2F18-B0CB5AA0E4BD</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS_id_status" id="C76D8EF3-DDF1-83EF-829B-27014CA067B6">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>DCBA9071-20C3-8F51-1BDD-CE824B8E0252</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7AF39CB2-0F12-5876-00C5-DB569567785B" referredColumn="FCE3F821-0622-FCA0-77B5-AB5C33DDD3A6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7123CD9D-A81B-4A2D-31AB-D2BFAE5E54BE" name="BANKOMAT_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>086EFCDA-85C2-1C55-27F4-8B49E9562BB8</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF29E2C9-6360-BA87-969E-4B26EFCFDB6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EE7289DD-B3EB-33DD-2FB3-F0695E8DF55A" name="BANKOMAT__IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:39:52 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF29E2C9-6360-BA87-969E-4B26EFCFDB6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="030F4EA9-9952-C772-F669-C21F699E8E01" name="BANKOMAT_ADRES_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:40:42 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EA9FEC3-65A4-BEEB-F9E3-AEED92505C7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="52BBE9DD-FF19-D398-B9AD-1D0E8B9265B6" name="BANKOMAT_STATUS_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:40:42 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C76D8EF3-DDF1-83EF-829B-27014CA067B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E33B9046-F25A-B19F-415D-1B2F0A0C38BD" name="BANKOMAT_BANK_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-21 14:44:15 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="58DB8265-97A2-D34E-F6B5-8B27F31A5B59"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8299A4E6-F1FD-E11E-9EC7-2029975C6DB0" name="BANKOMAT_Bank_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>11E69B56-1AB2-92E8-A1AA-69EA078FC613</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="58DB8265-97A2-D34E-F6B5-8B27F31A5B59"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="134BE70A-3D7F-2A8D-2036-132EC6C3832A" name="BANKOMAT_ADRESA_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>64DF5D5E-6F11-7260-41B9-0FBE1DA2CFCB</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EA9FEC3-65A4-BEEB-F9E3-AEED92505C7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6B73925D-4F0A-20E6-9903-6AA51140C4CE" name="BANKOMAT_STATUS_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3AD819A1-C1EF-F714-1676-B0C707712F66</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C76D8EF3-DDF1-83EF-829B-27014CA067B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

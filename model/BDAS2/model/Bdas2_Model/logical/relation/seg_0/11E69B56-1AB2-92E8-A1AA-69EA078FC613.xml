@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="BANKOMAT Bank FK" directorySegmentName="seg_0" id="11E69B56-1AB2-92E8-A1AA-69EA078FC613">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-12 14:42:36 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>A1F65F9C-7F81-8D21-E977-D6D83EF8DDAF</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>ma</nameOnSource>
+<nameOnTarget>patri</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C7F1F2EB-05BF-EC42-0377-7539E318A87F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B4A71E2F-6D49-864D-099D-6F19965F374C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,195 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="380C6C86-03B1-510C-BB29-321ED73B9B1C" name="Klient">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 16:06:58 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id klient" id="E7BCE587-C48A-B40C-FBA5-002C09C64B55">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:03:50 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cislo prukazu" id="EEBB0472-9515-53C5-FB34-76938A5A3D48">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:22:49 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="jmeno" id="14FA396D-907E-0838-CD00-07868228DE57">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:04:05 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prijmeni" id="694C05B6-E4C4-7DDD-29AC-E2B1D1C644C1">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:05:11 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Bank id bank" id="88FD54C1-07FA-2100-A8F7-5ABB471BAAC0">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-12 14:59:38 UTC</createdTime>
+<generatorID>3E7BE679-F787-DDD4-3B89-7F749394C361</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>DF81F5D7-9A4A-3F76-5919-97DEF1CD693D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefoni cislo" id="F8B20B5D-872E-D02B-E375-DB14AC2EE130">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-20 21:22:53 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id zamestnanec" id="974A5CD6-1F4A-60C0-4E4E-1788963D7995">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-20 21:27:24 UTC</createdTime>
+<generatorID>337EA408-304F-AE37-631E-CAB47813E971</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>8C93F709-BA40-5F61-2F81-243B7BAC8762</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ADRESA id adres" id="5FF09DDC-A0ED-31CA-219C-B7A7AEEB6B68">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>EABA136B-20EC-3DFA-2711-0B4CB6C1A48D</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>082D0CC1-719A-F2B2-D257-9DD50727C9A6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_file" id="AA9C5744-5FCC-F566-A62B-1DEB1B887C4D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:35:47 UTC</createdTime>
+<generatorID>BC89B4C4-0238-B41A-50FD-3B9FF4AA57F9</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>7664EB96-ED03-8931-0726-E715F4321699</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id klient1" id="9B728705-3B73-ACE9-3BE3-E7A9F0E44692">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:35:59 UTC</createdTime>
+<generatorID>BC89B4C4-0238-B41A-50FD-3B9FF4AA57F9</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>4C90EC30-E788-AC4C-92E6-85F3C619DE89</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_file1" id="C350962D-26C3-C1D4-4479-F388C12A9119">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>337EA408-304F-AE37-631E-CAB47813E971</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>B88ED4CA-BA65-6119-1818-8D3146DA24AC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id klient2" id="9987C4BE-DABD-8560-9C71-A6A007B68033">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>337EA408-304F-AE37-631E-CAB47813E971</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>9168FB0A-FA73-FA73-7562-D4EA3B17EFFD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="061DB3B5-3976-F274-B14D-0E62EBD6867F" name="Klient PK">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 19:04:03 UTC</createdTime>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E7BCE587-C48A-B40C-FBA5-002C09C64B55</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

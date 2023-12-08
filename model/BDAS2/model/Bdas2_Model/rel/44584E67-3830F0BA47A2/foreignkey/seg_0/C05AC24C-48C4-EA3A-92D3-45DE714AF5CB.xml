@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C05AC24C-48C4-EA3A-92D3-45DE714AF5CB" containerWithKeyObject="54558471-A83D-62B0-B1FB-CF47C0B31441" localFKIndex="264B7FE3-4B8F-18BD-071C-F8110E12EF83" name="ODESILANI_FILE_Klient_FK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>7C361E0F-4FAF-E327-FF5E-7776E7331EF1</generatorID>
+<ownerDesignName>Bdas2_Model</ownerDesignName>
+<referredTableLongName>Klient</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1B23F924-30A4-A87E-AF20-C00E82C8D1DF</referredTableID>
+<keyObject>DB981330-BDBB-CEAB-D1FF-4C56246B247D</keyObject>
+<referredKeyID>DB981330-BDBB-CEAB-D1FF-4C56246B247D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_klient</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
