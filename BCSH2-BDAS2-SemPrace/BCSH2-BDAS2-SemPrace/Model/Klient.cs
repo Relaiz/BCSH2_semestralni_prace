@@ -26,6 +26,7 @@ namespace BCSH2_BDAS2_SemPrace.Model
         private int? _idFile1;
         private int? _idKlient2;
 
+
         
         public Klient SelectedKlient { get; set; }
         public ICommand EditKlientCommand { get; set; }

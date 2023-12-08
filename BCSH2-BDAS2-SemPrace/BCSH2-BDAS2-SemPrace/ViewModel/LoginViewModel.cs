@@ -116,7 +116,11 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     Zamestnanec zamestnanec = GetZamestnanecFromLogin(userEmail);
 
                     SuccessfulLoginZamestnanec?.Invoke(zamestnanec);
-                    newUserWindow = new ZamestnanecWindow(zamestnanec,zamestnanecInfo.Pozice);
+
+                    newUserWindow = new AdminWindow(zamestnanec);
+                    AdminViewModel adminViewModel = new AdminViewModel(zamestnanec);
+                    newUserWindow.DataContext= adminViewModel;
+                    ZamLoginSuccess(zamestnanec);
                     CloseLoginWindow();
                     newUserWindow.Show();
                 }

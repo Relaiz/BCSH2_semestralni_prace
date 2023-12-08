@@ -31,9 +31,23 @@ namespace BCSH2_BDAS2_SemPrace.Model
         private string _adresa;
         private string _popisStatus;
         private string _nazevPobocky;
+        private string _pracePozice;
         public ObservableCollection<Klient> ManagedZamestnancy { get; set; }
         public Zamestnanec SelectedZamestnanec { get; set; }
         public ICommand EditZamestnanecCommand { get; set; }
+
+        public string PoziceNazev
+        {
+            get { return _pracePozice; }
+            set
+            {
+                if (_pracePozice != value)
+                {
+                    _pracePozice = value;
+                    OnPropertyChanged(nameof(PoziceNazev));
+                }
+            }
+        }
 
         public string NazevPobocky
         {

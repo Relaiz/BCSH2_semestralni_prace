@@ -10,19 +10,30 @@
         Width="850"
         ResizeMode="NoResize">
     <Window.Resources>
-        <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="Margin" Value="0,10,0,0" />
-            <Setter Property="Padding" Value="10" />
-            <Setter Property="Background" Value="LightBlue" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="BorderBrush" Value="DarkBlue" />
-            <Setter Property="BorderThickness" Value="2" />
+        <Style x:Key="ButtonStyle"
+               TargetType="Button">
+            <Setter Property="Margin"
+                    Value="0,10,0,0" />
+            <Setter Property="Padding"
+                    Value="10" />
+            <Setter Property="Background"
+                    Value="LightBlue" />
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="BorderBrush"
+                    Value="DarkBlue" />
+            <Setter Property="BorderThickness"
+                    Value="2" />
         </Style>
-        <Style x:Key="LabelStyle" TargetType="Label">
-            <Setter Property="Background" Value="#FFE2DDDD" />
+        <Style x:Key="LabelStyle"
+               TargetType="Label">
+            <Setter Property="Background"
+                    Value="#FFE2DDDD" />
         </Style>
-        <Style x:Key="ListBoxStyle" TargetType="ListBox">
+        <Style x:Key="ListBoxStyle"
+               TargetType="ListBox">
             <!-- Define styles as needed -->
         </Style>
     </Window.Resources>
@@ -44,57 +55,170 @@
         </Grid.ColumnDefinitions>
 
         <!-- Left side displaying Klient data -->
-        <TextBox x:Name="NameTextBox" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="10,10,165,338" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
-        <TextBox x:Name="SurnameTextBox" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" Margin="175,10,0,338" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
-        <Label x:Name="klientEmail" Content="{Binding Email}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,77,0,270" />
-        <Label x:Name="klientZamestnanec" Content="{Binding Zamestnanec}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="10,109,0,240" />
-        <TextBox x:Name="klientTel" Text="{Binding Telephone, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="0" Margin="10,42,0,302" />
-        <Label x:Name="klientZustatek" Content="{Binding Zustatek}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,146,0,202" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
-        <Label x:Name="klientZustatekBlock" Content="{Binding ZustatekBlocked}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,190,0,158" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
-        <Label Content="Mesicni platby" HorizontalAlignment="Left" Margin="18,227,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Sitka Banner" FontSize="16"/>
-        <Label x:Name="klientMesicniPlatby" Content="{Binding MesicniPlatby}" Style="{StaticResource LabelStyle}" Grid.Row="1" Grid.Column="0" Margin="179,231,0,117" FontSize="18" FontFamily="SimSun" FontWeight="Bold" />
+        <TextBox x:Name="NameTextBox"
+                 Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                 Margin="10,10,165,338"
+                 Grid.Row="0"
+                 Grid.Column="0"
+                 Grid.RowSpan="2" />
+        <TextBox x:Name="SurnameTextBox"
+                 Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}"
+                 Margin="175,10,0,338"
+                 Grid.Row="0"
+                 Grid.Column="0"
+                 Grid.RowSpan="2" />
+        <Label x:Name="klientEmail"
+               Content="{Binding Email}"
+               Style="{StaticResource LabelStyle}"
+               Grid.Row="1"
+               Grid.Column="0"
+               Margin="10,77,0,270" />
+        <Label x:Name="klientZamestnanec"
+               Content="{Binding Zamestnanec}"
+               Style="{StaticResource LabelStyle}"
+               Grid.Row="1"
+               Grid.Column="0"
+               Margin="10,109,0,240" />
+        <TextBox x:Name="klientTel"
+                 Text="{Binding Telephone, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="1"
+                 Grid.Column="0"
+                 Margin="10,42,0,302" />
+        <Label x:Name="klientZustatek"
+               Content="{Binding Zustatek}"
+               Style="{StaticResource LabelStyle}"
+               Grid.Row="1"
+               Grid.Column="0"
+               Margin="179,146,0,202"
+               FontSize="18"
+               FontFamily="SimSun"
+               FontWeight="Bold" />
+        <Label x:Name="klientZustatekBlock"
+               Content="{Binding ZustatekBlocked}"
+               Style="{StaticResource LabelStyle}"
+               Grid.Row="1"
+               Grid.Column="0"
+               Margin="179,190,0,158"
+               FontSize="18"
+               FontFamily="SimSun"
+               FontWeight="Bold" />
+        <Label Content="Mesicni platby"
+               HorizontalAlignment="Left"
+               Margin="18,227,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               FontFamily="Sitka Banner"
+               FontSize="16" />
+        <Label x:Name="klientMesicniPlatby"
+               Content="{Binding MesicniPlatby}"
+               Style="{StaticResource LabelStyle}"
+               Grid.Row="1"
+               Grid.Column="0"
+               Margin="179,231,0,117"
+               FontSize="18"
+               FontFamily="SimSun"
+               FontWeight="Bold" />
 
         <!-- Right side displaying Klient's accounts -->
         <ListView x:Name="accountsList"
-                 ItemsSource="{Binding ListOfKlientUcty}"
-                 SelectedItem="{Binding SelectedUcet}"
-                 Style="{StaticResource ListBoxStyle}" Margin="10,42,10,10" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                  ItemsSource="{Binding ListOfKlientUcty}"
+                  SelectedItem="{Binding SelectedUcet}"
+                  Style="{StaticResource ListBoxStyle}"
+                  Margin="10,42,10,10"
+                  Grid.Row="0"
+                  Grid.Column="1"
+                  Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Ucet" Width="150"
+                    <GridViewColumn Header="Ucet"
+                                    Width="150"
                                     DisplayMemberBinding="{Binding CisloUctu}" />
-                    <GridViewColumn Header="Nazev" Width="100"
+                    <GridViewColumn Header="Nazev"
+                                    Width="100"
                                     DisplayMemberBinding="{Binding Nazev}" />
-                    <GridViewColumn Header="Status" Width="100"
+                    <GridViewColumn Header="Status"
+                                    Width="100"
                                     DisplayMemberBinding="{Binding PopisStatus}" />
                 </GridView>
             </ListView.View>
         </ListView>
 
         <!-- Buttons for Klient's accounts -->
-        <Button Content="Tranzakce Z Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding TranzakceZUctuCommand}" Margin="10,10,410,10" Grid.Row="2" Grid.Column="1" />
-        <Button Content="Zalozit Ucet" Style="{StaticResource ButtonStyle}" Command="{Binding ZalozitNovyCommand}" Margin="380,10,42,10" Grid.Row="2" Grid.Column="1" />
-        <Button Content="Detail Uctu" Style="{StaticResource ButtonStyle}" Command="{Binding DetailUctuCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="2" Grid.Column="1" Margin="135,10,287,10"  />
-        <Button Content="Schuzky" Style="{StaticResource ButtonStyle}" Command="{Binding SchuzkaClickCommand}"  RenderTransformOrigin="-1.41,-0.667" Grid.Row="2" Grid.Column="1" Margin="258,10,165,10"  />
-        <Button Content="Ulozit Data" Style="{StaticResource ButtonStyle}" Command="{Binding SaveDataCommand}"  RenderTransformOrigin="-0.251,0.057" Grid.Row="1" Margin="183,275,10,59"  />
+        <Button Content="Tranzakce Z Uctu"
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding TranzakceZUctuCommand}"
+                Margin="10,10,410,10"
+                Grid.Row="2"
+                Grid.Column="1" />
+        <Button Content="Zalozit Ucet"
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding ZalozitNovyCommand}"
+                Margin="380,10,42,10"
+                Grid.Row="2"
+                Grid.Column="1" />
+        <Button Content="Detail Uctu"
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding DetailUctuCommand}"
+                RenderTransformOrigin="-0.251,0.057"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="135,10,287,10" />
+        <Button Content="Schuzky"
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding SchuzkaClickCommand}"
+                RenderTransformOrigin="-1.41,-0.667"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="258,10,165,10" />
+        <Button Content="Ulozit Data"
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding SaveDataCommand}"
+                RenderTransformOrigin="-0.251,0.057"
+                Grid.Row="1"
+                Margin="183,275,10,59" />
         <Button x:Name="btnExit"
-            Style="{StaticResource ButtonStyle}"
-            Content="Exit"
-            Command="{Binding ExitKlientCommand}"
-            Margin="10,10,0,10"
-            Grid.Row="2"
-            HorizontalAlignment="Left"
-            Width="108" />
-        <Label x:Name="klientAccNumsTitle" Content="Vaše účty:" Style="{StaticResource LabelStyle}" Margin="10,10,10,338" Grid.Row="1" Grid.Column="1" />
-        <Label Content="Zustatek" HorizontalAlignment="Left" Margin="105,144,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Sitka Banner" FontSize="16"/>
-        <Label Content="Blokovane Prostredky" HorizontalAlignment="Left" Margin="18,188,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Sitka Banner" FontSize="16"/>
+                Style="{StaticResource ButtonStyle}"
+                Content="Exit"
+                Command="{Binding ExitKlientCommand}"
+                Margin="10,10,0,10"
+                Grid.Row="2"
+                HorizontalAlignment="Left"
+                Width="108" />
+        <Label x:Name="klientAccNumsTitle"
+               Content="Vaše účty:"
+               Style="{StaticResource LabelStyle}"
+               Margin="10,10,10,338"
+               Grid.Row="1"
+               Grid.Column="1" />
+        <Label Content="Zustatek"
+               HorizontalAlignment="Left"
+               Margin="105,144,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               FontFamily="Sitka Banner"
+               FontSize="16" />
+        <Label Content="Blokovane Prostredky"
+               HorizontalAlignment="Left"
+               Margin="18,188,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               FontFamily="Sitka Banner"
+               FontSize="16" />
         <Button x:Name="btnPlatba"
-            Style="{StaticResource ButtonStyle}"
-            Content="Nova Platba"
-            Command="{Binding VytvoritPlatbuCommand}"
-            Margin="179,10,0,10"
-            Grid.Row="2"
-            HorizontalAlignment="Left"
-            Width="108" />
+                Style="{StaticResource ButtonStyle}"
+                Content="Nova Platba"
+                Command="{Binding VytvoritPlatbuCommand}"
+                Margin="179,10,0,10"
+                Grid.Row="2"
+                HorizontalAlignment="Left"
+                Width="108" />
+        <Button x:Name="btnZalozitShuzku"
+                Style="{StaticResource ButtonStyle}"
+                Content="Zchuzky"
+                Command="{Binding ShuzkyCommand}"
+                Margin="18,275,0,59"
+                Grid.Row="1"
+                HorizontalAlignment="Left"
+                Width="108" />
     </Grid>
 </Window>

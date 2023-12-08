@@ -132,3 +132,27 @@ C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCS
 C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PridatKlientWindow.g.cs
 C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PridatKlientWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\AdminWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\ManazerWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PridatBankerWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PridatSchuzkuWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\ShowBankerWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\SjednatShuzkuWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\UpravitBankerWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\UpravitKlientWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\UpravitZamestnanecWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\AdminWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\ManazerWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PridatBankerWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PridatSchuzkuWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\ShowBankerWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\SjednatShuzkuWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\UpravitBankerWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\UpravitKlientWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\UpravitZamestnanecWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PobockyWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PobockyWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PridatBankomatWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\PridatBankomatWindow.baml
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\BankomatyWindow.g.cs
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\View\BankomatyWindow.baml

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Types;
 using System.Security.Cryptography;
 using BCSH2_BDAS2_SemPrace.Model;
+using System.Windows.Controls;
 
 namespace BCSH2_BDAS2_SemPrace.DataBase
 {
@@ -154,7 +155,7 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
             OpenConnection();
 
             OracleCommand cmd = Connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM MANAZER_BANKER_VIEW WHERE jmeno = :jmeno AND prijmeni = :prijmeni";
+            cmd.CommandText = "SELECT * FROM MANAZER_ZAMESTNANEC_VIEW WHERE jmeno = :jmeno AND prijmeni = :prijmeni";
             cmd.Parameters.Add("jmeno", OracleDbType.Varchar2).Value = jmeno;
             cmd.Parameters.Add("prijmeni", OracleDbType.Varchar2).Value = prijmeni;
             try
@@ -173,7 +174,8 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                         EmailZamestnanec=reader["email_zamestnanec"].ToString(),
                         NazevPobocky = reader["nazev_pobocky"].ToString(),
                         StatusPopis = reader["status_popis"].ToString(),
-                        Adresa = reader["adresa"].ToString(),
+                        PoziceNazev = reader["pozice_nazev"].ToString(),
+                        Adresa = reader["adresa"].ToString(),                     
                     };
                 }
                 reader.Close();

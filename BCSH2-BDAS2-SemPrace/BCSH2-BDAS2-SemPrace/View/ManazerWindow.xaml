@@ -77,7 +77,7 @@
             </ListView.View>
         </ListView>
         <Label x:Name="bankiri"
-               Content="Seznam bankeru"
+               Content="Seznam Zamestance"
                Margin="10,33,320,0"
                Background="#FFE2DDDD"
                Grid.Column="1"
@@ -110,18 +110,18 @@
 
         <Button x:Name="btnAdd"
                 Style="{StaticResource ButtonStyle}"
-                Content="Pridat Bankere"
+                Content="Pridat Zamestnance"
                 Command="{Binding PridatBankereCommand}"
-                Margin="141,12,0,22"
+                Margin="123,12,0,22"
                 Grid.Row="3"
                 Grid.Column="1"
                 HorizontalAlignment="Left"
-                Width="108" />
+                Width="138" />
         <Button x:Name="delBankere"
                 Style="{StaticResource ButtonStyle}"
                 Command="{Binding SmazatBankereCommand}"
-                Content="Smazat Bankera"
-                Margin="28,12,0,22"
+                Content="Smazat Zamestance"
+                Margin="10,12,0,22"
                 Grid.Row="3"
                 RenderTransformOrigin="0.418,0.897"
                 Grid.Column="1"
@@ -129,9 +129,9 @@
                 Width="108" />
         <Button x:Name="upravitBankere"
                 Style="{StaticResource ButtonStyle}"
-                Content="Upravit Bankere"
+                Content="Upravit Zamestance"
                 Command="{Binding UpravitBankereCommand}"
-                Margin="254,12,0,22"
+                Margin="270,12,0,22"
                 Grid.Row="3"
                 Grid.Column="1"
                 HorizontalAlignment="Left"
@@ -152,10 +152,10 @@
                 HorizontalAlignment="Center"
                 Width="108" />
         <Button x:Name="showKlient"
-                Content="Ukaz Bankere"
+                Content="Ukaz Zamestance"
                 Style="{StaticResource ButtonStyle}"
                 Command="{Binding UkazBankereCommand}"
-                Margin="379,12,0,22"
+                Margin="409,12,0,22"
                 Grid.Row="3"
                 Grid.Column="1"
                 HorizontalAlignment="Left"

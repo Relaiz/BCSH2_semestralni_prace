@@ -35,6 +35,8 @@
                            FontWeight="Bold" />
                 <TextBlock Text="Status:"
                            FontWeight="Bold" />
+                <TextBlock Text="Pozice:"
+                           FontWeight="Bold" />
                 <TextBlock Text="Adresa:"
                            FontWeight="Bold" />
             </StackPanel>
@@ -46,6 +48,7 @@
                 <TextBlock Text="{Binding EmailZamestnanec}" />
                 <TextBlock Text="{Binding NazevPobocky}" />
                 <TextBlock Text="{Binding StatusPopis}" />
+                <TextBlock Text="{Binding PoziceNazev}" />
                 <TextBlock Text="{Binding Adresa}" />
             </StackPanel>
         </StackPanel>

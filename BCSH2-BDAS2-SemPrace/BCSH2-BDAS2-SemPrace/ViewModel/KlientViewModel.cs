@@ -172,7 +172,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 OnPropertyChanged(nameof(MesicniPlatby));
             }
         }
-
+        public ICommand SjednatShuzkuCommand { get; }
         public ICommand TranzakceZUctuCommand { get; }
         public ICommand ZalozitNovyCommand { get; }
         public ICommand DetailUctuCommand { get; }
@@ -197,6 +197,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             ExitKlientCommand = new RelayCommand(ExitKlient);
             VytvoritPlatbuCommand = new RelayCommand(VytvoritPlatbu);
             SaveDataCommand = new RelayCommand(SaveData);
+            //SjednatShuzkuCommand = new RelayCommand(SjednatShuzku);
         }
 
         private void TranzakceZUctu(object parameter)

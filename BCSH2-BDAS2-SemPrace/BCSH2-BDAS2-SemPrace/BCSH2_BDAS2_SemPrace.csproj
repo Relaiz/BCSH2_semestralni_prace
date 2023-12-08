@@ -114,7 +114,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Model\PracePozice.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModel\AdminViewModel.cs" />
+    <Compile Include="ViewModel\BankomatViewModel.cs" />
     <Compile Include="ViewModel\KlientDetailUctuViewModel.cs" />
     <Compile Include="ViewModel\KlientObjednaniKartyViewModel.cs" />
     <Compile Include="ViewModel\KlientPlatbaViewModel.cs" />
@@ -124,13 +127,22 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ManazerViewModel.cs" />
     <Compile Include="ViewModel\PridatBankerViewModel.cs" />
+    <Compile Include="ViewModel\PridatBankomatViewModel.cs" />
     <Compile Include="ViewModel\PridatKlientViewModel.cs" />
+    <Compile Include="ViewModel\PridatSchuzkuViewModel.cs" />
     <Compile Include="ViewModel\ShowKlientViewModel.cs" />
+    <Compile Include="ViewModel\SjednatShuzkuViewModel.cs" />
     <Compile Include="ViewModel\UpravitBankerViewModel.cs" />
     <Compile Include="ViewModel\UpravitZamestnanecViewModel.cs" />
     <Compile Include="ViewModel\UpravitKlientViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ZamestnanecViewModel.cs" />
+    <Compile Include="View\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BankomatyWindow.xaml.cs">
+      <DependentUpon>BankomatyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditKlientWindow.xaml.cs">
       <DependentUpon>EditKlientWindow.xaml</DependentUpon>
     </Compile>
@@ -158,18 +170,30 @@
     <Compile Include="View\ManazerWindow.xaml.cs">
       <DependentUpon>ManazerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PobockyWindow.xaml.cs">
+      <DependentUpon>PobockyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PridatBankerWindow.xaml.cs">
       <DependentUpon>PridatBankerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PridatBankomatWindow.xaml.cs">
+      <DependentUpon>PridatBankomatWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PridatKlientWindow.xaml.cs">
       <DependentUpon>PridatKlientWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ShowBankerViewModel.cs" />
+    <Compile Include="View\PridatSchuzkuWindow.xaml.cs">
+      <DependentUpon>PridatSchuzkuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ShowBankerViewModel.cs" />
     <Compile Include="View\ShowBankerWindow.xaml.cs">
       <DependentUpon>ShowBankerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ShowKlientWindow.xaml.cs">
       <DependentUpon>ShowKlientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SjednatShuzkuWindow.xaml.cs">
+      <DependentUpon>SjednatShuzkuWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpravitBankerWindow.xaml.cs">
       <DependentUpon>UpravitBankerWindow.xaml</DependentUpon>
@@ -196,6 +220,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BankomatyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EditKlientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,11 +264,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PobockyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PridatBankerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PridatBankomatWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PridatKlientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PridatSchuzkuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,6 +289,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ShowKlientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SjednatShuzkuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

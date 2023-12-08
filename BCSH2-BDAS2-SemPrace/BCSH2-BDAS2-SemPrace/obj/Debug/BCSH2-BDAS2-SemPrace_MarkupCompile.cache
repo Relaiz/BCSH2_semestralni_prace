@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\obj\Debug\
 BCSH2_BDAS2_SemPrace
 none
 false
 DEBUG;TRACE
-C:\Users\wille\Documents\GitHub\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\App.xaml
-121654751453
+D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\App.xaml
+24-594407605
 
-46-455913704
-34-508379105
-MainWindow.xaml;View\EditKlientWindow.xaml;View\KlientDetailUctuWindow.xaml;View\KlientObjednaniKartyWindow.xaml;View\KlientPlatbaWindow.xaml;View\KlientTranzakceZUctuWindow.xaml;View\KlientWindow.xaml;View\KlientZalozitUcetWindow.xaml;View\LoginWindow.xaml;View\PridatKlientWindow.xaml;View\ShowKlientWindow.xaml;View\ZamestnanecWindow.xaml;
+70114100890
+34220344143
+MainWindow.xaml;View\AdminWindow.xaml;View\BankomatyWindow.xaml;View\EditKlientWindow.xaml;View\KlientDetailUctuWindow.xaml;View\KlientObjednaniKartyWindow.xaml;View\KlientPlatbaWindow.xaml;View\KlientTranzakceZUctuWindow.xaml;View\KlientWindow.xaml;View\KlientZalozitUcetWindow.xaml;View\LoginWindow.xaml;View\ManazerWindow.xaml;View\PobockyWindow.xaml;View\PridatBankerWindow.xaml;View\PridatBankomatWindow.xaml;View\PridatKlientWindow.xaml;View\PridatSchuzkuWindow.xaml;View\ShowBankerWindow.xaml;View\ShowKlientWindow.xaml;View\SjednatShuzkuWindow.xaml;View\UpravitBankerWindow.xaml;View\UpravitKlientWindow.xaml;View\UpravitZamestnanecWindow.xaml;View\ZamestnanecWindow.xaml;
 
 False
 

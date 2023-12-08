@@ -41,8 +41,10 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private Zamestnanec _novyBanker;
         public int SelectedStatusId { get; set; }
         public int SelectedPobockaId { get; set; }
+        public int SelectedPoziceId { get; set; }
         public ObservableCollection<Status> Statusy { get; set; }
         public ObservableCollection<Pobocka> Pobocky { get; set; }
+        public ObservableCollection<PracePozice> PoziceList { get; set; }
         public ICommand PridatBankerCommand { get; }
         public PridatBankerViewModel(Zamestnanec zamestnanec)
         {
@@ -55,8 +57,10 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             PridatBankerCommand = new RelayCommand(PridatBanker);
             Statusy = new ObservableCollection<Status>();
             Pobocky = new ObservableCollection<Pobocka>();
+            PoziceList = new ObservableCollection<PracePozice>();
             LoadStatusy();
             LoadPobocky();
+            LoadPozice();
 
         }
         public string Heslo
@@ -210,6 +214,40 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     _telCislo = value;
                     OnPropertyChanged(TelCislo);
                 }
+            }
+        }
+        private void LoadPozice()
+        {
+            try
+            {
+                db.OpenConnection();
+
+                string query = "SELECT id_pozice, pozice_nazev FROM prace_pozice";
+
+                using (OracleCommand cmd = new OracleCommand(query, db.Connection))
+                {
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            PracePozice pozice = new PracePozice
+                            {
+                                IdPozice = Convert.ToInt32(reader["id_pozice"]),
+                                Pozice = reader["pozice_nazev"].ToString()
+                            };
+
+                            PoziceList.Add(pozice);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection();
             }
         }
         private void LoadStatusy()
@@ -423,38 +461,49 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     cmd.Parameters.Add("p_status_id_status", OracleDbType.Int32).Value = SelectedStatusId;
                     cmd.Parameters.Add("p_zamestnanec_id_zamestnanec1", OracleDbType.Int32).Value = AsignManazer.IdZamestnanec;
                     cmd.Parameters.Add("p_pobocka_id_pobocka", OracleDbType.Int32).Value = SelectedPobockaId;
-                    cmd.Parameters.Add("p_prace_pozice_id_pozice", OracleDbType.Int32).Value = 1;
+                    cmd.Parameters.Add("p_prace_pozice_id_pozice", OracleDbType.Int32).Value = SelectedPoziceId;
                     cmd.Parameters.Add("p_email_zamestnanec", OracleDbType.Varchar2).Value = Email;
                     OracleParameter idBankerParam = new OracleParameter("p_id_zamestnanec", OracleDbType.Int32);
                     idBankerParam.Direction = ParameterDirection.Output;
                     cmd.Parameters.Add(idBankerParam);
                     cmd.ExecuteNonQuery();
+                    
                     if (cmd.Parameters["p_id_zamestnanec"].Value != DBNull.Value)
                     {
                         OracleDecimal oracleDecimal = (OracleDecimal)cmd.Parameters["p_id_zamestnanec"].Value;
                         idBanker = oracleDecimal.ToInt32();
-                        Zamestnanec banker = new Zamestnanec
-                        {
-                            IdZamestnanec = idBanker,
-                            Jmeno = Jmeno,
-                            Prijmeni = Prijmeni,
-                            Mzda = Mzda.HasValue ? (decimal)Mzda.Value : 0m,
-                            TelefoniCislo = TelCislo,
-                            AdresaIdAdres = _adresa.IdAdres,
-                            BankIdBank = AsignManazer.BankIdBank,
-                            StatusIdStatus = SelectedStatusId,
-                            ZamestnanecIdZamestnanec1 = AsignManazer.IdZamestnanec,
-                            PobockaIdPobocka = SelectedPobockaId,
-                            PracePoziceIdPozice = 1,
-                            EmailZamestnanec = Email,
-                            OdesilaniFileIdFile = null,
-                            OdesilaniFileIdKlient = null,
-                            IdFile1 = null,
-                            IdKlient1 = null                   
-                        };
+                        
+                           Zamestnanec  banker = new Zamestnanec
+                            {
+                                IdZamestnanec = idBanker,
+                                Jmeno = Jmeno,
+                                Prijmeni = Prijmeni,
+                                Mzda = Mzda.HasValue ? (decimal)Mzda.Value : 0m,
+                                TelefoniCislo = TelCislo,
+                                AdresaIdAdres = _adresa.IdAdres,
+                                BankIdBank = AsignManazer.BankIdBank,
+                                StatusIdStatus = SelectedStatusId,
+                                ZamestnanecIdZamestnanec1 = AsignManazer.IdZamestnanec,
+                                PobockaIdPobocka = SelectedPobockaId,
+                                PracePoziceIdPozice = SelectedPoziceId,
+                                EmailZamestnanec = Email,
+                                OdesilaniFileIdFile = null,
+                                OdesilaniFileIdKlient = null,
+                                IdFile1 = null,
+                                IdKlient1 = null
+                            };
+                                                  
                         NovyBanker = banker;
                         InsertLoginData();
-                        System.Windows.MessageBox.Show("Banker vytvořen!", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBoxResult result = System.Windows.MessageBox.Show("Zamestnanec vytvořen!", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);                      
+                        if (result == MessageBoxResult.OK)
+                        {
+                            Window actualnWindow = System.Windows.Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+                            if (actualnWindow != null)
+                            {
+                                actualnWindow.Close();
+                            }
+                        }
                     }                      
                 }
             }

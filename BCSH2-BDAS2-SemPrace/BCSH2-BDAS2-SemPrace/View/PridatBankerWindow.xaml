@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BCSH2_BDAS2_SemPrace.View"
         Title="Pridani Noveho Bankira"
-        Height="700"
+        Height="750"
         Width="600"
         ResizeMode="NoResize">
     
@@ -48,7 +48,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Label Content="Jmeno:"
@@ -163,10 +163,19 @@
                   SelectedValuePath="IdPobocka"
                   SelectedValue="{Binding SelectedPobockaId}"
                   Margin="150,0,10,0" />
-
+        <Label Content="Pozice:"
+               Grid.Row="13"
+               Margin="10" />
+        <ComboBox x:Name="comboBoxPozice"
+                  Grid.Row="13"
+                  ItemsSource="{Binding PoziceList}"
+                  DisplayMemberPath="Pozice"
+                  SelectedValuePath="IdPozice"
+                  SelectedValue="{Binding SelectedPoziceId}"
+                  Margin="150,0,10,0" />
         <Button Content="Pridat"
                 Style="{StaticResource ButtonStyle}"
-                Grid.Row="13"
+                Grid.Row="14"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Margin="219,0,0,0"
