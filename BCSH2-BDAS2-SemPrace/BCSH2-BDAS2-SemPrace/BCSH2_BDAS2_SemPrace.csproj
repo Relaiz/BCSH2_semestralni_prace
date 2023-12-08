@@ -115,11 +115,13 @@
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Model\PracePozice.cs" />
+    <Compile Include="Model\SouborOdesilani.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModel\AdminViewModel.cs" />
     <Compile Include="ViewModel\BankomatViewModel.cs" />
     <Compile Include="ViewModel\KlientDetailUctuViewModel.cs" />
     <Compile Include="ViewModel\KlientObjednaniKartyViewModel.cs" />
+    <Compile Include="ViewModel\KlientOdesilaniSouboruViewModel.cs" />
     <Compile Include="ViewModel\KlientPlatbaViewModel.cs" />
     <Compile Include="ViewModel\KlientTranzakceZUctuViewModel.cs" />
     <Compile Include="ViewModel\KlientViewModel.cs" />
@@ -167,6 +169,9 @@
     </Compile>
     <Compile Include="View\KlientObjednaniKartyWindow.xaml.cs">
       <DependentUpon>KlientObjednaniKartyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KlientOdesilaniSouboruWindow.xaml.cs">
+      <DependentUpon>KlientOdesilaniSouboruWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\KlientPlatbaWindow.xaml.cs">
       <DependentUpon>KlientPlatbaWindow.xaml</DependentUpon>
@@ -266,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\KlientObjednaniKartyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KlientOdesilaniSouboruWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

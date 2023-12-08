@@ -1,0 +1,31 @@
+﻿<Window x:Class="BCSH2_BDAS2_SemPrace.View.KlientOdesilaniSouboruWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BCSH2_BDAS2_SemPrace.View"
+        mc:Ignorable="d"
+        Title="KlientOdesilaniSouboruWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Button Content="Zobrazit" Command="{Binding OpenFileCommand}" Margin="5"/>
+                <Button Content="Přidat" Command="{Binding UploadFileCommand}" Margin="5"/>
+                <Button Content="Změnit" Command="{Binding EditFileCommand}" Margin="5"/>
+                <Button Content="Odebrat" Command="{Binding DeleteFileCommand}" Margin="5"/>
+            </StackPanel>
+
+            <!-- ListView -->
+            <ListView ItemsSource="{Binding Files}" SelectedItem="{Binding SelectedFile}" Margin="0,10">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Název" DisplayMemberBinding="{Binding NazevFile}" Width="150"/>
+                        <GridViewColumn Header="Formát" DisplayMemberBinding="{Binding FormatFile}" Width="100"/>
+                        <GridViewColumn Header="Příjemce" DisplayMemberBinding="{Binding PrijemceFile}" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>
