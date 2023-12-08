@@ -10,10 +10,11 @@ public class Operace : INotifyPropertyChanged
     private DateTime _datumZacatka;
     private DateTime _datumOkonceni;
     private string _nazev;
-    private int _zUctu;
-    private int _doUctu;
+    private long _zUctu;
+    private long _doUctu;
     private int _idUcet;
     private int _idStatus;
+    private string _popisStatusu;
 
     public int IdOperace
     {
@@ -45,13 +46,13 @@ public class Operace : INotifyPropertyChanged
         set { _nazev = value; OnPropertyChanged(nameof(Nazev)); }
     }
 
-    public int ZUctu
+    public long ZUctu
     {
         get { return _zUctu; }
         set { _zUctu = value; OnPropertyChanged(nameof(ZUctu)); }
     }
 
-    public int DoUctu
+    public long DoUctu
     {
         get { return _doUctu; }
         set { _doUctu = value; OnPropertyChanged(nameof(DoUctu)); }
@@ -67,6 +68,12 @@ public class Operace : INotifyPropertyChanged
     {
         get { return _idStatus; }
         set { _idStatus = value; OnPropertyChanged(nameof(IdStatus)); }
+    }
+
+    public string PopisStatusu
+    {
+        get { return _popisStatusu; }
+        set { _popisStatusu = value; OnPropertyChanged(nameof(PopisStatusu)); }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;

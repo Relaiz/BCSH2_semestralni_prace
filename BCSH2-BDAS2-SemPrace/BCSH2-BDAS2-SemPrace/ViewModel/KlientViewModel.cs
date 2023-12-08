@@ -162,6 +162,17 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
         }
 
+        private int _mesicniPlatby;
+        public int MesicniPlatby
+        {
+            get { return _mesicniPlatby; }
+            set
+            {
+                _mesicniPlatby = value;
+                OnPropertyChanged(nameof(MesicniPlatby));
+            }
+        }
+
         public ICommand TranzakceZUctuCommand { get; }
         public ICommand ZalozitNovyCommand { get; }
         public ICommand DetailUctuCommand { get; }
@@ -178,6 +189,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             listOfKlientUcty = new ObservableCollection<Ucet>();
             RefreshListView();
             FetchAndPopulateData();
+            GetMonthlySpendings();
             // Initialize your commands
             TranzakceZUctuCommand = new RelayCommand(TranzakceZUctu);
             ZalozitNovyCommand = new RelayCommand(ZalozitNovy);
@@ -189,7 +201,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void TranzakceZUctu(object parameter)
         {
-            // Create a new instance of KlientZalozitUcetWindow
             KlientTranzakceZUctuWindow tranzakceWindow = new KlientTranzakceZUctuWindow(selectedUcet);
 
             // Show the window
@@ -199,7 +210,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
 
         private void ZalozitNovy(object parameter)
         {
-            // Create a new instance of KlientZalozitUcetWindow
             KlientZalozitUcetWindow zalozitUcetWindow = new KlientZalozitUcetWindow(_currentKlient.IdKlient);
 
             // Show the window
@@ -254,50 +264,52 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             // Check if the selected Ucet is not null
             if (selectedUcet != null)
             {
-                // Create an instance of KlientDetailUctuViewModel
-                KlientDetailUctuViewModel detailUctuViewModel = new KlientDetailUctuViewModel(SelectedUcet, CurrentKlient);
-
-                // Create the KlientDetailUctuWindow
                 KlientDetailUctuWindow detailUctuWindow = new KlientDetailUctuWindow(selectedUcet, _currentKlient);
-                detailUctuWindow.DataContext = detailUctuViewModel;
 
-                // Show the window
                 detailUctuWindow.ShowDialog();
                 RefreshListView();
             }
             else
             {
                 // Show a message that no Ucet is selected
-                MessageBox.Show("Please select an Ucet", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Prosim, vyberte ucet", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void ExitKlient(object parameter)
         {
+            LogoutLog(_currentKlient);
             LoginWindow loginWindow = new LoginWindow();
 
             // Close the current window
-            Window currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-
-            // zamExit(CurrentZamestnanec);
-            // Закрываем текущее окно
-            currentWindow?.Close();
+            Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive).Close();            
 
             // Show the login window
             loginWindow.Show();
         }
 
+        private void LogoutLog(Klient klient)
+        {
+            db.OpenConnection();
+            string username = $"{klient.Jmeno} {klient.Prijmeni}";
+            string tempQuery = "DELETE FROM successful_logins WHERE user_name = :username";
+
+            using (OracleCommand tempCmd = new OracleCommand(tempQuery, db.Connection))
+            {
+                tempCmd.Parameters.Add("user_name", OracleDbType.Varchar2).Value = username;
+                tempCmd.ExecuteNonQuery();
+            }
+            db.CloseConnection();
+        }
+
         private void VytvoritPlatbu(object parameter)
         {
-            // Create an instance of KlientPlatbaViewModel
-            KlientPlatbaViewModel klientPlatbaViewModel = new KlientPlatbaViewModel(_currentKlient, listOfKlientUcty);
-
             // Create the KlientPlatbaWindow
             KlientPlatbaWindow klientPlatbaWindow = new KlientPlatbaWindow(_currentKlient, listOfKlientUcty);
-            klientPlatbaWindow.DataContext = klientPlatbaViewModel;
 
             // Show the window as a dialog
             klientPlatbaWindow.ShowDialog();
+            GetMonthlySpendings();
         }
 
         private List<Ucet> GetUctyForKlient(int klientId)
@@ -345,7 +357,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error populating Ucty list for Klient: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Chyba populaci uctu pro klienta: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 // Return an empty ObservableCollection in case of an error
             }
             finally
@@ -358,7 +370,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         }
         private Zamestnanec GetAssignedZamestnanec(int zameId)
         {
-            OracleDatabaseService db = new OracleDatabaseService();
             db.OpenConnection();
 
             OracleCommand cmd = db.Connection.CreateCommand();
@@ -375,7 +386,6 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     {
                         Jmeno = reader["jmeno"].ToString(),
                         Prijmeni = reader["prijmeni"].ToString(),
-                        // Add other properties as needed
                     };
 
                     return assignedZamestnanec;
@@ -385,12 +395,48 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error fetching Zamestnanec: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Chyba dostanuti Zamestnancu: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return null;
             }
             finally
             {
                 // Close the database connection
+                db.CloseConnection();
+            }
+        }
+
+        private void GetMonthlySpendings()
+        {
+            db.OpenConnection();
+            try
+            {
+                OracleCommand cmd = db.Connection.CreateCommand();
+                cmd.CommandText = "BEGIN :result := GetClientOperationsSum(:p_client_id); END;";
+                cmd.CommandType = CommandType.Text;
+
+                // Define the OUT parameter for the function result
+                OracleParameter resultParam = new OracleParameter("result", OracleDbType.Decimal);
+                resultParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(resultParam);
+
+                // Set the value for the input parameter
+                cmd.Parameters.Add("p_client_id", OracleDbType.Int32).Value = _currentKlient.IdKlient;
+
+                // Execute the command
+                cmd.ExecuteNonQuery();
+
+                decimal resultDecimal = ((OracleDecimal)resultParam.Value).Value;
+                int result = Convert.ToInt32(resultDecimal);
+
+                // Now you can use 'result' as needed, for example, assign it to MesicniPlatby
+                MesicniPlatby = result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error getting monthly spendings: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
                 db.CloseConnection();
             }
         }
@@ -417,7 +463,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Chyba ulozeni dat: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         
@@ -438,6 +484,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         {
             List<Ucet> ucty = GetUctyForKlient(_currentKlient.IdKlient);
             FetchTotalZustatkyForKlient();
+            GetMonthlySpendings();
 
             // Clear the existing items
             ListOfKlientUcty.Clear();

@@ -47,8 +47,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 {
                     db.CreateNewAccount(klientId, NewAccountName);
 
-
-                    MessageBoxResult result = MessageBox.Show("New account created successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBoxResult result = MessageBox.Show("Novy ucet uspesne zalozen.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                     if (result == MessageBoxResult.OK)
                     {
                         // Закрываем текущее окно
@@ -62,12 +61,12 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                     }
                 }
                 else {
-                    MessageBox.Show("Name can't be empty!");
+                    MessageBox.Show("Nazev uctu nesmi byt prazdny!");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error creating new account: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Chyba zalozeni uctu: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
