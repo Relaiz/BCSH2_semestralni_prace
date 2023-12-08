@@ -168,6 +168,15 @@
                 Grid.Row="1"
                 HorizontalAlignment="Center"
                 Width="108" />
+        <Button x:Name="katalog"
+                Content="katalog"
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding CatalogCommand}"
+                Margin="516,20,0,30"
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Width="44" />
 
     </Grid>
 

@@ -1,0 +1,23 @@
+﻿<Window x:Class="BCSH2_BDAS2_SemPrace.View.CatalogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BCSH2_BDAS2_SemPrace.View"
+        mc:Ignorable="d"
+        Title="Catalog" Height="450" Width="800">
+    <Grid>
+        <ListView Name="catalogListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Owner"
+                                    DisplayMemberBinding="{Binding Owner}" />
+                    <GridViewColumn Header="Object Name"
+                                    DisplayMemberBinding="{Binding ObjectName}" />
+                    <GridViewColumn Header="Object Type"
+                                    DisplayMemberBinding="{Binding ObjectType}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

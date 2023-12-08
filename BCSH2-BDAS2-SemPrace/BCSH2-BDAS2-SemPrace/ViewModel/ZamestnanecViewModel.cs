@@ -141,6 +141,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         public ICommand SmazatKlientCommand { get; }
         public ICommand UpravitKlientCommand { get; }
         public ICommand UpravitZamestnanecCommand { get; }
+        public ICommand CatalogCommand { get; }
 
         private readonly OracleDatabaseService db;
 
@@ -164,6 +165,42 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             SmazatKlientCommand = new RelayCommand(SmazatKlient);
             UpravitKlientCommand = new RelayCommand(UpravitKlient);
             UpravitZamestnanecCommand=new RelayCommand(UpravitZamestnanec);
+            CatalogCommand = new RelayCommand(CatalogShow);
+        }
+
+        public void CatalogShow(object parametr)
+        {
+            try
+            {
+                
+                // Ваш запрос для получения данных из представления
+                string query = "SELECT OWNER, OBJECT_NAME, OBJECT_TYPE FROM YOUR_VIEW_NAME";
+
+                // Выполните запрос к базе данных
+                DataTable resultTable = db.ExecuteQuery(query);
+
+                // Преобразуйте DataTable в список объектов CatalogItem
+                List<CatalogItem> catalogItems = new List<CatalogItem>();
+                foreach (DataRow row in resultTable.Rows)
+                {
+                    CatalogItem item = new CatalogItem
+                    {
+                        Owner = row["OWNER"].ToString(),
+                        ObjectName = row["OBJECT_NAME"].ToString(),
+                        ObjectType = row["OBJECT_TYPE"].ToString()
+                    };
+                    catalogItems.Add(item);
+                }
+
+                // Создайте и отобразите окно WPF с ListView
+                CatalogWindow catalogWindow = new CatalogWindow();
+                catalogWindow.LoadCatalogItems(catalogItems);
+                catalogWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in CatalogShow: {ex.Message}");
+            }
         }
 
         private void UpravitZamestnanec(object parameter)
@@ -363,7 +400,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         private void GetPobockaName(decimal id_zamestnanec)
         {
             db.OpenConnection();
-            OracleCommand cmd = db.Connection.CreateCommand();  // Создаем команду открытого соединения
+            OracleCommand cmd = db.Connection.CreateCommand(); 
             cmd.CommandText = "SELECT f.nazev FROM pobocka f WHERE f.id_pobocka= (SELECT z.pobocka_id_pobocka FROM zamestnanec z WHERE z.id_zamestnanec = :id_zamestnanec)";
             cmd.Parameters.Add("id_zamestnanec", OracleDbType.Decimal).Value = id_zamestnanec;
             try
@@ -407,48 +444,8 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 db.CloseConnection();
             }
         }
-        
 
-       /* public List<Klient> GetHierarchyInfoFromDatabase(int id_zamestnanec)
-        {
-            try
-            {
-                db.OpenConnection();
-                List<Klient> result = new List<Klient>();
-                using (OracleCommand cmd = new OracleCommand("GetHierarchyInfo", db.Connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("result", OracleDbType.RefCursor).Direction = ParameterDirection.ReturnValue;
-                    cmd.Parameters.Add("p_id_zamestnanec", OracleDbType.Decimal).Value = id_zamestnanec;
-
-                    using (OracleDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string full_name = reader["full_name"].ToString();
-                            string[] names = full_name.Split(' ');
-
-                            string firstName = names[0];
-                            string lastName = names[1];
-
-                            result.Add(new Klient { Jmeno = firstName, Prijmeni = lastName });
-                        }
-                    }
-                }
-
-                return result;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                return null;
-            }
-            finally
-            {
-                db.CloseConnection();
-            }
-        }       */
+       
         private void PopulateKlientsList()
         {
 
