@@ -163,9 +163,9 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="135,10,287,10" />
-        <Button Content="Schuzky"
+        <Button Content="Soubory"
                 Style="{StaticResource ButtonStyle}"
-                Command="{Binding SchuzkaClickCommand}"
+                Command="{Binding SouboryCommand}"
                 RenderTransformOrigin="-1.41,-0.667"
                 Grid.Row="2"
                 Grid.Column="1"

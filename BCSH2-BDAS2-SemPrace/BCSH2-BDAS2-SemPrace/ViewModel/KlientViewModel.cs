@@ -179,6 +179,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         public ICommand ExitKlientCommand { get; }
         public ICommand SaveDataCommand { get; }
         public ICommand VytvoritPlatbuCommand { get; }
+        public ICommand SouboryCommand { get; }
         private readonly OracleDatabaseService db;
         public KlientViewModel(Klient klient)
         {
@@ -190,14 +191,13 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             RefreshListView();
             FetchAndPopulateData();
             GetMonthlySpendings();
-            // Initialize your commands
             TranzakceZUctuCommand = new RelayCommand(TranzakceZUctu);
             ZalozitNovyCommand = new RelayCommand(ZalozitNovy);
             DetailUctuCommand = new RelayCommand(DetailUctu);
             ExitKlientCommand = new RelayCommand(ExitKlient);
             VytvoritPlatbuCommand = new RelayCommand(VytvoritPlatbu);
             SaveDataCommand = new RelayCommand(SaveData);
-            //SjednatShuzkuCommand = new RelayCommand(SjednatShuzku);
+            SouboryCommand = new RelayCommand(SouboryClick);
         }
 
         private void TranzakceZUctu(object parameter)
@@ -277,13 +277,21 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }
         }
 
+        private void SouboryClick(object parameter)
+        {
+            KlientOdesilaniSouboruWindow w = new KlientOdesilaniSouboruWindow(_currentKlient);
+
+            w.ShowDialog();
+            RefreshListView();
+        }
+
         private void ExitKlient(object parameter)
         {
             LogoutLog(_currentKlient);
             LoginWindow loginWindow = new LoginWindow();
 
             // Close the current window
-            Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive).Close();            
+            Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive).Close();
 
             // Show the login window
             loginWindow.Show();
@@ -467,7 +475,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 MessageBox.Show($"Chyba ulozeni dat: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        
+
         private void FetchAndPopulateData()
         {
             Name = _currentKlient.Jmeno;
