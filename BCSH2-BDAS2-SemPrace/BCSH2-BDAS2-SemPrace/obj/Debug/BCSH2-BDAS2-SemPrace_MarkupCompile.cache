@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Program Files\Git\BCSH2-Sem-Prace\BCSH2_semestralni_prace\BCSH2-BDAS2-SemPrace\BCSH2-BDAS2-SemPrace\App.xaml
-121654751453
+18-960603444
 
-46-455913704
+58266747115
 34220344143
-MainWindow.xaml;View\EditKlientWindow.xaml;View\KlientDetailUctuWindow.xaml;View\KlientObjednaniKartyWindow.xaml;View\KlientPlatbaWindow.xaml;View\KlientTranzakceZUctuWindow.xaml;View\KlientWindow.xaml;View\KlientZalozitUcetWindow.xaml;View\LoginWindow.xaml;View\PridatKlientWindow.xaml;View\ShowKlientWindow.xaml;View\ZamestnanecWindow.xaml;
+MainWindow.xaml;View\EditKlientWindow.xaml;View\KlientDetailUctuWindow.xaml;View\KlientObjednaniKartyWindow.xaml;View\KlientPlatbaWindow.xaml;View\KlientTranzakceZUctuWindow.xaml;View\KlientWindow.xaml;View\KlientZalozitUcetWindow.xaml;View\LoginWindow.xaml;View\ManazerWindow.xaml;View\PridatBankerWindow.xaml;View\PridatKlientWindow.xaml;View\ShowBankerWindow.xaml;View\ShowKlientWindow.xaml;View\UpravitBankerWindow.xaml;View\UpravitKlientWindow.xaml;View\UpravitZamestnanecWindow.xaml;View\ZamestnanecWindow.xaml;
 
 False
 

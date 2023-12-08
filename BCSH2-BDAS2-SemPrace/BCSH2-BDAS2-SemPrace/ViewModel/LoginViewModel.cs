@@ -136,9 +136,12 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                 else if  (zamestnanecInfo.Pozice == "Manazer")
                 {
                     Zamestnanec zamestnanec = GetZamestnanecFromLogin(userEmail);
-
                     SuccessfulLoginZamestnanec?.Invoke(zamestnanec);
-                    newUserWindow = new ZamestnanecWindow(zamestnanec, zamestnanecInfo.Pozice);
+                    newUserWindow = new ManazerWindow(zamestnanec, zamestnanecInfo.Pozice);
+                    Console.WriteLine($"User {zamestnanec.Jmeno} {zamestnanec.Prijmeni} logged in successfully.");
+                    ZamLoginSuccess(zamestnanec);
+                    CloseLoginWindow();
+                    newUserWindow.Show();
                 }
 
             }

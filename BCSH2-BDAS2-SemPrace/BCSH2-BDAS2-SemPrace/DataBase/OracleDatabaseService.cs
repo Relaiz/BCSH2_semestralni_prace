@@ -149,7 +149,48 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                 CloseConnection();
             }
         }
-       
+        public Zamestnanec GetBankerByJmenoPrijmeni(string jmeno, string prijmeni)
+        {
+            OpenConnection();
+
+            OracleCommand cmd = Connection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM MANAZER_BANKER_VIEW WHERE jmeno = :jmeno AND prijmeni = :prijmeni";
+            cmd.Parameters.Add("jmeno", OracleDbType.Varchar2).Value = jmeno;
+            cmd.Parameters.Add("prijmeni", OracleDbType.Varchar2).Value = prijmeni;
+            try
+            {
+                OracleDataReader reader = cmd.ExecuteReader();
+                Zamestnanec banker = null;
+
+                if (reader.Read())
+                { 
+                    banker = new Zamestnanec
+                    {
+                        Jmeno = reader["jmeno"].ToString(),
+                        Prijmeni = reader["prijmeni"].ToString(),
+                        Mzda = Convert.ToDecimal(reader["mzda"]),
+                        TelefoniCislo = reader["telefoni_cislo"].ToString(),
+                        EmailZamestnanec=reader["email_zamestnanec"].ToString(),
+                        NazevPobocky = reader["nazev_pobocky"].ToString(),
+                        StatusPopis = reader["status_popis"].ToString(),
+                        Adresa = reader["adresa"].ToString(),
+                    };
+                }
+                reader.Close();
+
+                return banker;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
         public Klient GetKlientByJmenoPrijmeni(string jmeno, string prijmeni)
         {
             OpenConnection();
@@ -181,19 +222,26 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
                     string[] cisloUctuArray = reader["cislo_uctu"].ToString().Split(',');
                     string[] nazevUcetuArray = reader["nazev_ucetu"].ToString().Split(',');
                     string[] statusPopisArray = reader["status_popis"].ToString().Split(',');
-
-                    for (int i = 0; i < idUcetArray.Length; i++)
+                    if (idUcetArray[0] == "")
                     {
-                        Ucet ucet = new Ucet
-                        {
-                            IdUcet = Convert.ToInt32(idUcetArray[i].Trim()),
-                            CisloUctu = Convert.ToInt64(cisloUctuArray[i].Trim()),
-                            Nazev = nazevUcetuArray[i].Trim(),
-                            PopisStatus = statusPopisArray[i].Trim()
-                        };
 
-                        klient.Ucty.Add(ucet);
                     }
+                    else
+                    {
+                        for (int i = 0; i < idUcetArray.Length; i++)
+                        {
+                            Ucet ucet = new Ucet
+                            {
+                                IdUcet = Convert.ToInt32(idUcetArray[i].Trim()),
+                                CisloUctu = Convert.ToInt64(cisloUctuArray[i].Trim()),
+                                Nazev = nazevUcetuArray[i].Trim(),
+                                PopisStatus = statusPopisArray[i].Trim()
+                            };
+
+                            klient.Ucty.Add(ucet);
+                        }
+                    }
+
                 }
 
                 reader.Close();
@@ -330,5 +378,240 @@ namespace BCSH2_BDAS2_SemPrace.DataBase
 
             return zustatek;
         }
+        public int GetZamestnanecId(string jmeno, string prijmeni)
+        {
+            try
+            {
+                OpenConnection();
+                using (OracleCommand command = new OracleCommand("GET_ZAMESTNANEC_ID", Connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Добавляем входные параметры
+                    command.Parameters.Add("p_jmeno", OracleDbType.Varchar2).Value = jmeno;
+                    command.Parameters.Add("p_prijmeni", OracleDbType.Varchar2).Value = prijmeni;
+
+                    // Добавляем выходной параметр
+                    command.Parameters.Add("p_id_zamestnanec", OracleDbType.Int32).Direction = ParameterDirection.Output;
+
+                    command.ExecuteNonQuery();
+
+                    // Получаем значение из выходного параметра
+                    OracleDecimal oracleDecimalValue = (OracleDecimal)command.Parameters["p_id_zamestnanec"].Value;
+                    return oracleDecimalValue.IsNull ? -1 : oracleDecimalValue.ToInt32();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetZamestnanecId: " + ex.Message);
+                return -1;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public int GetKlientId(string jmeno, string prijmeni)
+        {
+            try
+            {
+                OpenConnection();
+                using (OracleCommand command = new OracleCommand("GET_KLIENT_ID", Connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Добавляем входные параметры
+                    command.Parameters.Add("p_jmeno", OracleDbType.Varchar2).Value = jmeno;
+                    command.Parameters.Add("p_prijmeni", OracleDbType.Varchar2).Value = prijmeni;
+
+                    // Добавляем выходной параметр
+                    command.Parameters.Add("p_id_klient", OracleDbType.Int32).Direction = ParameterDirection.Output;
+
+                    command.ExecuteNonQuery();
+
+                    // Получаем значение из выходного параметра
+                    OracleDecimal oracleDecimalValue = (OracleDecimal)command.Parameters["p_id_klient"].Value;
+                    return oracleDecimalValue.IsNull ? -1 : oracleDecimalValue.ToInt32();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetKlientId: " + ex.Message);
+                return -1;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+        public Klient LoadKlientDataById(int klientId)
+        {
+            try
+            {
+                OpenConnection();
+                Klient klient = null;
+                using (OracleCommand command = new OracleCommand("SELECT jmeno, prijmeni, cislo_prukazu, klient_email, telefoni_cislo FROM klient WHERE id_klient = :p_id_klient", Connection))
+                {
+                    command.Parameters.Add("p_id_klient", OracleDbType.Int32).Value = klientId;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string jmeno = reader["jmeno"].ToString();
+                            string prijmeni = reader["prijmeni"].ToString();
+                            OracleDecimal cisloPrukazuOracle = reader.GetOracleDecimal(reader.GetOrdinal("cislo_prukazu"));
+                            long? cisloPrukazu = cisloPrukazuOracle.IsNull ? (long?)null : cisloPrukazuOracle.ToInt64();
+                            string klientEmail = reader["klient_email"].ToString();
+                            string telefoniCislo = reader["telefoni_cislo"].ToString();
+
+                            klient = new Klient
+                            {
+                                IdKlient = klientId,
+                                Jmeno = jmeno,
+                                Prijmeni = prijmeni,
+                                CisloPrukazu = cisloPrukazu ?? 0,
+                                KlientEmail = klientEmail,
+                                TelefoniCislo = telefoniCislo
+                            };
+                        }
+                    }
+                }
+                return klient;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+        public Zamestnanec LoadZamestnanecDataById(int idZam)
+        {
+            try
+            {
+                OpenConnection();
+                Zamestnanec zamestnanec = null;
+                using (OracleCommand command = new OracleCommand("SELECT jmeno, prijmeni, email_zamestnanec, telefoni_cislo,pobocka_id_pobocka,status_id_status FROM zamestnanec WHERE id_zamestnanec = :id_zamestnanec", Connection))
+                {
+                    command.Parameters.Add("p_id_zamestnanec", OracleDbType.Int32).Value = idZam;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string jmeno = reader["jmeno"].ToString();
+                            string prijmeni = reader["prijmeni"].ToString();
+                            
+                            string Email = reader["email_zamestnanec"].ToString();
+                            string telefoniCislo = reader["telefoni_cislo"].ToString();
+                            int idPobocka = Convert.ToInt32(reader["pobocka_id_pobocka"]);
+                            int idStatus = Convert.ToInt32(reader["status_id_status"]);
+
+
+                            zamestnanec = new Zamestnanec
+                            {
+                                IdZamestnanec = idZam,
+                                Jmeno = jmeno,
+                                Prijmeni = prijmeni,
+                                EmailZamestnanec = Email,
+                                TelefoniCislo = telefoniCislo,
+                                PobockaIdPobocka = idPobocka,
+                                StatusIdStatus = idStatus
+                            };
+                        }
+                    }
+                }
+                return zamestnanec;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+        public (List<Klient> Klients, List<Zamestnanec> Bankers) GetHierarchyInfoFromDatabase(int idZamestnanec)
+        {
+            try
+            {
+                OpenConnection();
+
+                using (OracleCommand cmd = new OracleCommand("GetHierarchyInformation", Connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("p_id_zamestnanec", OracleDbType.Decimal).Value = idZamestnanec;
+
+                    var klientsCursor = new OracleParameter
+                    {
+                        ParameterName = "klients_cursor_out",
+                        OracleDbType = OracleDbType.RefCursor,
+                        Direction = ParameterDirection.Output
+                    };
+
+                    var bankersCursor = new OracleParameter
+                    {
+                        ParameterName = "bankers_cursor_out",
+                        OracleDbType = OracleDbType.RefCursor,
+                        Direction = ParameterDirection.Output
+                    };
+
+                    cmd.Parameters.Add(klientsCursor);
+                    cmd.Parameters.Add(bankersCursor);
+
+                    cmd.ExecuteNonQuery();
+
+                    // Получаем данные для клиентов
+                    var klientsResult = new List<Klient>();
+                    using (var klientsReader = ((OracleRefCursor)klientsCursor.Value).GetDataReader())
+                    {
+                        while (klientsReader.Read())
+                        {
+                            // Пример чтения данных клиента
+                            klientsResult.Add(new Klient
+                            {
+                                Jmeno = klientsReader["klient_jmeno"].ToString(),
+                                Prijmeni = klientsReader["klient_prijmeni"].ToString()
+                            });
+                        }
+                    }
+
+                    // Получаем данные для банкиров
+                    var bankersResult = new List<Zamestnanec>();
+                    using (var bankersReader = ((OracleRefCursor)bankersCursor.Value).GetDataReader())
+                    {
+                        while (bankersReader.Read())
+                        {
+                            // Пример чтения данных банкира
+                            bankersResult.Add(new Zamestnanec
+                            {
+                                Jmeno = bankersReader["banker_jmeno"].ToString(),
+                                Prijmeni = bankersReader["banker_prijmeni"].ToString()
+                            });
+                        }
+                    }
+
+                    return (klientsResult, bankersResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, null);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
     }
 }
+

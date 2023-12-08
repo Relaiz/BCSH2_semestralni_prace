@@ -122,8 +122,13 @@
     <Compile Include="ViewModel\KlientViewModel.cs" />
     <Compile Include="ViewModel\KlientZalozitUcetViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\ManazerViewModel.cs" />
+    <Compile Include="ViewModel\PridatBankerViewModel.cs" />
     <Compile Include="ViewModel\PridatKlientViewModel.cs" />
     <Compile Include="ViewModel\ShowKlientViewModel.cs" />
+    <Compile Include="ViewModel\UpravitBankerViewModel.cs" />
+    <Compile Include="ViewModel\UpravitZamestnanecViewModel.cs" />
+    <Compile Include="ViewModel\UpravitKlientViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ZamestnanecViewModel.cs" />
     <Compile Include="View\EditKlientWindow.xaml.cs">
@@ -150,11 +155,30 @@
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManazerWindow.xaml.cs">
+      <DependentUpon>ManazerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PridatBankerWindow.xaml.cs">
+      <DependentUpon>PridatBankerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PridatKlientWindow.xaml.cs">
       <DependentUpon>PridatKlientWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ShowBankerViewModel.cs" />
+    <Compile Include="View\ShowBankerWindow.xaml.cs">
+      <DependentUpon>ShowBankerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ShowKlientWindow.xaml.cs">
       <DependentUpon>ShowKlientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpravitBankerWindow.xaml.cs">
+      <DependentUpon>UpravitBankerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpravitKlientWindow.xaml.cs">
+      <DependentUpon>UpravitKlientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpravitZamestnanecWindow.xaml.cs">
+      <DependentUpon>UpravitZamestnanecWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ZamestnanecWindow.xaml.cs">
       <DependentUpon>ZamestnanecWindow.xaml</DependentUpon>
@@ -204,11 +228,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManazerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PridatBankerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PridatKlientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ShowBankerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ShowKlientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UpravitBankerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UpravitKlientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UpravitZamestnanecWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

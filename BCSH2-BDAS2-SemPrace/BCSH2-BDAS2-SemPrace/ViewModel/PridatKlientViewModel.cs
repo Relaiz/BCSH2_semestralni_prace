@@ -189,7 +189,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 db.OpenConnection();
 
-                using (OracleCommand cmd = new OracleCommand("AddKlientLogin", db.Connection))
+                using (OracleCommand cmd = new OracleCommand("AddLogin", db.Connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("p_zamestnanec_id_zamestnanec", OracleDbType.Int32).Value = null;
@@ -550,7 +550,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
                            string.IsNullOrEmpty(this["Stat"]) &&
                            string.IsNullOrEmpty(this["Ulice"]) &&
                            string.IsNullOrEmpty(this["Mesto"]) &&
-                           CisloPrukaz !=0; 
+                           CisloPrukaz > 10000; 
         }
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)

@@ -3,6 +3,7 @@ using BCSH2_BDAS2_SemPrace.DataBase;
 using BCSH2_BDAS2_SemPrace.Model;
 using BCSH2_BDAS2_SemPrace.View;
 using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -96,6 +97,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 _jmeno = value;
                 OnPropertyChanged(nameof(Jmeno));
+                OnPropertyChanged(nameof(CeleJmeno));
             }
         }
 
@@ -106,6 +108,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 _prijmeni = value;
                 OnPropertyChanged(nameof(Prijmeni));
+                OnPropertyChanged(nameof(CeleJmeno));
             }
         }
 
@@ -159,11 +162,105 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             UkazKlientCommand = new RelayCommand(UkazKlient);
             PridatKlientCommand = new RelayCommand(PridatKlient);
             SmazatKlientCommand = new RelayCommand(SmazatKlient);
-            //UpravitKlientCommandnew = new RelayCommand();
-            //UpravitZamestnanecCommand=new RelayCommand();
+            UpravitKlientCommand = new RelayCommand(UpravitKlient);
+            UpravitZamestnanecCommand=new RelayCommand(UpravitZamestnanec);
+        }
+
+        private void UpravitZamestnanec(object parameter)
+        {
+            try
+            {
+                UpravitZamestnanecViewModel upravitZamestnanecViewModel = new UpravitZamestnanecViewModel(AktualniZamestnanec);
+                UpravitZamestnanecWindow upravitZamestnanecWindow = new UpravitZamestnanecWindow(AktualniZamestnanec);
+                upravitZamestnanecWindow.DataContext = upravitZamestnanecViewModel;
+                upravitZamestnanecWindow.ShowDialog();
+                GetPobockaName(AktualniZamestnanec.IdZamestnanec);
+                GetStatus(AktualniZamestnanec.IdZamestnanec);
+                Zamestnanec zamPomocna = AktualizovatZamestnanec(AktualniZamestnanec.IdZamestnanec);
+                Jmeno= zamPomocna.Jmeno;
+                Prijmeni= zamPomocna.Prijmeni;
+                TelCislo=zamPomocna.TelefoniCislo;
+                Email= zamPomocna.EmailZamestnanec;
+                AktualniZamestnanec.Jmeno = zamPomocna.Jmeno;
+                AktualniZamestnanec.Prijmeni = zamPomocna.Prijmeni;
+                AktualniZamestnanec.TelefoniCislo = zamPomocna.TelefoniCislo;
+                AktualniZamestnanec.EmailZamestnanec = zamPomocna.EmailZamestnanec;
+                
+                PopulateKlientsList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        private Zamestnanec AktualizovatZamestnanec(int zamId)
+        {
+            Zamestnanec zamestnanec = null;
+
+            try
+            {
+                db.OpenConnection();
+
+                using (OracleCommand command = new OracleCommand())
+                {
+                    command.Connection = db.Connection;
+                    command.CommandText = "SELECT jmeno, prijmeni, telefoni_cislo, email_zamestnanec FROM zamestnanec WHERE id_zamestnanec = :zamId";
+                    command.Parameters.Add("zamId", OracleDbType.Int32).Value = zamId; 
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            zamestnanec = new Zamestnanec
+                            {
+                                Jmeno = reader["jmeno"].ToString(),
+                                Prijmeni = reader["prijmeni"].ToString(),
+                                TelefoniCislo = reader["telefoni_cislo"].ToString(),
+                                EmailZamestnanec = reader["email_zamestnanec"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                db.CloseConnection(); 
+            }
+
+            return zamestnanec;
+        }
+        private void UpravitKlient(object parameter)
+        {
+            if (AktualniKlient == null)
+            {
+                System.Windows.MessageBox.Show("Nejprve vyberte klienta ze seznamu.", "Upozorneni", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                try
+                {
+                    
+                    int idKlient = db.GetKlientId(AktualniKlient.Jmeno, AktualniKlient.Prijmeni);
+                    AktualniKlient.IdKlient = idKlient;
+                    UpravitKlientViewModel upravitKlientViewModel = new UpravitKlientViewModel(AktualniKlient);
+                    UpravitKlientWindow upravitKlientWindow = new UpravitKlientWindow(AktualniKlient);
+                    upravitKlientWindow.DataContext=upravitKlientViewModel;
+                    upravitKlientWindow.ShowDialog();
+                    PopulateKlientsList();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+                
+            }
         }
         
-
         private void SmazatKlient(object parameter)
         {
             if (AktualniKlient == null)
@@ -196,19 +293,14 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             }          
         }
         private void PridatKlient(object parameter)
-        {
-
-            ZamestnanecViewModel zamestnanecViewModel = new ZamestnanecViewModel(_actualniZamestnanec,Pozice);
+        {            
             PridatKlientViewModel pridatKlientViewModel = new PridatKlientViewModel(AktualniZamestnanec,ListKlientu);
             PridatKlientWindow pridatKlientWindow = new PridatKlientWindow(AktualniZamestnanec,ListKlientu);
             pridatKlientWindow.DataContext = pridatKlientViewModel;
             pridatKlientWindow.Show();
             PopulateKlientsList();        
         }
-        private void EditKlient(object parameter)
-        {
-
-        }
+       
 
         private void UkazKlient(object parameter)
         {
@@ -317,7 +409,7 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
         }
         
 
-        public List<Klient> GetHierarchyInfoFromDatabase(int id_zamestnanec)
+       /* public List<Klient> GetHierarchyInfoFromDatabase(int id_zamestnanec)
         {
             try
             {
@@ -356,16 +448,28 @@ namespace BCSH2_BDAS2_SemPrace.ViewModel
             {
                 db.CloseConnection();
             }
-        }       
+        }       */
         private void PopulateKlientsList()
         {
 
-            List<Klient> clients = GetHierarchyInfoFromDatabase(AktualniZamestnanec.IdZamestnanec);
-            _listKlientu.Clear();
-            foreach (var klient in clients)
+            var (clients, _) = db.GetHierarchyInfoFromDatabase(AktualniZamestnanec.IdZamestnanec);
+            if (clients != null)
             {
-                ListKlientu.Add(klient);
+                Console.WriteLine($"Pocet nalezenych klientu: {clients.Count}");
+                _listKlientu.Clear();
+            if (clients != null)
+            {
+                foreach (var klient in clients)
+                {
+                    _listKlientu.Add(klient);
+                }
             }
+            }
+            else
+            {
+                Console.WriteLine("Prazdny seznam Klientu.");
+            }
+
             OnPropertyChanged(nameof(ListKlientu));
         }
     }

@@ -28,11 +28,49 @@ namespace BCSH2_BDAS2_SemPrace.Model
         private int? _odesilaniFileIdKlient;
         private int? _idFile1;
         private int? _idKlient1;
-
+        private string _adresa;
+        private string _popisStatus;
+        private string _nazevPobocky;
         public ObservableCollection<Klient> ManagedZamestnancy { get; set; }
         public Zamestnanec SelectedZamestnanec { get; set; }
         public ICommand EditZamestnanecCommand { get; set; }
 
+        public string NazevPobocky
+        {
+            get { return _nazevPobocky; }
+            set
+            {
+                if (_nazevPobocky != value)
+                {
+                    _nazevPobocky = value;
+                    OnPropertyChanged(nameof(NazevPobocky));
+                }
+            }
+        }
+        public string StatusPopis
+        {
+            get { return _popisStatus; }
+            set
+            {
+                if (_popisStatus != value)
+                {   
+                    _popisStatus = value;
+                    OnPropertyChanged(nameof(StatusPopis));
+                }
+            }
+        }
+        public string Adresa
+        {
+            get { return _adresa; }
+            set
+            {
+                if (_adresa != value)
+                {
+                    _adresa = value;
+                    OnPropertyChanged(nameof(Adresa));
+                }
+            }
+        }
         public int IdZamestnanec
         {
             get { return _idZamestnanec; }
