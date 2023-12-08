@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DC5EA818-E0CC-C26C-82B6-03F6D7D85311" containerWithKeyObject="58B7433B-A0EC-9AAC-52C6-6F77DB6CE666" localFKIndex="0E1B44EA-51FB-F595-CF27-6FEA7C967202" name="OPERACE_UCET_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>9D0F3F27-847B-BA44-CAF3-2C4902B6888E</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<referredTableLongName>UCET</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3AB68081-BE99-0EC8-F2CA-2EF0012CBE67</referredTableID>
+<keyObject>C7A4BB42-CA74-D558-8529-F692F89F6D8F</keyObject>
+<referredKeyID>C7A4BB42-CA74-D558-8529-F692F89F6D8F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_ucet</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

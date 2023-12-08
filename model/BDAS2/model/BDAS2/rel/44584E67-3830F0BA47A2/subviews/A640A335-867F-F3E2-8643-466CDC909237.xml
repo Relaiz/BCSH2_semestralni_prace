@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram class="oracle.dbtools.crest.swingui.relational.DPVRelationalSubView" name="From_LM_From_RM_Relational_1 - SubView_2" id="A640A335-867F-F3E2-8643-466CDC909237">
+<createdBy>Relaiz</createdBy>
+<modifiedBy>Relaiz</modifiedBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<autoRoute>false</autoRoute>
+<boxInbox>true</boxInbox>
+<showLegend>false</showLegend>
+<showLabels>false</showLabels>
+<showRelAttributes>false</showRelAttributes>
+<gridEnabled>false</gridEnabled>
+<showGrid>false</showGrid>
+<diagramColor>-1</diagramColor>
+<display>false</display>
+<generatorId>4B0A4707-07D8-CD35-B4A3-E9E851B94469</generatorId>
+<notation>1</notation>
+<objectViews>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="A76D7B8A-CB2D-0B83-14A0-D33E3448943F" otype="Table" vid="BF492313-A159-D0E7-3159-A505B5A31950">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="158" y="234" width="146" height="156"/>
+<generatorID>5A582E1B-6EF7-1AAB-C40E-57CCFA87C7FF</generatorID>
+</OView>
+</objectViews>
+<connectors>
+<Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="E41458C7-4AC8-9F87-293F-EF1B1C44CAB3" otype="FKIndexAssociation" vid_source="BF492313-A159-D0E7-3159-A505B5A31950" vid_target="BF492313-A159-D0E7-3159-A505B5A31950">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="234" y="390"/>
+<point x="234" y="404"/>
+<point x="234" y="494"/>
+<point x="148" y="494"/>
+<point x="158" y="390"/>
+</points>
+</Connector>
+</connectors>
+</Diagram>

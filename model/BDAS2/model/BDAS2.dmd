@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="BDAS2" id="C59548A8-F0A8-43BF-2161-3A4221ED78D8" version="3.5">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 15:07:40 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>C59548A8-F0A8-43BF-2161-3A4221ED78D8</designId>
+</OSDM_Design>

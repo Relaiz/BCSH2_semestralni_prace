@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7EC4AE2E-7BA9-C0CF-EB0C-D18C163A42A9" name="LOGIN">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:28:51 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id zamestnanec" id="DCE3B59A-FB20-E540-53FB-C3DCF467CE65">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:29:50 UTC</createdTime>
+<generatorID>FED8B9C5-FBCA-2A14-00FB-C5412913E32D</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>8C93F709-BA40-5F61-2F81-243B7BAC8762</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="login" id="1E1FFC75-F5CD-8E61-1937-E4994A62295D">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:30:10 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="heslo" id="0C7105ED-2879-83D7-A86D-B86264A84869">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:30:43 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="is admin" id="10994E9A-F080-E49C-9136-7DE192BF4706">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:31:41 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Klient id klient" id="B903A569-BAFE-EABE-90D2-54A8056B023C">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:34:15 UTC</createdTime>
+<generatorID>8BE44793-3830-5242-A69B-344A41549714</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>E7BCE587-C48A-B40C-FBA5-002C09C64B55</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_file" id="D4CEB451-F57E-8BC2-2C05-0EAB697A83B9">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>FED8B9C5-FBCA-2A14-00FB-C5412913E32D</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>B88ED4CA-BA65-6119-1818-8D3146DA24AC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id klient" id="DC5C7DE7-A39B-FF54-57AF-BBDEBD658341">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>FED8B9C5-FBCA-2A14-00FB-C5412913E32D</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>9168FB0A-FA73-FA73-7562-D4EA3B17EFFD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0A220ADB-3A01-5B0D-75FC-B136D3EA87D9" name="LOGIN PK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:30:20 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1E1FFC75-F5CD-8E61-1937-E4994A62295D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

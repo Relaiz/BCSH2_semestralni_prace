@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="734ED027-8F5A-BB02-C40E-BC51F3788DEB" name="KLIENT_SCHUZKA">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Klient_id_klient" id="23067072-C086-B470-17FB-CAFF9C1B9D29">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D0F43653-2D20-F186-A690-353342CD8319" referredColumn="C0C11172-5D99-9292-01CC-C228EA0EEE02"/>
+</associations>
+</Column>
+<Column name="SCHUZKA_id_schuzka" id="9CC35AB1-4EC4-CF94-A8D0-F525365C1245">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9089A465-3293-E409-5D54-C04863756279" referredColumn="B6B8DAD9-CA28-9D35-BB77-A23156485A1F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="620218DD-20FA-BD55-50E0-E13664C4621C" name="KLIENT_SCHUZKA_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23067072-C086-B470-17FB-CAFF9C1B9D29"/>
+<colUsage columnID="9CC35AB1-4EC4-CF94-A8D0-F525365C1245"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6641359B-F814-EF43-B0BB-74A77D19DE92" name="KLIENT_SCHUZKA_Klient_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3FEF4F5A-A7AC-702F-FC66-FD1D9D8BDC88</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23067072-C086-B470-17FB-CAFF9C1B9D29"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6274CF57-0A4A-EDBA-66F9-C8024BA968A5" name="KLIENT_SCHUZKA_SCHUZKA_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3FEF4F5A-A7AC-702F-FC66-FD1D9D8BDC88</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9CC35AB1-4EC4-CF94-A8D0-F525365C1245"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

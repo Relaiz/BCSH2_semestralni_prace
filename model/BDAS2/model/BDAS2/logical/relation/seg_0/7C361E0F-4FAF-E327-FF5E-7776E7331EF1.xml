@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="KLIENT_FILE" directorySegmentName="seg_0" id="7C361E0F-4FAF-E327-FF5E-7776E7331EF1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:35:59 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>061DB3B5-3976-F274-B14D-0E62EBD6867F</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>380C6C86-03B1-510C-BB29-321ED73B9B1C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BD5DAFBB-AE4D-CB11-7A29-272C91D2A29D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

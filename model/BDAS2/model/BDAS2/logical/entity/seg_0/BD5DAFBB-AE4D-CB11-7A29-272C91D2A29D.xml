@@ -1,0 +1,157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BD5DAFBB-AE4D-CB11-7A29-272C91D2A29D" name="ODESILANI_FILE">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:28:41 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_file" id="7664EB96-ED03-8931-0726-E715F4321699">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:31:11 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazev_file" id="91FC943A-C27C-13D1-280D-811B4CED26AA">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:31:30 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="file" id="D6837656-09CE-F400-5238-C0D4BB533B8F">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:31:56 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prijemce_file" id="47F005CD-F347-5E97-6FA9-997A37EB67CB">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:32:15 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="format_file" id="BDF15573-F307-1D4E-0411-978466D2A1F7">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:33:06 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id zamestnanec" id="00BCDA1A-45C1-C0CB-BFEE-EF38FBF72573">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:35:30 UTC</createdTime>
+<generatorID>77404E39-15C3-547B-16E8-F07F27D010B0</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>8C93F709-BA40-5F61-2F81-243B7BAC8762</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id klient" id="4C90EC30-E788-AC4C-92E6-85F3C619DE89">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:35:59 UTC</createdTime>
+<generatorID>7C361E0F-4FAF-E327-FF5E-7776E7331EF1</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>E7BCE587-C48A-B40C-FBA5-002C09C64B55</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_file1" id="68A77590-5153-B8E0-B78F-C8A91DD9156B">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>77404E39-15C3-547B-16E8-F07F27D010B0</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>B88ED4CA-BA65-6119-1818-8D3146DA24AC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id klient1" id="99765648-0F77-C770-33D9-58601B624C44">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:11 UTC</createdTime>
+<generatorID>77404E39-15C3-547B-16E8-F07F27D010B0</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>9168FB0A-FA73-FA73-7562-D4EA3B17EFFD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EBB5D99F-748D-4E7D-2C81-0416ACA9A174" name="ODESILANI_FILE PK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:31:17 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7664EB96-ED03-8931-0726-E715F4321699</attributeRef>
+<attributeRef>4C90EC30-E788-AC4C-92E6-85F3C619DE89</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

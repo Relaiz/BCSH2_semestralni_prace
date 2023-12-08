@@ -1,0 +1,439 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A76D7B8A-CB2D-0B83-14A0-D33E3448943F" name="ZAMESTNANEC">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>BF3EDEF1-0743-8F11-2A37-3EA90AA99E74</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_zamestnanec" id="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>8C93F709-BA40-5F61-2F81-243B7BAC8762</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="jmeno" id="2C967A7A-A70C-7616-82C9-B9960B01F280">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>FB893DD2-69FF-BCDE-E8B0-FC2304C45BA9</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prijmeni" id="F71A8A87-0E58-E45E-7EBF-141478E77EBC">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>A3DE6E4D-7840-BB6F-3F16-A68625B26370</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mzda" id="46F147CE-A30B-1115-F60A-D3FDEED92791">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>BCCD2577-6531-BEC7-3F73-5ACD4C5C3CAC</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefoni_cislo" id="78671268-A464-ACA7-9E2D-9B8B4312EFF5">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3110367C-CF95-3C51-4180-618B0E061D80</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADRESA_id_adres" id="C78A6D70-7453-7621-2043-E64DE4960921">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>B5E21B1A-266C-08D6-FDFB-42E9FBBCE4BE</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="420C5329-09B7-DC1C-C107-0F0E72936D7D" referredColumn="28B493D8-ACB5-C3C0-485D-C4DB0F7CA120"/>
+</associations>
+</Column>
+<Column name="Bank_id_bank" id="C79CE45A-71B3-80BE-DF99-5D52C4158A72">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>65FF4FD7-5025-0F65-F57E-0BFFD382977A</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BF4CD377-28F2-1A9C-1E78-4BA1C521B36C" referredColumn="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B"/>
+</associations>
+</Column>
+<Column name="STATUS_id_status" id="CAA5CB24-52FF-BF46-F779-3BCE1CA8240C">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>0DAC4C03-5AF6-35FC-E74F-FDDBAE9E9DD7</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C2229DB5-C8CB-DBA0-2AF3-E2160DE1A2E4" referredColumn="FCE3F821-0622-FCA0-77B5-AB5C33DDD3A6"/>
+</associations>
+</Column>
+<Column name="ZAME_id_zamestnanec" id="1115C8AB-D4A1-676B-E937-5750B434CFEB">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>DF234D1E-535F-773D-622C-926B806E39A4</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E41458C7-4AC8-9F87-293F-EF1B1C44CAB3" referredColumn="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
+</associations>
+</Column>
+<Column name="POBOCKA_id_pobocka" id="97DF82E0-2D30-873B-6E10-917A6A9B140C">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>E3B96AD7-1C7C-7410-A656-B4B3074019B6</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4387D2AE-2049-8197-F9D5-EDBEDD00B7B9" referredColumn="5B29E704-FBB9-1CB8-2998-F0F3240CCD36"/>
+</associations>
+</Column>
+<Column name="PRACE_POZICE_id_pozice" id="6C20F8C0-7D6E-EB48-4930-3B66772A3321">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>AE3A6C4F-D880-D9E2-5A1D-3D3579A01E1E</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA97CC87-50E0-9101-438E-5737AC298647" referredColumn="D04400DD-85CA-CBE3-3F98-87FAB6D74B64"/>
+</associations>
+</Column>
+<Column name="email_zamestnanec" id="451BEE7B-471F-B35C-7DD1-A794B17F2AF5">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>A2072F98-7EC9-AEAD-8CAD-37559147431C</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ODESI_FILE_id_file" id="231D4304-29D3-626A-E151-57E76E954684">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>B88ED4CA-BA65-6119-1818-8D3146DA24AC</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="66FBD186-5FEB-86AF-8FFD-8BD1ED62EEEB" referredColumn="30482480-DE5C-67D7-AC81-4D2C2C904D14"/>
+</associations>
+</Column>
+<Column name="ODESI_FILE_id_klient" id="6C397F19-C251-D394-3CB1-E851B9562559">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>9168FB0A-FA73-FA73-7562-D4EA3B17EFFD</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="66FBD186-5FEB-86AF-8FFD-8BD1ED62EEEB" referredColumn="99F3DFA7-0CB2-9467-D7B7-E9911CD6E5A9"/>
+</associations>
+</Column>
+<Column name="id_file1" id="1211B568-F2AF-D4EF-E0E8-F975A377BD89">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>9F7BE612-D646-78E3-9B38-20A94AF6CFA1</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_klient1" id="72983B7F-3733-2681-1417-7463732A1A09">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>F0719E94-36EF-3D0F-9CDB-5EE57ED05395</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CE7EB979-4A17-9761-690E-762EA9F41E33" name="ZAMESTNANEC_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>7EF54A53-4F81-0429-10BA-9DC3A7EEE328</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DE8068DF-82A2-FE03-2B32-51E10F78C8B0" name="ZAME_email_zamest_UN">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:43:34 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="451BEE7B-471F-B35C-7DD1-A794B17F2AF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27322FAE-6580-86B9-9C66-A5BDDA31C82D" name="ZAMESTNANEC_POBOCKA_IDX">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:43:47 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97DF82E0-2D30-873B-6E10-917A6A9B140C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F51DEF2D-173C-2741-38AF-EE5768FFA991" name="ZAMESTNANEC_EMAIL_IDX">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:43:58 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="451BEE7B-471F-B35C-7DD1-A794B17F2AF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D6CDE3B8-00FC-F7B0-5DA2-E626D3BE1A4B" name="ZAMESTNANEC_ID_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:45:12 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F96F76B9-68DD-BBE2-B55E-3975A4E5A9A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0317243B-1921-7A28-F89D-7BBF832EFD20" name="ZAMESTNANEC_PRACE_IDX">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:45:12 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C20F8C0-7D6E-EB48-4930-3B66772A3321"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1F0A94EA-F4D2-A9DB-DA62-45AF61A2B33F" name="ZAMESTNANEC_MANAZER_IDX">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:45:12 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1115C8AB-D4A1-676B-E937-5750B434CFEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A4E60DE5-91D9-61F1-6393-6501F0260D7B" name="ZAMESTNANEC_NAME_IDX">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:45:30 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C967A7A-A70C-7616-82C9-B9960B01F280"/>
+<colUsage columnID="F71A8A87-0E58-E45E-7EBF-141478E77EBC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4037EEC4-E5E0-39F9-2AE0-30EC19034EC1" name="ZAMESTNANEC_STATUS_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:37:42 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CAA5CB24-52FF-BF46-F779-3BCE1CA8240C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8EAE9920-673E-2A75-5490-91200CD00673" name="ZAMESTNANEC_ADRES_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:38:56 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C78A6D70-7453-7621-2043-E64DE4960921"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8C6878A1-CA1C-0E5D-0AA2-2E2DB65F6F47" name="ZAMESTNANEC_POZICE_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:38:56 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C20F8C0-7D6E-EB48-4930-3B66772A3321"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="279B2CB5-6237-B767-DD0D-A9FF0C6E83D4" name="ZAMESTNANEC_BANK_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:38:56 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C79CE45A-71B3-80BE-DF99-5D52C4158A72"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EE9D8FC1-06DA-6778-A6FD-65E332FA5EB4" name="ZAMESTNANEC__FILE_ODESILATEL">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:40:09 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="231D4304-29D3-626A-E151-57E76E954684"/>
+<colUsage columnID="6C397F19-C251-D394-3CB1-E851B9562559"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="16D0F5F0-7F2B-CD11-D616-6D182B92281E" name="ZAMESTNANEC__ID_FILE">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:40:09 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="231D4304-29D3-626A-E151-57E76E954684"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7581123-334E-C543-46AB-9A576F2F9762" name="ZAMESTNANEC_ADRESA_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>5535D4DA-4EEE-61DF-111B-DA8C6C109184</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C78A6D70-7453-7621-2043-E64DE4960921"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="980E8CE5-C0AF-4BE6-4EC4-B79692C4B134" name="ZAMESTNANEC_Bank_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>B72EDCDA-D777-90D8-7E64-49A1876D88C5</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C79CE45A-71B3-80BE-DF99-5D52C4158A72"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A12FA426-EF88-A7CB-5B39-D7D3F7A4C071" name="ZAME_MANAZER_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>1DCA2A11-1A61-5880-8213-69AD52BA6EAB</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1115C8AB-D4A1-676B-E937-5750B434CFEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5AAD6BCE-F8BE-69D7-B10C-3CEF87B0EA4E" name="ZAMESTNANEC_POBOCKA_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>AAF01008-0C28-5755-D0F3-9C5443115D51</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97DF82E0-2D30-873B-6E10-917A6A9B140C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4AB7B154-4410-4D07-E32B-6E5395B05529" name="ZAMESTNANEC_PRACE_POZICE_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>299F7584-6657-AB4C-B013-D8C28AC72BA6</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C20F8C0-7D6E-EB48-4930-3B66772A3321"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44D52CDA-2D8E-0793-5ABD-0DF486067122" name="ZAMESTNANEC_STATUS_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>6DDF393A-1FDB-561F-3A18-DD285EDD704B</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CAA5CB24-52FF-BF46-F779-3BCE1CA8240C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2F73C28A-E3A3-4C20-2476-91BD60205DCB" name="ZAM_ODES_FILE_FK">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-19 13:36:27 UTC</createdTime>
+<generatorID>EE50FF5C-88AF-97E5-6DCA-5EE974EC0711</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="231D4304-29D3-626A-E151-57E76E954684"/>
+<colUsage columnID="6C397F19-C251-D394-3CB1-E851B9562559"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

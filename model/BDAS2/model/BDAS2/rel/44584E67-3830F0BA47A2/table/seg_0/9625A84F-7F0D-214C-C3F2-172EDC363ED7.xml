@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9625A84F-7F0D-214C-C3F2-172EDC363ED7" name="Karta">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>EDC5B98B-05DB-E06C-4D71-C5B238AB231B</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_karta" id="4FB495C4-190F-54C5-D3BC-28EECC5AEDEE">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>826EC056-A457-6FEC-D96B-EFC863EC4FDD</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="jmeno" id="3A0E25AE-6B29-1505-274A-775432F5A25D">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>3DC38197-B24D-CB46-2D8B-CF88E997A168</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prijmeni" id="A4AD4A64-36D8-7F86-193F-4DD9D4921AE9">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>47120112-C670-43FC-9E2C-9B2C65269BC1</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cislo_karty" id="33DFEE42-752F-55B2-D304-B2885EE03E16">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>B2BB0732-9D6E-A38C-FC0E-EB0EA08F6DBE</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="platebni_system" id="C29F3A30-FC9E-F112-72A8-E254814AA836">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>53522E8C-7639-FCD2-26AA-D175E360548E</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="platnost" id="161EF1D1-2023-D52D-9245-28A87A0AAB3A">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>A1FA1A59-949C-484D-B466-17E177A3F040</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="typ" id="B637ACBF-CC5A-A3FB-EB59-35F31E21F1C2">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>23B5EE04-5048-3566-04D1-E7A1E42DCD1B</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UCET_id_ucet" id="F0B02570-5AA1-9FEA-7973-EBAF2F2F4ECA">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>0728CC2D-0C80-E055-99B5-07B0F4452A4B</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="60D439D1-5804-4FAC-79E1-EA5BEE39F14F" referredColumn="B6CDBCE0-2A58-7AD1-F75A-06BEB67A05C3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A6F69B55-552A-97F6-16CD-5A026306B35B" name="Karta_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>786208EC-00A6-CE79-D836-CFF9B87F5865</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4FB495C4-190F-54C5-D3BC-28EECC5AEDEE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="747C19EB-D5F7-02A9-0AF5-763FA3B60BA3" name="Karta_ID_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:49:33 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4FB495C4-190F-54C5-D3BC-28EECC5AEDEE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6EFB0656-51A4-1358-90E7-241166DD5E3E" name="Karta_UCET_IDXv1">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:49:33 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0B02570-5AA1-9FEA-7973-EBAF2F2F4ECA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2E1550A5-A14A-9E05-2A31-AAB8675C82EB" name="Karta_TYPE_IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:49:33 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B637ACBF-CC5A-A3FB-EB59-35F31E21F1C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="01173FF9-DFF2-C77B-A8A3-D0A1AEB106B6" name="Karta_UCET_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>187B25B6-4248-BBB9-21F5-B8A0B4F05B71</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0B02570-5AA1-9FEA-7973-EBAF2F2F4ECA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

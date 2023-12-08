@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B4A71E2F-6D49-864D-099D-6F19965F374C" name="BANKOMAT">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-08 21:25:57 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id bankomat" id="ADE02185-9972-9C39-3DBC-A9381A41F3CF">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-08 21:26:09 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Bank id bank" id="173E7ED8-2A73-4D10-D480-67E7E4256C6B">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-12 14:42:36 UTC</createdTime>
+<generatorID>11E69B56-1AB2-92E8-A1AA-69EA078FC613</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>DF81F5D7-9A4A-3F76-5919-97DEF1CD693D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazev" id="BD917E4E-BC1D-5E30-2F18-B0CB5AA0E4BD">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-12 14:43:10 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id status" id="DCBA9071-20C3-8F51-1BDD-CE824B8E0252">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-23 21:27:52 UTC</createdTime>
+<generatorID>3AD819A1-C1EF-F714-1676-B0C707712F66</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>0FD19A55-0E97-4D4E-EB36-0EF6F5527906</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ADRESA id adres" id="9F3EF981-842A-A547-9E87-4CC69216C270">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>1DE77FE9-C579-4296-F98A-C08ADDF3A4F0</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<referedAttribute>082D0CC1-719A-F2B2-D257-9DD50727C9A6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="086EFCDA-85C2-1C55-27F4-8B49E9562BB8" name="BANKOMAT PK">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-08 21:26:25 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>ADE02185-9972-9C39-3DBC-A9381A41F3CF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

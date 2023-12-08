@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A331ACCF-A847-CA79-F9B0-6691F06F1098" name="kreditni_karta">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>B6BFBD19-3887-66DE-6160-5CFD7A036ED3</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_karta" id="B06D164E-B77F-56D1-C197-BA5818251E1B">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>826EC056-A457-6FEC-D96B-EFC863EC4FDD</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="32D39070-8AFC-31B5-B791-78082B25E849" referredColumn="4FB495C4-190F-54C5-D3BC-28EECC5AEDEE"/>
+</associations>
+</Column>
+<Column name="uverzovy_limit" id="E25DA1A2-AB6B-67A3-2CC9-EBE744897F6D">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>255F562C-EBF0-5D97-BB1C-8C33F4425C2A</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bezurocne_obdobi" id="976B45F8-2188-986D-1B66-62FC8BEE33FF">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>1E8840C3-B568-73C3-C327-41FC4F8986D3</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="urokova_sazba" id="386BAC94-3904-CC7C-D12E-91C041F8B057">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>79966D4F-74D4-9EDD-7F7B-2453BC2050DC</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="povina_platba_uveru" id="A07CDADC-C895-DBCA-A711-B2F8848BFF23">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>D40DCDF1-CEDF-563D-A4F8-320BC0A0845C</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="915F068A-5569-C170-BEFA-B5EB18D66D53" name="kreditni_karta_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>786208EC-00A6-CE79-D836-CFF9B87F5865</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B06D164E-B77F-56D1-C197-BA5818251E1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8A37B582-24EA-85A2-E143-735E88FDD033" name="kreditni_karta_Karta_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>9E2C08DA-565E-ECCD-4E44-7AD3F1FA70B9</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B06D164E-B77F-56D1-C197-BA5818251E1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

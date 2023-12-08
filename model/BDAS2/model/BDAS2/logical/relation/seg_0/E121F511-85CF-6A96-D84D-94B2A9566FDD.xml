@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="POBOCKA_ADRESA_FK" directorySegmentName="seg_0" id="E121F511-85CF-6A96-D84D-94B2A9566FDD">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>C0AA7114-2EA9-5DF1-75E7-222CF3E63A91</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>A6AA5848-3CF7-2F8B-6305-05F6C7052C82</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B17E6950-EB7C-142C-3B19-B6A4113B7135</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1025505E-6D4B-195C-2E8D-2E433F6FABE9</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

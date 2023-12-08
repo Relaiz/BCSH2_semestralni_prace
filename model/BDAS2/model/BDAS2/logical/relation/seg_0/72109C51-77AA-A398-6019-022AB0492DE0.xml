@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ZAMESTNANEC_ADRESA_FK" directorySegmentName="seg_0" id="72109C51-77AA-A398-6019-022AB0492DE0">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>420C5329-09B7-DC1C-C107-0F0E72936D7D</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>A6AA5848-3CF7-2F8B-6305-05F6C7052C82</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B17E6950-EB7C-142C-3B19-B6A4113B7135</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BF3EDEF1-0743-8F11-2A37-3EA90AA99E74</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

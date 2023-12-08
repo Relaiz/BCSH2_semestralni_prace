@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="765EA6D2-7233-6493-B648-A7BF46E31062" containerWithKeyObject="2CF1907B-8DD4-1BB5-2DBE-6F78513A1CF6" localFKIndex="8299A4E6-F1FD-E11E-9EC7-2029975C6DB0" name="BANKOMAT_Bank_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>11E69B56-1AB2-92E8-A1AA-69EA078FC613</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<referredTableLongName>Bank</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>36859094-3CCE-D286-A709-720DC2BBF0A3</referredTableID>
+<keyObject>8A4267F3-A8A6-8370-A7C6-7A2F8862BD58</keyObject>
+<referredKeyID>8A4267F3-A8A6-8370-A7C6-7A2F8862BD58</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_bank</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

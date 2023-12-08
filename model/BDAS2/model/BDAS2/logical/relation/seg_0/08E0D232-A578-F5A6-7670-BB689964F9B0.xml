@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="UCET STATUS FK" directorySegmentName="seg_0" id="08E0D232-A578-F5A6-7670-BB689964F9B0">
+<createdBy>razbo</createdBy>
+<createdTime>2022-11-23 21:16:17 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>8F917EFD-DD49-7EAB-1E04-BC05EAAF745C</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>patri</nameOnSource>
+<nameOnTarget>ma</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5091E14C-56F2-EB64-1F5D-A1A92DC30BFE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>AAC834DD-B566-0332-14D7-CAB77987372A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

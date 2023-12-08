@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="36859094-3CCE-D286-A709-720DC2BBF0A3" name="Bank">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>C7F1F2EB-05BF-EC42-0377-7539E318A87F</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_bank" id="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>DF81F5D7-9A4A-3F76-5919-97DEF1CD693D</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="kod" id="39FD0077-95DE-BC44-8D11-2BBD7C95D387">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>D913A005-2CDE-745A-8422-2841FD197F40</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazev" id="869B948C-F0C8-58F4-E554-679519180A0C">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>E8B0715C-0646-4A7D-BEAB-211D3E4AE849</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8A4267F3-A8A6-8370-A7C6-7A2F8862BD58" name="Bank_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>A1F65F9C-7F81-8D21-E977-D6D83EF8DDAF</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="18EE5A93-2F39-E93E-B922-0D2C175B746E" name="Bank__IDX">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:39:44 UTC</createdTime>
+<ownerDesignName>BDAS2</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAA7F571-D22F-2FA0-3295-B6BFC2875D7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

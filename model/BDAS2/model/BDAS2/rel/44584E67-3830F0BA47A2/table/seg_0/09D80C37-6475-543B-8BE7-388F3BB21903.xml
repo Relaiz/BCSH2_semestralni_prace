@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="09D80C37-6475-543B-8BE7-388F3BB21903" name="debetni_karta">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>9BFDE282-6745-B8C5-56DE-7783A1055E36</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_karta" id="7B549161-0508-EFD8-7FB9-236A93E8DC85">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>826EC056-A457-6FEC-D96B-EFC863EC4FDD</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="89E831B2-4721-9217-DF73-975641FAD3FF" referredColumn="4FB495C4-190F-54C5-D3BC-28EECC5AEDEE"/>
+</associations>
+</Column>
+<Column name="limit" id="31CDA45F-B3B1-AB7C-5284-EF9ACCAA45F6">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>2F6A286F-9146-4116-0496-2DF91E5B7B14</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="099FF797-832D-1282-758D-4418B693DA90" name="debetni_karta_PK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>786208EC-00A6-CE79-D836-CFF9B87F5865</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B549161-0508-EFD8-7FB9-236A93E8DC85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F65636C0-9031-C24A-19A7-223D9CEF1310" name="debetni_karta_Karta_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>2353A086-9ECA-D7E0-FC5D-75B66EF5F36E</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B549161-0508-EFD8-7FB9-236A93E8DC85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

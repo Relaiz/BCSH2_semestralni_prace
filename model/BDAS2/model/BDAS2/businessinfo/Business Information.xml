@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="FE4ADB23-9511-43E8-A63B-C6BE07C462B1">
+<createdBy>razbo</createdBy>
+<createdTime>2022-10-23 15:07:40 UTC</createdTime>
+<ownerDesignName>semPraceDataBase</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

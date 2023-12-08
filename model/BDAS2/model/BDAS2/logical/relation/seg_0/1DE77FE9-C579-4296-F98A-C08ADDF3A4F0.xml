@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="BANKOMAT_ADRESA_FK" directorySegmentName="seg_0" id="1DE77FE9-C579-4296-F98A-C08ADDF3A4F0">
+<createdBy>Relaiz</createdBy>
+<createdTime>2023-11-05 15:53:51 UTC</createdTime>
+<generatorID>B9131321-6DF9-5A7E-1BD2-AF740F224480</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<engineerTo>
+<item key="44584E67-266B-A7F3-8EBA-3830F0BA47A2" value="true"/>
+</engineerTo>
+<sourcePk>A6AA5848-3CF7-2F8B-6305-05F6C7052C82</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B17E6950-EB7C-142C-3B19-B6A4113B7135</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B4A71E2F-6D49-864D-099D-6F19965F374C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

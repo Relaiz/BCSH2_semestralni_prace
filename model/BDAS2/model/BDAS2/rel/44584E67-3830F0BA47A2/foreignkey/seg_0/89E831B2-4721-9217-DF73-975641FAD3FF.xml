@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="89E831B2-4721-9217-DF73-975641FAD3FF" containerWithKeyObject="09D80C37-6475-543B-8BE7-388F3BB21903" localFKIndex="F65636C0-9031-C24A-19A7-223D9CEF1310" name="debetni_karta_Karta_FK">
+<createdBy>razbo</createdBy>
+<createdTime>2023-11-02 17:42:24 UTC</createdTime>
+<generatorID>2353A086-9ECA-D7E0-FC5D-75B66EF5F36E</generatorID>
+<ownerDesignName>BDAS2</ownerDesignName>
+<referredTableLongName>Karta</referredTableLongName>
+<arc>F23B6AA4-8030-890B-E911-E5A4B1D236EB</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9625A84F-7F0D-214C-C3F2-172EDC363ED7</referredTableID>
+<keyObject>A6F69B55-552A-97F6-16CD-5A026306B35B</keyObject>
+<referredKeyID>A6F69B55-552A-97F6-16CD-5A026306B35B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_karta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorValue>D</discriminatorValue>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
